@@ -1,0 +1,51 @@
+/* Colors Kytos */
+
+$kytos-white: #EEE !global;
+$kytos-dark-white: #CCC !global;
+
+$kytos-gray: #515151 !global;
+$kytos-medium-gray: #414141 !global;
+$kytos-dark-gray: #313131 !global;
+
+$kytos-purple: #554077 !global;
+$kytos-dark-purple: #322c5d !global;
+
+$kytos-blue: #008690 !global;
+$kytos-dark-blue: #233f55 !global;
+
+$kytos-green: #8bc34a !global;
+$kytos-yellow: #f9a825 !global;
+$kytos-red: #dd2c00 !global;
+
+
+/* UI: Elements and Actons */
+
+$fill-bar: #333 !global;
+$fill-panel: #313131 !global;
+$fill-panel-h: $kytos-purple !global;
+$fill-panel-dark: #111 !global;
+
+$fill-link: $kytos-dark-blue !global;
+$fill-link-h: $kytos-blue !global;
+
+$fill-icon: $kytos-dark-white !global;
+$fill-icon-h: $kytos-purple !global;
+
+$fill-text: $kytos-dark-white !global;
+$fill-text-h: $kytos-white !global;
+
+$fill-menubar: $kytos-gray !global;
+$fill-menubar-h: $kytos-purple !global;
+$fill-menubar-b: $kytos-purple !global;
+
+$fill-button: $kytos-dark-white !global;
+$fill-button-bg: rgba(0,0,0,0.15) !global;
+$fill-button-hover: white !global;
+$fill-button-bg-h: rgba(0,0,0,0.5) !global;
+
+$fill-input: $kytos-dark-white !global;
+$fill-input-bg: #292929 !global;
+$fill-input-hover: #202020 !global;
+
+$fill-actionm-bg: $kytos-medium-gray !global;
+$fill-shortkey: $kytos-blue !global;
