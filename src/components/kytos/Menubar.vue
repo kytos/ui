@@ -9,7 +9,7 @@
     <icon name="link" v-bind:class="{ active: activeItem==2 }" v-on:click.native="setItem(2)"></icon>
     <icon name="cube" v-bind:class="{ active: activeItem==3 }" v-on:click.native="setItem(3)"></icon>
   </section>
-    <kytos-toolbar v-show="!expanded" :switchLabels="switchLabels" :interfaceLabels="interfaceLabels" :mapOpacity="mapOpacity" :opacityEmit="emitMapOpacity"></kytos-toolbar>
+    <kytos-toolbar v-show="!expanded" :switchLabels="switchLabels" :interfaceLabels="interfaceLabels" :mapOpacity="mapOpacity" :emitMapOpacity="emitMapOpacity"></kytos-toolbar>
     <kytos-context-panel v-show="expanded">
       <kytos-accordion v-show="activeItem==1">
         <kytos-accordion-item title="Custom Labels">
@@ -91,7 +91,7 @@ export default {
       $.ajax({
         async: true,
         dataType: "json",
-        url: "http://demo.kytos.io:8181/api/kytos/status/v1/napps",
+        url: this.$kytos_server_api + "kytos/status/v1/napps",
         success: function(data) {
           self.napps = data['napps']
         }

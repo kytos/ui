@@ -61,7 +61,7 @@ export default {
       return this.interface_id.split(":").slice(0,-1).join(":")
     },
     endpoint () {
-      let url = "http://demo.kytos.io:8181/api/kytos/of_stats/v1/"
+      let url = this.$kytos_server_api + "kytos/of_stats/v1/"
       return url + this.dpid + "/ports/" + this.port_number
     },
     utilization_color_class: function () {

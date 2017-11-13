@@ -10,7 +10,7 @@ export default {
   props: ["map", "original_graph"],
   data () {
     return {
-      topology_url: "http://demo.kytos.io:8181/api/kytos/topology/v2/",
+      topology_url: this.$kytos_server_api + "kytos/topology/v2/",
       map_container: undefined,
       graph: {},
       svg: undefined,

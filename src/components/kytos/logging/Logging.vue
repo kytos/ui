@@ -14,7 +14,7 @@
           <kytos-button title="Debug" @click.native="select('debug')"  tooltip="Only debug messages"></kytos-button>
         </kytos-button-group>
         <kytos-button-group>
-          <kytos-input v-model="highlight_string" v-on:change.native='highlight' icon="lightbulb-o" placeholder="Highlight string"></kytos-input>
+          <kytos-input v-model="highlight_string" v-on:change.native='highlight' icon="lightbulb-o" tooltip="Highlight string" placeholder="Highlight string"></kytos-input>
         </kytos-button-group>
       </div>
 

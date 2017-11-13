@@ -20,6 +20,7 @@ import KytosActionMenu from './components/kytos/misc/ActionMenu.vue';
 import KytosInfoPanel from './components/kytos/misc/InfoPanel.vue';
 import KytosStatusBar from './components/kytos/misc/StatusBar.vue'
 import KytosInput from './components/kytos/inputs/Input.vue';
+import KytosTextarea from './components/kytos/inputs/Textarea.vue';
 import KytosCheckbox from './components/kytos/inputs/Checkbox.vue';
 
 import KytosSlider from './components/kytos/inputs/Slider.vue';
@@ -50,6 +51,7 @@ Vue.component('kytos-dropdown', KytosDropdown);
 Vue.component('kytos-button-group', KytosButtonGroup);
 Vue.component('kytos-action-menu', KytosActionMenu);
 Vue.component('kytos-input', KytosInput);
+Vue.component('kytos-textarea', KytosTextarea);
 Vue.component('kytos-checkbox', KytosCheckbox);
 Vue.component('kytos-status-bar', KytosStatusBar)
 
@@ -93,6 +95,8 @@ Vue.filter('humanize_bytes', function (num, precision = 0, suffix = 'bps') {
 });
 
 Vue.prototype.$kytos = new Vue()
+Vue.prototype.$kytos_server = "http://sc17.kytos.io:8181/"
+Vue.prototype.$kytos_server_api = "http://sc17.kytos.io:8181/api/"
 
 var kytos = new Vue({
   el: '#app',

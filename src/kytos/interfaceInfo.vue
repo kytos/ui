@@ -37,7 +37,7 @@ export default {
   },
   computed: {
     endpoint () {
-      let url = "http://demo.kytos.io:8181/api/kytos/of_stats/v1/"
+      let url = this.$kytos_server_api + "kytos/of_stats/v1/"
       return url + this.metadata.dpid + "/ports/" + this.metadata.port_number
     }
   },

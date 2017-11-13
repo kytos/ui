@@ -5,7 +5,7 @@ export default {
   name: 'logging-utils',
   data() {
     return {
-      logs_url: 'http://demo.kytos.io:8181/',
+      logs_url: this.$kytos_server,
       connect_timeout: 1000,
       level_types:['DEBUG', 'INFO', 'WARN', 'ERROR', 'CRITICAL'],
       channels: new Set(),

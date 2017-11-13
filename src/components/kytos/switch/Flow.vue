@@ -98,7 +98,7 @@ export default {
     //      .append("g")
     //          .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
-    //  var uri = "http://demo.kytos.io:8181/api/kytos/of_stats/v1/"
+    //  var uri = this.$kytos_server_api + "kytos/of_stats/v1/"
     //  var endpoint = uri + this.dpid + "/ports/" + this.port_number + "/random"
 
     //  d3.json(endpoint, function(error, result) {

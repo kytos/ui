@@ -4,7 +4,7 @@
 
   <div id="kytos-input-search" class="kytos-input-wrap">
    <icon name="search"></icon>
-   <input type="text" v-model="search" class="kytos-input" placeholder="Search for switches" onshow="this.focus()" autofocus id="kytos-switches-search-input">
+   <input type="text" v-model="search" class="kytos-input" tooltip="Search for switches" placeholder="Search for switches" onshow="this.focus()" autofocus id="kytos-switches-search-input">
   </div>
 
   <div id="search-result">
@@ -87,7 +87,7 @@ export default {
   },
   methods: {
     get_switches () {
-      var endpoint = "http://demo.kytos.io:8181/api/kytos/topology/v2"
+      var endpoint = this.$kytos_server_api + "kytos/topology/v2"
       var self = this
       d3.json(endpoint, function(error, result) {
         for (var key in result.devices) {

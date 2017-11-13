@@ -19,7 +19,7 @@ export default {
       map_zoom: 2,
       extraComponent: undefined,
       topology: {
-        url: "http://demo.kytos.io:8181/api/kytos/topology/v2/",
+        url: this.$kytos_server_api + "kytos/topology/v2/",
         graph: null
       }
     }
@@ -42,7 +42,6 @@ export default {
       }
     },
     loadMap () {
-      var self = this
       mapboxgl.accessToken = "pk.eyJ1Ijoia3l0b3MiLCJhIjoiY2o5ZTRsbHpnMjd3ZjMzbnJxc2xqa2hibyJ9.bBZPeP_YLA5oP0heHRpL6A"
 
       var map = new mapboxgl.Map({
@@ -54,7 +53,7 @@ export default {
 
       map.dragRotate.disable()
 
-      map.on("load", function(){
+      map.on("load", () => {
         map.addLayer({
           id: "background",
           type: "background",
@@ -69,22 +68,21 @@ export default {
             }
           }
         })
-        self.getTopology()
+        this.getTopology()
       })
       this.map = map
     },
     getTopology () {
-      var self = this
       let topoTimer = this.topoTimer
       console.log("Fetching topology data")
-      json(this.topology.url, function(error, graph) {
+      json(this.topology.url, (error, graph) => {
         if (error) {
           var msg = "Error while trying to load the topology"
           this.$kytos.$emit("statusMessage", msg, true)
           throw error
         } else {
-          self.topology.graph = graph
-          self.extraComponent = KytosTopology
+          this.topology.graph = graph
+          this.extraComponent = KytosTopology
         }
       })
     }
