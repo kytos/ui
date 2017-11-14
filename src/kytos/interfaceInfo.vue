@@ -2,6 +2,14 @@
     <kytos-accordion>
 
       <kytos-accordion-item title="Interface Plot" v-if="chartJsonData">
+        <kytos-button-group>
+            <!-- input type="text" class="kytos-input" placeholder="Zoom" disabled -->
+            <kytos-button title="5" tooltip="5 minutes" v-on:click.native="change_plotRange(5)"></kytos-button>
+            <kytos-button title="10" tooltip="10 minutes" v-on:click.native="change_plotRange(10)"></kytos-button>
+            <kytos-button title="15" tooltip="15 minutes" v-on:click.native="change_plotRange(15)"></kytos-button>
+            <kytos-button title="60" tooltip="60 minutes" v-on:click.native="change_plotRange(60)"></kytos-button>
+            <kytos-button title="120" tooltip="120 minutes" v-on:click.native="change_plotRange(120)"></kytos-button>
+          </kytos-button-group>
         <kytos-chart-timeseries :interface_id="metadata.interface_id" :jsonData="chartJsonData" :display_legend="true" :chartHeight="200" ></kytos-chart-timeseries>
       </kytos-accordion-item>
 
@@ -32,7 +40,8 @@ export default {
                  "mac": "",
                  "speed": ""},
       chartJsonData: null,
-      interval: null
+      interval: null,
+      plotRange: null
     }
   },
   computed: {
@@ -61,8 +70,22 @@ export default {
         this.chartJsonData = data["data"]
       }
     },
+    build_url() {
+        var parameters_url = "";
+        if (this.plotRange !== null) {
+            var unix = Math.round(+new Date()/1000);
+            var start = unix - (this.plotRange * 60);
+            parameters_url = parameters_url + "?start=" + start + "&end=" + unix;
+        }
+        var endpoint_url = this.endpoint + parameters_url;
+        return endpoint_url;
+    },
     update_chart() {
-      json(this.endpoint, this.parseInterfaceData)
+        json(this.build_url(), this.parseInterfaceData)
+    },
+    change_plotRange(range) {
+        this.plotRange = range
+        this.update_chart()
     }
   },
   mounted () {
