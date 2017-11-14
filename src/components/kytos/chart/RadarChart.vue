@@ -155,6 +155,10 @@ export default {
   //float: left;
   background-color: $fill-button-bg-h;
 
+  svg
+    display: block;
+    margin: 0 auto;
+
   .kytosAxisWrapper
 
     text
