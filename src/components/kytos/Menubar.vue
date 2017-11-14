@@ -6,8 +6,7 @@
       <img v-show="!this.expanded" src="../../assets/icon-kytos.svg" class="logo-kytos" alt="Kytos" height="35">
     </div>
     <icon name="desktop" v-bind:class="{ active: activeItem==1 }" v-on:click.native="setItem(1)"></icon>
-    <icon name="link" v-bind:class="{ active: activeItem==2 }" v-on:click.native="setItem(2)"></icon>
-    <icon name="cube" v-bind:class="{ active: activeItem==3 }" v-on:click.native="setItem(3)"></icon>
+    <icon name="cube" v-bind:class="{ active: activeItem==2 }" v-on:click.native="setItem(2)"></icon>
   </section>
     <kytos-toolbar v-show="!expanded" :switchLabels="switchLabels" :interfaceLabels="interfaceLabels" :mapOpacity="mapOpacity" :emitMapOpacity="emitMapOpacity"></kytos-toolbar>
     <kytos-context-panel v-show="expanded">
@@ -28,24 +27,12 @@
       </kytos-accordion>
 
       <kytos-accordion v-show="activeItem==2">
-        <kytos-accordion-item title="Request E-Line Circuit">
-          <kytos-input id="name-input" title="Circuit Name:" tooltip="Circuit name" placeholder="Circuit Name" icon="pencil"></kytos-input>
-          <kytos-input id="endpoint-a-input" title="Endpoint A:" tooltip="Endpoint A (format: dpid:port_number)" placeholder="First endpoint" icon="arrow-right"></kytos-input>
-          <kytos-input id="vlan-a-input" title="VLAN A:" tooltip="Vlan id at endpoint A" placeholder="Vlan id" icon="tag"></kytos-input>
-          <kytos-input id="endpoint-z-input" title="Endpoint Z:" tooltip="Endpoint Z (format: dpid:port_number)" placeholder="Last endpoint" icon="arrow-left"></kytos-input>
-          <kytos-input id="vlan-z-input" title="VLAN Z:" tooltip="Vlan id at endpoint Z" placeholder="Vlan id" icon="tag"></kytos-input>
-          <kytos-button tooltip="Request Circuit" title="Request Circuit" icon="gear" v-on:click.native="request_circuit()"></kytos-button>
-        </kytos-accordion-item>
-      </kytos-accordion>
-
-      <kytos-accordion v-show="activeItem==3">
         <kytos-accordion-item title="Installed NApps">
           <kytos-property-panel>
             <kytos-property-panel-item :name="napp.name" :value="napp.version"  v-if="napps" v-for="napp in this.napps" :key="napp.name"></kytos-property-panel-item>
           </kytos-property-panel>
         </kytos-accordion-item>
       </kytos-accordion>
-
     </kytos-context-panel>
 </div>
 </template>
@@ -53,8 +40,8 @@
 <script>
 import Icon from '../../../node_modules/vue-awesome/components/Icon.vue'
 import KytosBaseWithIcon from './base/KytosBaseWithIcon.vue'
+
 import About from '../../kytos/about.vue'
-import * as d3 from "d3"
 
 export default {
   name: 'kytos-menu-bar',
@@ -115,42 +102,6 @@ export default {
     },
     toggleLabel (type, label) {
       this.$kytos.$emit('topology-toggle-label', type, label)
-    },
-    request_circuit () {
-      // TODO: FIx this to use model properly when on own component
-      var circuit_name = $("#name-input").find('input:visible:first')[0].value
-      var endpoint_a = $("#endpoint-a-input").find('input:visible:first')[0].value
-      var vlan_a = $("#vlan-a-input").find('input:visible:first')[0].value
-      var endpoint_z = $("#endpoint-z-input").find('input:visible:first')[0].value
-      var vlan_z = $("#vlan-z-input").find('input:visible:first')[0].value
-
-      var dpid_a = endpoint_a.split(":").slice(0,8).join(":")
-      var port_a = endpoint_a.split(":").slice(8,9).join(":")
-
-      var dpid_z = endpoint_z.split(":").slice(0,8).join(":")
-      var port_z = endpoint_z.split(":").slice(8,9).join(":")
-
-      var request =  {"name": circuit_name,
-                      "uni_a": {"dpid": dpid_a,
-                                "port": port_a,
-                                "tag": {"tag_type": "VLAN",
-                                        "value": vlan_a}},
-                      "uni_z": {"dpid": dpid_z,
-                                "port": port_z,
-                                "tag": {"tag_type": "VLAN",
-                                        "value": vlan_z}},
-                      "bandwidth": 100000000000}
-
-      $.ajax({
-        url: "http://demo.kytos.io:8181/api/kytos/mef_eline/circuits",
-        type:"POST",
-        data: request,
-        contentType:"application/json; charset=utf-8",
-        dataType: "json",
-        success: function(message){
-          console.log(message)
-        }
-      })
     }
   },
   created () {

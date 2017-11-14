@@ -16,16 +16,10 @@ export default {
       svg: undefined,
       simulation: undefined,
       // Nodes vars
-      charge: {"switch": 10, "interface": -20, "host": 20},
-      size: {"switch": 12, "interface": 2, "host": 8},
-      nodes_fill: {"switch": "rgba(85, 64, 199, 0.8)",
-                   "interface": "rgba(255,255,255,0.5)",
-                   "host": "rgba(255,0,0,1)"},
-      nodes_stroke: {"switch": "rgba(85, 64, 199, 0.8)",
-                     "interface": "rgba(255,255,255,0.5)",
-                     "host": "rgba(255,255,255.0.5)"},
+      charge: {switch: 10, iep: 10, interface: -20, host: 20},
+      size: {switch: 12, iep: 12, interface: 2, host: 8},
       // Links vars
-      strength: {"link": 0.001, "interface": 1, "host": 0.1},
+      strength: {link: 0.001, interface: 1, host: 0.1},
       distance: {},
       strokes: {interface: 0, link: 1, host: 1},
       // other attributes
@@ -44,18 +38,17 @@ export default {
   },
   mounted () {
     this.map_container = this.map.getCanvasContainer()
-    this.distance = {"link": 20 * this.size["switch"],
-                     "interface": this.size["switch"] + 4,
-                     "host": 1 * this.size["interface"]}
+    this.distance = {link: 20 * this.size.switch,
+                     interface: this.size.switch + 4,
+                     host: 1 * this.size.interface}
     this.update_graph_data()
     this.draw_topology()
     this.setListeners()
   },
   methods: {
     setListeners () {
-      var self = this
-      this.$kytos.$on("topology-highlightAll", function(p){
-        if (!self.check_switch_under_click(p)) self.highlight_all_nodes()
+      this.$kytos.$on("topology-highlightAll", (p) => {
+        if (!this.check_switch_under_click(p)) this.highlight_all_elements()
       })
       this.$kytos.$on("topology-toggle-label", this.toggle_labels)
     },
@@ -72,28 +65,162 @@ export default {
       if (dist <= this.size.switch) return true
       return false
     },
+    add_iep_nodes () {
+      // Method to add Internet Exchange Point (IEP) nodes
+      // IEPs devices
+      let iep_devices = {
+        santiago: {
+          connection: "",
+          custom_properties: {
+            city: "Santiago",
+            description: "Amlight Santiago IEP",
+            lat: -30.244639,
+            long: -70.749417,
+            network: "Amlight"
+          },
+          data_path: "",
+          dpid: "",
+          hardware: "",
+          id: "santiago",
+          interfaces: {
+            "santiago:1": {
+              id: "santiago:1",
+              mac: "",
+              name: "Santiago 1",
+              nni: true,
+              port_number: 1,
+              speed: 125000000,
+              stats: {},
+              switch: "santiago",
+              type: "interface",
+              uni: false
+            },
+            "santiago:2": {
+              id: "santiago:2",
+              mac: "",
+              name: "Santiago 2",
+              nni: true,
+              port_number: 2,
+              speed: 125000000,
+              stats: {},
+              switch: "santiago",
+              type: "interface",
+              uni: false
+            }
+          },
+          manufacturer: "",
+          name: "Santiago IEP",
+          ofp_version: null,
+          serial: "",
+          software: "",
+          type: "iep"
+        },
+        fortaleza: {
+          connection: "",
+          custom_properties: {
+            city: "Fortaleza",
+            description: "Amlight Fortaleza IEP",
+            lat: -3.731903,
+            long: -38.526739,
+            network: "Amlight"
+          },
+          data_path: "",
+          dpid: "",
+          hardware: "",
+          id: "fortaleza",
+          interfaces: {
+            "fortaleza:1": {
+              id: "fortaleza:1",
+              mac: "",
+              name: "fortaleza 1",
+              nni: true,
+              port_number: 1,
+              speed: 125000000,  // TOOD: FIX
+              stats: {},
+              switch: "fortaleza",
+              type: "interface",
+              uni: false
+            },
+            "fortaleza:2": {
+              id: "fortaleza:2",
+              mac: "",
+              name: "fortaleza 2",
+              nni: true,
+              port_number: 2,
+              speed: 125000000,  // TOOD: FIX
+              stats: {},
+              switch: "fortaleza",
+              type: "interface",
+              uni: false
+            }
+          },
+          manufacturer: "",
+          name: "Fortaleza IEP",
+          ofp_version: null,
+          serial: "",
+          software: "",
+          type: "iep"
+        }
+      }
+      // Add iep devices into graph devices
+      for (let dev in iep_devices) {
+        this.graph.devices[dev] = iep_devices[dev]
+      }
+
+      let atlantic_link = {
+        id: "cc:4e:24:4b:11:00:00:00:241", // BR Atlantic
+        link1: {
+          a: "cc:4e:24:4b:11:00:00:00:241", // BR Atlantic
+          b: "fortaleza:1"
+        },
+        link2: {
+          a: "fortaleza:2",
+          b: "00:24:38:94:06:00:00:00:290" // Miami Atlantic "00:24:38:94:06:00:00:00:290"
+        }
+      }
+
+      let pacific_link = {
+        id: "cc:4e:24:4b:11:00:00:00:289", // BR Pacific
+        link1: {
+          a: "cc:4e:24:4b:11:00:00:00:289", // BR Pacific
+          b: "santiago:1"
+        },
+        link2: {
+          a: "santiago:2",
+          b: "00:24:38:af:17:00:00:00:290" // Miami Pacific
+        }
+      }
+
+      this.graph.links.forEach((link, index) => {
+        if (link.a == atlantic_link.id || link.b == atlantic_link.id)
+          this.graph.links.splice(index, 1, atlantic_link.link1, atlantic_link.link2)
+
+        if (link.a == pacific_link.id || link.b == pacific_link.id)
+          this.graph.links.splice(index, 1, pacific_link.link1, pacific_link.link2)
+      })
+    },
     update_graph_data () {
-      var self = this
-      this.graph = this.original_graph
+      this.graph = JSON.parse(JSON.stringify(this.original_graph)) // Make a copy
+      this.add_iep_nodes()
 
       // variable that will be used to only allow nodes for interfaces that
       // have a link attached to it.
       let interfaces_with_links = []
 
-      this.graph.links.forEach(function(link){
+      this.graph.links.forEach((link) => {
         link.source = link.a
         interfaces_with_links.push(link.a)
         link.target= link.b
         interfaces_with_links.push(link.b)
         link.type = "link"
-        link.id = self.fix_name(link.a) + "___" + self.fix_name(link.b)
+        link.id = this.fix_name(link.a) + "___" + this.fix_name(link.b)
       })
 
       this.graph.nodes = Object.values(this.graph.devices)
-      this.graph.nodes.forEach(function(node){
+      this.graph.nodes.forEach((node) => {
         if (node.type == "host"){
           node.name = node.mac
-          node.id = self.fix_name(node.mac)
+          node.id = this.fix_name(node.mac)
         } else {
           // here we only have switches. Let's create the interfaces nodes.
           node.lat = null
@@ -102,14 +229,14 @@ export default {
           if (node.custom_properties && node.custom_properties.lat) {
             node.lat = node.custom_properties.lat
             node.lng = node.custom_properties.long
-            let ll = self.project(node.lat, node.lng)
+            let ll = this.project(node.lat, node.lng)
             node.x = node.fx = ll.x
             node.y = node.fy = ll.y
           }
           let interfaces = Object.values(node.interfaces)
-          interfaces.forEach(function(_interface){
+          interfaces.forEach((_interface) => {
             if (interfaces_with_links.indexOf(_interface.id) > -1) {
-              self.graph.nodes.push(_interface)
+              this.graph.nodes.push(_interface)
             }
           })
         }
@@ -122,7 +249,7 @@ export default {
       /* Get the switch in which the "d" interface is connected */
       if (d.type != "interface") return null
       var searched_switch = null
-      $.each(this.simulation.nodes(), function(index, node) {
+      this.simulation.nodes().forEach( (node, index) => {
         if (node.id == d.switch) {
           searched_switch = node
           return false  // this just breaks the each loop.
@@ -132,20 +259,8 @@ export default {
     },
     get_switch_interfaces (s) {
       /* Get all interfaces associated to the "d" host */
-      if (s.type != "switch") return null
+      if (s.type != "switch" && s.type != "iep") return null
       return this.simulation.nodes().filter(function(d){ return d.type == "interface" && d.switch == s.id })
-    },
-    get_nodes_by_type (type) {
-      return this.simulation.nodes().filter(function(d) {return d.type == type;})
-    },
-    get_interfaces () {
-      return this.get_nodes_by_type("interface")
-    },
-    get_hosts () {
-      return this.get_nodes_by_type("host")
-    },
-    get_switches () {
-      return this.get_nodes_by_type("switch")
     },
     get_node_links(node) {
       return this.simulation.force('link').links().filter(function(d){ return d.source == node || d.target == node})
@@ -154,8 +269,8 @@ export default {
       let delta_x = d.x - cx
       let delta_y = d.y - cy
       let rad = Math.atan2(delta_y, delta_x)
-      let new_x = cx + Math.cos(rad) * this.distance["interface"]
-      let new_y = cy + Math.sin(rad) * this.distance["interface"]
+      let new_x = cx + Math.cos(rad) * this.distance.interface
+      let new_y = cy + Math.sin(rad) * this.distance.interface
 
       return [new_x, new_y]
     },
@@ -166,47 +281,31 @@ export default {
       d3.select("#node-" + node.type + "-" + this.fix_name(node.id))
         .classed("downlight", false)
     },
-    node_downlight (node) {
-      d3.select("#node-" + node.type + "-" + this.fix_name(node.id))
-        .classed("downlight", true)
-    },
-    highlight_all_switches () {
-      d3.selectAll('[id^="node-switch-"]').classed("downlight", false)
-    },
-    highlight_all_interfaces () {
-      d3.selectAll('[id^="node-interface-"]').classed("downlight", false)
-    },
-    highlight_all_nodes () {
+    highlight_all_elements () {
       d3.selectAll('[id^="node-"]').classed("downlight", false)
       d3.selectAll('line').classed("downlight", false)
       this.$kytos.$emit("hideInfoPanel")
     },
-    downlight_all_switches () {
-      d3.selectAll('[id^="node-switch-"]').classed("downlight", true)
-    },
-    downlight_all_interfaces () {
-      d3.selectAll('[id^="node-interface-"]').classed("downlight", true)
-    },
-    downlight_all_links () {
+    downlight_all_elements () {
+      d3.selectAll('[id^="node-"]').classed("downlight", true)
       d3.selectAll('line').classed("downlight", true)
     },
     highlight_switch (obj) {
+      // Avoid highlighting IEPs for now
+      if (obj.type != "switch") return
       // downlight all
-      this.downlight_all_switches()
-      this.downlight_all_interfaces()
-      this.downlight_all_links()
+      this.downlight_all_elements()
       this.node_highlight(obj)
-      var self = this
-      this.get_switch_interfaces(obj).forEach(function(_interface){
-        self.node_highlight(_interface)
-        self.get_node_links(_interface).forEach(function(_link){self.link_highlight(_link)})
+      this.get_switch_interfaces(obj).forEach((_interface) => {
+        this.node_highlight(_interface)
+        this.get_node_links(_interface).forEach((_link) => {this.link_highlight(_link)})
       })
 
-      var content = {"component": switchInfo,
-                     "content": obj,
-                     "icon": "gear",
-                     "title": "Switch Details",
-                     "subtitle": obj.connection}
+      var content = {component: switchInfo,
+                     content: obj,
+                     icon: "gear",
+                     title: "Switch Details",
+                     subtitle: obj.connection}
       this.$kytos.$emit("showInfoPanel", content)
     },
     toggle_labels (content) {
@@ -216,14 +315,8 @@ export default {
       $(".label." + node_type + "." + label_type).fadeIn()
       this.labels_display[node_type] = label_type
     },
-    show_context (d) {
-      this.highlight_switch(d)
-    },
     fix_name (name) {
       return name.toString().replace(/:/g, "__")
-    },
-    unfix_name (name) {
-      return name.toString().replace(/\_\_/g, ":")
     },
     add_label (name, attribute, nodes, show=false) {
       // creating a group label
@@ -275,10 +368,6 @@ export default {
                  selected: this.labels_display[name] == attribute}
       this.$kytos.$emit(eventName, arg)
     },
-    center () {
-      let center = this.map.getCenter()
-      return this.project(center.lat, center.lng)
-    },
     set_switch_position (s) {
       let ll = this.project(s.lat, s.lng)
       s.x = s.fx = ll.x
@@ -291,12 +380,8 @@ export default {
       this.simulation.alpha(1).restart()
     },
     topo_id (d) { return d.id },
-    topo_strength (d) { return this.strength[d.type] },
-    topo_distance (d) { return this.distance[d.type] },
     link_stroke_width (d) { return this.strokes[d.type] },
     gnode_radius (d) { return this.size[d.type] },
-    gnode_stroke (d) { return this.nodes_stroke[d.type] },
-    gnode_fill (d) { return this.nodes_fill[d.type] },
     gnode_id (d) { return "node-" + d.type + "-" + this.fix_name(d.id) },
     link_id (l) { return "link-" + l.id },
     draw_topology() {
@@ -318,7 +403,7 @@ export default {
         .on("click", function() {
           var coords = d3.mouse(this)
           coords = {x: coords[0], y: coords[1]}
-          if (!self.check_switch_under_click(coords)) self.highlight_all_nodes()
+          if (!self.check_switch_under_click(coords)) self.highlight_all_elements()
         })
         .on("mousedown.drag", null)
 
@@ -343,18 +428,20 @@ export default {
                     .attr("id", this.gnode_id)
 
       node = gnodes.append("circle")
-               .attr("class", "node")
+               .classed("node", true)
+               .classed("iep", function(d){ return d.type == "iep" })
+               .classed("switch", function(d){ return d.type == "switch" })
+               .classed("interface", function(d){ return d.type == "interface" })
+               .classed("amlight", function(d) { return d.custom_properties && d.custom_properties.network && d.custom_properties.network.indexOf("Amlight") != -1 })
+               .classed("fibre", function(d) { return d.custom_properties && d.custom_properties.network && d.custom_properties.network.indexOf("Fibre") != -1 })
                .attr("r", this.gnode_radius)
-               .attr("stroke", this.gnode_stroke)
-               .attr("stroke-width", 2)
-               .attr("fill", this.gnode_fill)
-               .on("click", this.show_context)
+               .on("click", this.highlight_switch)
 
       /*******************/
       /* SWITCH LABELING */
       /*******************/
       // only labeling switches, but not interfaces
-      switch_labeled_items = gnodes.filter(function(d) {return d.type == "switch";})
+      switch_labeled_items = gnodes.filter(function(d) {return d.type == "switch" || d.type == "iep";})
 
       this.add_label("switch", "name", switch_labeled_items, true) // NAME LABEL
       this.add_label("switch", "connection", switch_labeled_items, false)// ADDRESS LABEL
@@ -380,7 +467,7 @@ export default {
       // this.map.on("move", this.restartSim)
 
       function ticked() {
-        gnodes.filter(function(d){ return d.type == "switch" })
+        gnodes.filter(function(d){ return d.type == "switch" || d.type == "iep" })
           .attr("transform", function(d) {
             let _ = self.set_switch_position(d)
             return "translate(" + [d.x, d.y] + ")"
@@ -456,4 +543,39 @@ export default {
 
     .downlight
       opacity: 0.2;
+
+    .node
+      stroke-width: 0;
+
+      &.switch
+        fill: rgba(85, 64, 199, 0.8);
+
+      &.iep
+        fill: rgba(236, 236, 31, 0.5);
+        stroke: rgba(236, 236, 31, 0.5);
+        cursor: grab;
+        cursor: -webkit-grab;
+
+      &.interface
+        fill: rgba(255, 255, 255, 0.5);
+        stroke: rgba(255, 255, 255, 0.5);
+        stroke-width: 1;
+        cursor: grab;
+        cursor: -webkit-grab;
+
+      &.host
+        fill: rgba(255,0,0,1);
+        stroke: rgba(255,255,255,0.5);
+
+      &.amlight,
+      &.fibre
+        stroke-width: 2;
+
+      &.amlight
+        stroke: rgba(0, 149, 255, 0.75);
+
+      &.fibre
+        stroke: rgba(7, 195, 21, 0.74);
+
+
 </style>

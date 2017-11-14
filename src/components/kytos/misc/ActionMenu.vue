@@ -29,19 +29,13 @@
 <script>
 import KytosBaseWithIcon from '../base/KytosBaseWithIcon.vue'
 import listSwitches from "../../../kytos/listSwitches.vue"
-import listCircuits from "../../../kytos/listCircuits.vue"
 
-var searchSwitch = {"component": listSwitches,
+var searchContent = {"component": listSwitches,
                      "content": {},
                      "icon": "search",
                      "title": "Switch Search",
                      "subtitle": "by kytos/topology"}
 
-var searchCircuit = {"component": listCircuits,
-                     "content": {},
-                     "icon": "search",
-                     "title": "Circuit Search",
-                     "subtitle": "by kytos/mef_eline"}
 
 export default {
   name: 'kytos-action-menu',
@@ -51,8 +45,7 @@ export default {
     show: false,
     search: '',
    items: [
-        { name: 'Search Switch', author: 'kytos/core', shortkey: 'Ctrl+Alt+S', content: searchSwitch},
-        { name: 'Search Circuit', author: 'kytos/mef_eline', shortkey: 'Ctrl+Alt+C', content: searchCircuit},
+        { name: 'Search Switch', author: 'kytos/core', shortkey: 'Ctrl+Alt+S', content: searchContent},
         { name: 'Search Host', author: 'kytos/core', shortkey: 'Ctrl+Alt+H'},
         { name: 'Search Interface', author: 'kytos/core', shortkey: 'Ctrl+Alt+I'}
      ]
