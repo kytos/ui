@@ -33,9 +33,11 @@ import KytosInterface from './components/kytos/switch/Interface.vue';
 import KytosFlow from './components/kytos/switch/Flow.vue';
 
 import KytosSwitchInfo from './kytos/switchInfo.vue';
+import KytosSwitchRadar from './kytos/switchRadar.vue';
 import KytosInterfaceInfo from './kytos/interfaceInfo.vue';
 
 import KytosChartTimeseries from './components/kytos/chart/Timeseries.vue'
+import KytosChartRadar from './components/kytos/chart/RadarChart.vue'
 
 
 Vue.component('kytos-menubar', KytosMenubar);
@@ -66,9 +68,11 @@ Vue.component('kytos-interface', KytosInterface);
 Vue.component('kytos-flow', KytosFlow);
 
 Vue.component('kytos-switch-info', KytosSwitchInfo);
+Vue.component('kytos-switch-radar', KytosSwitchRadar);
 Vue.component('kytos-interface-info', KytosInterfaceInfo);
 
 Vue.component('kytos-chart-timeseries', KytosChartTimeseries)
+Vue.component('kytos-chart-radar', KytosChartRadar)
 
 Vue.filter('humanize_bytes', function (num, precision = 0, suffix = 'bps') {
     num = Number(num);

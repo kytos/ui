@@ -1,6 +1,11 @@
 <template>
 
     <kytos-accordion>
+
+    <kytos-accordion-item title="Usage Radar" v-if="this.metadata.id">
+      <kytos-switch-radar :dpid="metadata.id" :showGrid="true" :showAxis="true" :showLabels="true" :showLegend="false"></kytos-switch-radar>
+    </kytos-accordion-item>
+
     <kytos-accordion-item title="Basic Details">
         <kytos-property-panel>
             <kytos-property-panel-item :name="key" :value="value" :key="key" v-if="content" v-for="(value, key) in this.metadata"></kytos-property-panel-item>
