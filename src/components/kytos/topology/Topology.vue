@@ -571,11 +571,11 @@ export default {
       &.fibre
         stroke-width: 2;
 
-      &.amlight
-        stroke: rgba(0, 149, 255, 0.75);
+      //&.amlight
+      //  stroke: rgba(0, 149, 255, 0.75);
 
-      &.fibre
-        stroke: rgba(7, 195, 21, 0.74);
+      //&.fibre
+      //  stroke: rgba(7, 195, 21, 0.74);
 
 
 </style>

@@ -92,13 +92,13 @@ export default {
       this.chart.options(this.options).update()
     },
     updateChart () {
-      this.chart.data(this.exampleData).duration(100).update()
+      this.chart.data(this.data).duration(100).update()
     }
   },
   mounted () {
     this.init()
     this.updateChart()
-    this.chart.data(this.exampleData).duration(100).update()
+    this.chart.data(this.data).duration(100).update()
 
     // this.chart.filterAxes(7);
     // this.chart.options({circles: {maxValue: 1, levels: 4}}).update();
