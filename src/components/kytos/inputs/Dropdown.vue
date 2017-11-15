@@ -39,9 +39,9 @@ export default {
       this.$kytos.$emit(this.event.name, content)
     }
   },
-  created () {
+  mounted () {
     this.options.forEach((item) => {
-      if (this.selected != '' && item.selected) {this.selected = item.value }
+      if (this.selected == '' && item.selected) {this.selected = item.value}
     })
   },
   watch: {
@@ -50,7 +50,7 @@ export default {
     },
     options () {
       this.options.forEach((item) => {
-        if (this.selected != '' && item.selected) {this.selected = item.value }
+        if (this.selected == '' && item.selected) {this.selected = item.value }
       })
     }
   }
