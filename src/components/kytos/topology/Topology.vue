@@ -192,11 +192,15 @@ export default {
       }
 
       this.graph.links.forEach((link, index) => {
-        if (link.a == atlantic_link.id || link.b == atlantic_link.id)
-          this.graph.links.splice(index, 1, atlantic_link.link1, atlantic_link.link2)
+        if (link.a == atlantic_link.id || link.b == atlantic_link.id) {
+            this.graph.links.splice(index, 1, atlantic_link.link1, atlantic_link.link2)
+        }
+      })
 
-        if (link.a == pacific_link.id || link.b == pacific_link.id)
+      this.graph.links.forEach((link, index) => {
+        if (link.a == pacific_link.id || link.b == pacific_link.id) {
           this.graph.links.splice(index, 1, pacific_link.link1, pacific_link.link2)
+        }
       })
     },
     update_graph_data () {
