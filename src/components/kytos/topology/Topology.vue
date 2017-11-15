@@ -222,6 +222,12 @@ export default {
           node.name = node.mac
           node.id = this.fix_name(node.mac)
         } else {
+          // set the custom_properties as 'properties'
+          if (node.custom_properties) {
+            for (let prop in node.custom_properties) {
+              node[prop] = node.custom_properties[prop]
+            }
+          }
           // here we only have switches. Let's create the interfaces nodes.
           node.lat = null
           node.lng = null
@@ -444,8 +450,14 @@ export default {
       switch_labeled_items = gnodes.filter(function(d) {return d.type == "switch" || d.type == "iep";})
 
       this.add_label("switch", "name", switch_labeled_items, true) // NAME LABEL
+      this.add_label("switch", "description", switch_labeled_items, false)// DPID LABEL
       this.add_label("switch", "connection", switch_labeled_items, false)// ADDRESS LABEL
       this.add_label("switch", "dpid", switch_labeled_items, false)// DPID LABEL
+      this.add_label("switch", "ofp_version", switch_labeled_items, false)// DPID LABEL
+      this.add_label("switch", "manufacturer", switch_labeled_items, false)// DPID LABEL
+      this.add_label("switch", "hardware", switch_labeled_items, false)// DPID LABEL
+      this.add_label("switch", "serial", switch_labeled_items, false)// DPID LABEL
+      this.add_label("switch", "network", switch_labeled_items, false)// DPID LABEL
       /**************************/
       /* END OF SWITCH LABELING */
       /**************************/
