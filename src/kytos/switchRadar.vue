@@ -34,6 +34,7 @@ export default {
   data () {
     return {
       data: null,
+      interval: null
     }
   },
   computed: {
@@ -69,6 +70,10 @@ export default {
   },
   mounted () {
     this.updateChart()
+    this.interval = setInterval(this.updateChart, 60000)
+  },
+  beforeDestroy () {
+    clearInterval(this.interval)
   },
   watch: {
     dpid () {
