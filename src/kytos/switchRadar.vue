@@ -56,10 +56,10 @@ export default {
         data = data["data"]
         data.forEach((_iface) => {
           if (_iface.speed) {
-            let rx_val = Math.round(10000 * (_iface.rx_bytes / _iface.speed)) / 10000
-            let tx_val = Math.round(10000 * (_iface.tx_bytes / _iface.speed)) / 10000
-            if (rx_val > 0) rx.values.push({axis: String(_iface.port), value: rx_val})
-            if (tx_val > 0) tx.values.push({axis: String(_iface.port), value: tx_val})
+            let rx_val = Math.round((10000 * _iface.rx_bytes) / _iface.speed) / 10000
+            let tx_val = Math.round((10000 * _iface.tx_bytes) / _iface.speed) / 10000
+            rx.values.push({axis: String(_iface.port), value: rx_val})
+            tx.values.push({axis: String(_iface.port), value: tx_val})
           }
         })
 
