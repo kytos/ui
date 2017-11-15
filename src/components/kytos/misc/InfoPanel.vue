@@ -79,8 +79,8 @@ export default {
 @import '../../../assets/styles/variables'
 
 .kytos-info-panel-max
-  width: 1200px !important
-  min-width: 1200px !important
+  width: 900px !important
+  min-width: 900px !important
   
 .kytos-info-panel
  -webkit-order: 4
