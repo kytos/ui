@@ -1,7 +1,7 @@
 <script>
 import KytosBase from './KytosBase.vue';
-import Icon from '../../../../node_modules/vue-awesome/components/Icon.vue';
 import 'vue-awesome/icons';
+import Icon from 'vue-awesome/components/Icon.vue';
 
 export default {
   name: 'KytosBaseWithIcon',
