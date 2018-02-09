@@ -25,14 +25,17 @@ Kytos UI Parts
 
 **Image caption / Kytos UI Parts:**
 
-#. `logo / logo expanded`: A button with the kytos logo, which allows to switch between the extended or non-extended version of the kytos UI;
-#. `kytos-toolbar`: Non-extended version of the menu bar;
-#. `kytos-menu-bar`: Extended version of the menu bar;
-#. `kytos-context-panel`: Contents of the selected item in the *kytos-menu-bar*;
-#. `kytos-map`: Map representation;
-#. `kytos-info-panel`: Shows specific information of the selected component;
-#. `kytos-tabs`: Tab with the terminal, switches, notifications and logging.
+#. **kytos-menu-bar**: A button with the kytos logo, which allows to switch between the extended or non-extended version of the kytos UI;
 
+   #. Non-extended version of the menu bar;
+   #. Extended version of the menu bar;
+   #. Contents of the selected item in the extended version of the menu bar;
+   
+#. **kytos-map**: Map representation;
+#. **kytos-info-panel**: Shows specific information of the selected component;
+#. **kytos-tabs**: Tab with the terminal, switches, notifications and logging.
+
+.. note:: It is allowed to add components only in the parts 1.x, 3 and 4.
 
 List of Kytos UI Components
 ----------------------------
@@ -43,38 +46,38 @@ Inputs
 ^^^^^^^
 
 * Buttons
-    * `Button`:
-    * `ButtonGroup`:
-* `Checkbox`:
-* `Dropdown`:
-* `Input`:
-* `Slider`:
-* `Textarea`:
+    * Button:
+    * ButtonGroup:
+* Checkbox:
+* Dropdown:
+* Input:
+* Slider:
+* Textarea:
 
 Accordion
 ^^^^^^^^^^
 
-* `Accordion`:
-* `AccordionItem`:
+* Accordion:
+* AccordionItem:
 
 Misc
 ^^^^^
 
-* `ActionMenu`:
-* `InfoPanel`:
-* `StatusBar`:
+* ActionMenu:
+* InfoPanel:
+* StatusBar:
 
 Property Panel
 ^^^^^^^^^^^^^^^
 
-* `PropertyPanel`:
-* `PropertyPanelItem`:
+* PropertyPanel:
+* PropertyPanelItem:
 
 Switch
 ^^^^^^^
 
-* `Flow`:
-* `Interface`:
+* Flow:
+* Interface:
 
 .. ### Tabs
 .. * `tabs`:
