@@ -47,140 +47,156 @@ Inputs
 
 * Button
 
-Name: kytos-button
+   **Name**: kytos-button
 
-About: Triggers an event when clicked.
+   **About**: Triggers an event when clicked.
 
 .. .. figure:: ./src/assets/imgs/development/button.png
    :scale: 50 %
    :alt: Button image.
    :align: center
+..
 
-Properties: None.
+   **Properties**: None.
 
-Methods: None.
+   **Methods**: None.
 
 .. Example:
 
 * ButtonGroup
 
-Name: kytos-button-group
+   **Name**: kytos-button-group
 
-About: Allows to group buttons, which trigger events when clicked.
+   **About**: Allows to group buttons, which trigger events when clicked.
 
 .. .. figure:: ./src/assets/imgs/development/button-group.png
    :scale: 50 %
    :alt:  ButtonGroup image.
    :align: center
+..
 
-Properties: None.
+   **Properties**: None.
 
-Methods: None.
+   **Methods**: None.
 
 .. Example:
 
 * Checkbox
 
-Name: kytos-input
+   **Name**: kytos-input
 
-About: A GUI widget that permits the user to make a binary choice, checked (ticked) when activated or not checked when disable.
+   **About**: A GUI widget that permits the user to make a binary choice, checked (ticked) when activated or not checked when disable.
 
 .. .. figure:: ./src/assets/imgs/development/checkbox.png
    :scale: 50 %
    :alt: Checkbox image.
    :align: center
+..
 
-Properties:
-   * placeholder: String.
+   **Properties**:
 
-Methods: None.
+      * placeholder: String.
+
+   **Methods**: None.
 
 .. Example:
 
 * Dropdown
 
-Name: kytos-dropdown
+   **Name**: kytos-dropdown
 
-About: A toggleable menu that allows the user to choose one value from a predefined list.
+   **About**: A toggleable menu that allows the user to choose one value from a predefined list.
 
 .. .. figure:: ./src/assets/imgs/development/dropdown.png
    :scale: 50 %
    :alt: Dropdown image.
    :align: center
+..
 
-Properties:
-   * options: Array (required);
-   * event: Object (required).
+   **Properties**:
 
-Methods:
-   * emitEvent();
+      * options: Array (required);
+      * event: Object (required).
+
+   **Methods**:
+
+      * emitEvent();
 
 .. Example:
 
 * Input
 
-Name: kytos-input
+   **Name**: kytos-input
 
-About: An input field where the user can enter data.
+   **About**: An input field where the user can enter data.
 
 .. .. figure:: ./src/assets/imgs/development/input.png
    :scale: 50 %
    :alt: Input image.
    :align: center
+..
 
-Properties:
-   * value: String;
-   * modelValue: String;
-   * tooltip: String;
-   * placeholder: String.
+   **Properties**:
 
-Methods:
-   * updateText(value).
+      * value: String;
+      * modelValue: String;
+      * tooltip: String;
+      * placeholder: String.
+
+   **Methods**:
+
+      * updateText(value).
 
 .. Example:
 
 * Slider
 
-Name: kytos-slider
+   **Name**: kytos-slider
 
-About: A GUI widget that allows the users specify a numeric value which must be no less than a given value, and no more than another given value.
+   **About**: A GUI widget that allows the users specify a numeric value which must be no less than a given value, and no more than another given value.
 
 .. .. figure:: ./src/assets/imgs/development/slider.png
    :scale: 50 %
    :alt: Slider image.
    :align: center
+..
 
-Properties:
-   * initialValue: Number;
-   * action: Function(val):val;
-   * min: Number;
-   * max: Number;
-   * step: Number.
+   **Properties**:
 
-Methods:
-   * doRange().
+      * initialValue: Number;
+      * action: Function(val):val;
+      * min: Number;
+      * max: Number;
+      * step: Number.
+
+   **Methods**:
+
+      * doRange().
 
 .. Example:
 
 * Textarea
 
-Name: kytos-textarea
+   **Name**: kytos-textarea
 
-About: A text input field with multi-line.
+   **About**: A text input field with multi-line.
 
 .. .. figure:: ./src/assets/imgs/development/textarea.png
    :scale: 50 %
    :alt: Textarea image.
    :align: center
+..
 
-Properties:
-   * value: String;
-   * modelValue: String;
-   * tooltip: String;
-   * placeholder: String.
+   **Properties**:
 
-Methods:
-   * updateText(value).
+      * value: String;
+      * modelValue: String;
+      * tooltip: String;
+      * placeholder: String.
+
+   **Methods**:
+
+      * updateText(value).
 
 .. Example:
 
@@ -189,35 +205,37 @@ Accordion
 
 * Accordion
 
-Name: kytos-accordion
+   **Name**: kytos-accordion
 
-About: A GUI widget with a list of items that can be switched between hiding and showing content.
+   **About**: A GUI widget with a list of items that can be switched between hiding and showing content.
 
 .. .. figure:: ./src/assets/imgs/development/accordion.png
    :scale: 50 %
    :alt: Accordion image.
    :align: center
+..
 
-Properties: None.
+   **Properties**: None.
 
-Methods: None.
+   **Methods**: None.
 
 .. Example:
 
 * AccordionItem
 
-Name: kytos-accordion-item
+   **Name**: kytos-accordion-item
 
-About: Accordion item that can be switched between hiding and showing content.
+   **About**: Accordion item that can be switched between hiding and showing content.
 
 .. .. figure:: ./src/assets/imgs/development/accordion-item.png
    :scale: 50 %
    :alt: AccordionItem image.
    :align: center
+..
 
-Properties: None.
+   **Properties**: None.
 
-Methods: None.
+   **Methods**: None.
 
 .. Example:
 
@@ -226,64 +244,71 @@ Misc
 
 * ActionMenu
 
-Name: kytos-action-menu
+   **Name**: kytos-action-menu
 
-About: Menu with a list of actions. Can be shown or hidden using the *Ctrl+Space* shortcut.
+   **About**: Menu with a list of actions. Can be shown or hidden using the *Ctrl+Space* shortcut.
 
 .. .. figure:: ./src/assets/imgs/development/action-menu.png
    :scale: 50 %
    :alt: ActionMenu image.
    :align: center
+..
 
-Properties: None.
+   **Properties**: None.
 
-Methods:
-   * toggle();
-   * hide();
-   * show_info_panel(content).
+   **Methods**:
+
+      * toggle();
+      * hide();
+      * show_info_panel(content).
 
 .. Example:
 
 * InfoPanel
 
-Name: kytos-info-panel
+   **Name**: kytos-info-panel
 
-About: Shows details about selected kytos components. The panel can be shown or hidden using the shortcut *Ctrl+Alt+Space*.
+   **About**: Shows details about selected kytos components. The panel can be shown or hidden using the shortcut *Ctrl+Alt+Space*.
 
 .. .. figure:: ./src/assets/imgs/development/info-panel.png
    :scale: 50 %
    :alt: infopanel image.
    :align: center
+..
 
-Properties:
-   * subtitle: String.
+   **Properties**:
 
-Methods:
-   * toggle();
-   * hide();
-   * show(content);
-   * register_listeners().
+      * subtitle: String.
+
+   **Methods**:
+
+      * toggle();
+      * hide();
+      * show(content);
+      * register_listeners().
 
 .. Example:
 
 * StatusBar
 
-Name: kytos-status-bar
+   **Name**: kytos-status-bar
 
-About: A tabbed bar such as a Terminal, Switches, Logging, Notifications and System Information.
+   **About**: A tabbed bar such as a Terminal, Switches, Logging, Notifications and System Information.
 
 .. .. figure:: ./src/assets/imgs/development/status-bar.png
    :scale: 50 %
    :alt: StatusBar image.
    :align: center
+..
 
-Properties: None.
+   **Properties**: None.
 
-Methods:
-   * display_messages();
-   * get_terminal();
-   * set_status(message, error=false);
-   * register_listeners().
+   **Methods**:
+
+      * display_messages();
+      * get_terminal();
+      * set_status(message, error=false);
+      * register_listeners().
 
 .. Example:
 
@@ -292,37 +317,40 @@ Property Panel
 
 * PropertyPanel
 
-Name: kytos-property-panel
+   **Name**: kytos-property-panel
 
-About: Component with a list of items that are properties of the Request E-Line Circuit.
+   **About**: Component with a list of items that are properties of the Request E-Line Circuit.
 
 .. .. figure:: ./src/assets/imgs/development/property-panel.png
    :scale: 50 %
    :alt: PropertyPanel image.
    :align: center
+..
 
-Properties: None.
+   **Properties**: None.
 
-Methods: None.
+   **Methods**: None.
 
 .. Example:
 
 * PropertyPanelItem
 
-Name: kytos-property-panel-item
+   **Name**: kytos-property-panel-item
 
-About: Property Panel item that can be edited.
+   **About**: Property Panel item that can be edited.
 
 .. .. figure:: ./src/assets/imgs/development/property-panel-item.png
    :scale: 50 %
    :alt: PropertyPanelItem image.
    :align: center
+..
 
-Properties:
-   * name: String (required);
-   * value: [String, Number] (required).
+   **Properties**:
 
-Methods: None.
+      * name: String (required);
+      * value: [String, Number] (required).
+
+   **Methods**: None.
 
 .. Example:
 
@@ -331,46 +359,52 @@ Switch
 
 * Flow
 
-Name: kytos-flow
+   **Name**: kytos-flow
 
-About: Representation of flows between interfaces.
+   **About**: Representation of flows between interfaces.
 
 .. .. figure:: ./src/assets/imgs/development/flow.png
    :scale: 50 %
    :alt: Flow image.
    :align: center
+..
 
-Properties:
-   * content: Object (required).
+   **Properties**:
 
-Methods:
-   * get_plot_selector();
-   * update_chart().
+      * content: Object (required).
+
+   **Methods**:
+
+      * get_plot_selector();
+      * update_chart().
 
 .. Example:
 
 * Interface
 
-Name: kytos-interface
+   **Name**: kytos-interface
 
-About: Representation of the interfaces (hardware) used.
+   **About**: Representation of the interfaces (hardware) used.
 
 .. .. figure:: ./src/assets/imgs/development/interface.png
-   :scale: 50 %
-   :alt: Interface image.
-   :align: center
+      :scale: 50 %
+      :alt: Interface image.
+      :align: center
+..
 
-Properties:
-   * name: String (required);
-   * mac: String (required);
-   * speed: Number;
-   * port_number: Number (required);
-   * interface_id: String (required).
+   **Properties**:
 
-Methods:
-   * open_interface();
-   * parseInterfaceData (data);
-   * update_chart();
+         * name: String (required);
+         * mac: String (required);
+         * speed: Number;
+         * port_number: Number (required);
+         * interface_id: String (required).
+
+   **Methods**:
+
+      * open_interface();
+      * parseInterfaceData (data);
+      * update_chart();
 
 .. Example:
 
