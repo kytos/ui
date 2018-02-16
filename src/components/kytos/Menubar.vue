@@ -5,13 +5,11 @@
       <img v-show="this.expanded" src="../../assets/logo-kytos.svg" class="icon-kytos" alt="Kytos" height="35">
       <img v-show="!this.expanded" src="../../assets/icon-kytos.svg" class="logo-kytos" alt="Kytos" height="35">
     </div>
-
-    <!--Icon loop-->
-    <icon v-for="(icon, index) in icons" :key="icon.name" :name="icon.name" v-bind:class="{ active: activeItem==(index+1) }" v-on:click.native="setItem(index+1)"></icon>
-
+    <icon v-for="(component, index) in components" :key="component.icon" :name="component.icon"
+          v-bind:class="{ active: activeItem==(index+1) }"
+          v-on:click.native="setItem(index+1)"></icon>
   </section>
-  <napp-bar-context :active="this.activeItem" :expanded="this.expanded"></napp-bar-context>
-
+  <napp-loader :active="this.activeItem" :components="this.components" :expanded="this.expanded"></napp-loader>
 </div>
 </template>
 
@@ -23,14 +21,18 @@ export default {
   name: 'kytos-menu-bar',
   mixins: [KytosBaseWithIcon],
   props: ['toggle', 'expanded'],
-  components: {
-    'icon': Icon,
-  },
   data() {
     return {
-      icons:[{name: "desktop"},{name: "link"}, {name: "cube"}],
+      components: [],
       activeItem: 1
     }
+  },
+  created() {
+    this.components = [
+        {'icon':'desktop', 'name':'mapbox-settings'},
+        {'icon': 'link', 'name':'mef-eline-component', 'url': 'http://localhost:8000/MefElineComponent.kytos-ui'},
+        {'icon': 'cube', 'name':'status-component', 'url': 'http://localhost:8000/StatusComponent.kytos-ui'}
+      ]
   },
   methods: {
     toggleLabel (type, label) {
@@ -38,7 +40,7 @@ export default {
     },
     setItem (item) {
       this.activeItem = item
-    },
+    }
   }
 }
 </script>
