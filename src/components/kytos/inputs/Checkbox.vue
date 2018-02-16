@@ -13,7 +13,7 @@
 import KytosBaseWithIcon from '../base/KytosBaseWithIcon.vue';
 
 export default {
-  name: 'kytos-input',
+  name: 'kytos-checkbox',
   mixins: [KytosBaseWithIcon],
   props: {
     placeholder: {
