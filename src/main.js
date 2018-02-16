@@ -7,7 +7,7 @@ Vue.use(VueHotkey)
 window.$ = window.jQuery = require('jquery');
 
 import KytosToolbar from './components/kytos/Toolbar.vue';
-import NappSection from './components/kytos/NappSection.vue';
+import NappBarContext from './components/kytos/napp/NappBarContext.vue';
 import KytosMap from './components/kytos/map/Map.vue';
 import KytosTopology from './components/kytos/topology/Topology.vue';
 import KytosMenubar from './components/kytos/Menubar.vue';
@@ -24,6 +24,7 @@ import KytosStatusBar from './components/kytos/misc/StatusBar.vue'
 import KytosInput from './components/kytos/inputs/Input.vue';
 import KytosTextarea from './components/kytos/inputs/Textarea.vue';
 import KytosCheckbox from './components/kytos/inputs/Checkbox.vue';
+import MapBoxSettings from './components/kytos/map/MapBoxSettings.vue'
 
 import KytosSlider from './components/kytos/inputs/Slider.vue';
 import KytosAccordion from './components/kytos/accordion/Accordion.vue';
@@ -45,6 +46,7 @@ import KytosChartRadar from './components/kytos/chart/RadarChart.vue'
 Vue.component('kytos-menubar', KytosMenubar);
 Vue.component('kytos-toolbar', KytosToolbar);
 Vue.component('kytos-map', KytosMap);
+Vue.component('mapbox-settings', MapBoxSettings);
 Vue.component('kytos-topology', KytosTopology);
 Vue.component('kytos-context-panel', KytosContextPanel);
 Vue.component('kytos-tabs', KytosTabs);
@@ -65,7 +67,7 @@ Vue.component('kytos-accordion-item', KytosAccordionItem);
 Vue.component('kytos-property-panel', KytosPropertyPanel);
 Vue.component('kytos-property-panel-item', KytosPropertyPanelItem);
 Vue.component('kytos-info-panel', KytosInfoPanel);
-Vue.component('napp-section', NappSection);
+Vue.component('napp-bar-context', NappBarContext);
 
 Vue.component('kytos-interface', KytosInterface);
 Vue.component('kytos-flow', KytosFlow);

@@ -6,15 +6,12 @@
       <img v-show="!this.expanded" src="../../assets/icon-kytos.svg" class="logo-kytos" alt="Kytos" height="35">
     </div>
 
-    <div id="icons" v-for="(index, icon_name) in icons">
-       <icon  :name=icon_name v-bind:class="{ active: activeItem==index }" v-on:click.native="setItem(index)"></icon>
-    </div>
+    <!--Icon loop-->
+    <icon v-for="(icon, index) in icons" :key="icon.name" :name="icon.name" v-bind:class="{ active: activeItem==(index+1) }" v-on:click.native="setItem(index+1)"></icon>
 
   </section>
-  <!-- Create a loop to all toolbars  -->
+  <napp-bar-context :active="this.activeItem" :expanded="this.expanded"></napp-bar-context>
 
-  <!--<napps-toolbars></napps-toolbars> -->
-  <napp-section :active="this.activeItem" :expanded="this.expanded"></napp-section>
 </div>
 </template>
 
@@ -31,11 +28,7 @@ export default {
   },
   data() {
     return {
-      icons: {
-        "desktop": 1,
-        "cube": 2,
-        "link": 3,
-      },
+      icons:[{name: "desktop"},{name: "link"}, {name: "cube"}],
       activeItem: 1
     }
   },
