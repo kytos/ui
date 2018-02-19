@@ -151,8 +151,9 @@ export default {
 .kytos-tabs:-webkit-full-screen .kytos-hidden-tab
   display: none
 
-#app.expanded .kytos-tabs
-  margin-left: 280px
+.expanded
+ .kytos-tabs
+   margin-left: 280px
 
 .kytos-tabs-nav
  overflow: hidden

@@ -9,7 +9,7 @@
           v-bind:class="{ active: activeItem==(index+1) }"
           v-on:click.native="setItem(index+1)"></icon>
   </section>
-  <napp-loader :active="this.activeItem" :components="this.components" :expanded="this.expanded"></napp-loader>
+  <napp-loader :active="activeItem" :components.sync="components" :expanded="expanded" :url="url"></napp-loader>
 </div>
 </template>
 
@@ -23,16 +23,10 @@ export default {
   props: ['toggle', 'expanded'],
   data() {
     return {
-      components: [],
+      url: this.$kytos_server+ 'ui/menu-items',
+      components: [{'icon': 'desktop', 'name':'mapbox-settings'}],
       activeItem: 1
     }
-  },
-  created() {
-    this.components = [
-        {'icon':'desktop', 'name':'mapbox-settings'},
-        {'icon': 'link', 'name':'mef-eline-component', 'url': 'http://localhost:8000/MefElineComponent.kytos-ui'},
-        {'icon': 'cube', 'name':'status-component', 'url': 'http://localhost:8000/StatusComponent.kytos-ui'}
-      ]
   },
   methods: {
     toggleLabel (type, label) {

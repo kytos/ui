@@ -2,7 +2,7 @@
 This httpVueLoader is based on FranckFreiburger from
 'https://github.com/FranckFreiburger/http-vue-loader' with some modifications.
 
-The file extention was changed from '.vue' to '.kytos-ui'
+The file extention was changed from '.vue' to '.kytos'
 **/
 var scopeIndex = 0;
 
@@ -343,7 +343,7 @@ function identity(value) {
 
 function parseComponentURL(url) {
 
-  var comp = url.match(/(.*?)([^/]+?)\/?(\.kytos-ui)?(\?.*|#.*|$)/);
+  var comp = url.match(/(.*?)([^/]+?)\/?(\.kytos)?(\?.*|#.*|$)/);
   return {
     name: comp[2],
     url: comp[1] + comp[2] + (comp[3] === undefined ? '/index.vue' : comp[3]) + comp[4]

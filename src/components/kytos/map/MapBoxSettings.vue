@@ -1,5 +1,5 @@
 <template>
- <kytos-context-panel v-if="expanded">
+ <section class="kytos-menu-item"  icon="desktop" tooltip="MapBox-Settings">
     <kytos-accordion>
         <kytos-accordion-item title="Custom Labels">
           <kytos-dropdown title="Switch Labels:" icon="circle-o" :options="switchLabels" :event="{name: 'topology-toggle-label', content: {node_type: 'switch'}}"></kytos-dropdown>
@@ -14,18 +14,14 @@
           <kytos-slider icon="adjust" :initial-value="mapOpacity" :action="emitMapOpacity"></kytos-slider>
         </kytos-accordion-item>
       </kytos-accordion>
-  </kytos-context-panel>
-  <kytos-toolbar v-else :switchLabels="switchLabels" :interfaceLabels="interfaceLabels" :mapOpacity="mapOpacity" :emitMapOpacity="emitMapOpacity"></kytos-toolbar>
+  </section>
 </template>
 
 <script>
 module.exports = {
-  name: "mapbox-settings",
-  props:["expanded"],
   methods: {
     emitMapOpacity (value) {
       this.$kytos.$emit('change-map-opacity', value)
-      this.mapOpacity = Number(value)
     },
     addSwitchLabel (content) {
       let value = content.value
