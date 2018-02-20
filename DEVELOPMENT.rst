@@ -51,11 +51,10 @@ Inputs
 
    **About**: Triggers an event when clicked.
 
-.. .. figure:: ./src/assets/imgs/development/button.png
+ .. figure:: ./src/assets/imgs/development/components/input/kytos-button.png
    :scale: 50 %
    :alt: Button image.
    :align: center
-..
 
    **Properties**: None.
 
@@ -69,11 +68,11 @@ Inputs
 
    **About**: Allows to group buttons, which trigger events when clicked.
 
-.. .. figure:: ./src/assets/imgs/development/button-group.png
+.. figure:: ./src/assets/imgs/development/components/input/kytos-button-group.png
    :scale: 50 %
    :alt:  ButtonGroup image.
    :align: center
-..
+
 
    **Properties**: None.
 
@@ -83,11 +82,11 @@ Inputs
 
 * Checkbox
 
-   **Name**: kytos-input
+   **Name**: kytos-checkbox
 
    **About**: A GUI widget that permits the user to make a binary choice, checked (ticked) when activated or not checked when disable.
 
-.. .. figure:: ./src/assets/imgs/development/checkbox.png
+.. .. figure:: ./src/assets/imgs/development/components/input/kytos-checkbox.png
    :scale: 50 %
    :alt: Checkbox image.
    :align: center
@@ -107,11 +106,11 @@ Inputs
 
    **About**: A toggleable menu that allows the user to choose one value from a predefined list.
 
-.. .. figure:: ./src/assets/imgs/development/dropdown.png
+ .. figure:: ./src/assets/imgs/development/components/input/kytos-dropdown.png
    :scale: 50 %
    :alt: Dropdown image.
    :align: center
-..
+
 
    **Properties**:
 
@@ -130,11 +129,10 @@ Inputs
 
    **About**: An input field where the user can enter data.
 
-.. .. figure:: ./src/assets/imgs/development/input.png
+ .. figure:: ./src/assets/imgs/development/components/input/kytos-input.png
    :scale: 50 %
    :alt: Input image.
    :align: center
-..
 
    **Properties**:
 
@@ -155,11 +153,11 @@ Inputs
 
    **About**: A GUI widget that allows the users specify a numeric value which must be no less than a given value, and no more than another given value.
 
-.. .. figure:: ./src/assets/imgs/development/slider.png
+ .. figure:: ./src/assets/imgs/development/components/input/kytos-slider.png
    :scale: 50 %
    :alt: Slider image.
    :align: center
-..
+
 
    **Properties**:
 
@@ -209,11 +207,10 @@ Accordion
 
    **About**: A GUI widget with a list of items that can be switched between hiding and showing content.
 
-.. .. figure:: ./src/assets/imgs/development/accordion.png
+ .. figure:: ./src/assets/imgs/development/accordion/kytos-accordion.png
    :scale: 50 %
    :alt: Accordion image.
    :align: center
-..
 
    **Properties**: None.
 
@@ -227,11 +224,10 @@ Accordion
 
    **About**: Accordion item that can be switched between hiding and showing content.
 
-.. .. figure:: ./src/assets/imgs/development/accordion-item.png
+ .. figure:: ./src/assets/imgs/development/accordion/kytos-accordion-item.png
    :scale: 50 %
    :alt: AccordionItem image.
    :align: center
-..
 
    **Properties**: None.
 
@@ -248,11 +244,11 @@ Misc
 
    **About**: Menu with a list of actions. Can be shown or hidden using the *Ctrl+Space* shortcut.
 
-.. .. figure:: ./src/assets/imgs/development/action-menu.png
+ .. figure:: ./src/assets/imgs/development/misc/kytos-action-menu.png
    :scale: 50 %
    :alt: ActionMenu image.
    :align: center
-..
+
 
    **Properties**: None.
 
@@ -270,11 +266,11 @@ Misc
 
    **About**: Shows details about selected kytos components. The panel can be shown or hidden using the shortcut *Ctrl+Alt+Space*.
 
-.. .. figure:: ./src/assets/imgs/development/info-panel.png
+ .. figure:: ./src/assets/imgs/development/development/misc/kytos-info-panel.png
    :scale: 50 %
    :alt: infopanel image.
    :align: center
-..
+
 
    **Properties**:
 
@@ -295,11 +291,11 @@ Misc
 
    **About**: A tabbed bar such as a Terminal, Switches, Logging, Notifications and System Information.
 
-.. .. figure:: ./src/assets/imgs/development/status-bar.png
+ .. figure:: ./src/assets/imgs/development/development/misc/kytos-status-bar.png
    :scale: 50 %
    :alt: StatusBar image.
    :align: center
-..
+
 
    **Properties**: None.
 
