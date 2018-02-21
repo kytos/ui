@@ -99,8 +99,8 @@ Vue.filter('humanize_bytes', function (num, precision = 0, suffix = 'bps') {
 });
 
 Vue.prototype.$kytos = new Vue()
-Vue.prototype.$kytos_server = "http://localhost:8181/"
-Vue.prototype.$kytos_server_api = "http://localhost:8181/api/"
+Vue.prototype.$kytos_server = window.kytos_server
+Vue.prototype.$kytos_server_api =  window.kytos_server_api
 
 var kytos = new Vue({
   el: '#app',
