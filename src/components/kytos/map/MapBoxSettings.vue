@@ -1,5 +1,5 @@
 <template>
- <section class="kytos-menu-item"  icon="desktop" tooltip="MapBox-Settings">
+ <section class="kytos-menu-item"  icon="desktop" tooltip="MapBox Settings">
     <kytos-accordion>
         <kytos-accordion-item title="Custom Labels">
           <kytos-dropdown title="Switch Labels:" icon="circle-o" :options="switchLabels" :event="{name: 'topology-toggle-label', content: {node_type: 'switch'}}"></kytos-dropdown>

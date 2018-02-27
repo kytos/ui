@@ -107,13 +107,13 @@ export default {
    padding-bottom: 2px
    padding-left: 3px
    padding-top: 0px
-  
+
   .kytos-dropdown__select
    margin-left: 5px
    width: 130px
    max-width: 130px
-  
-  &:before 
+
+  &:before
    background: $fill-input-bg
    width: 20px
    height: 20px
@@ -163,5 +163,26 @@ export default {
  option:focus,
  option:hover
   box-shadow: 0 0 10px 10px rgba(0,0,0,0.5) inset
+
+.compacted
+ .kytos-dropdown
+  display: inline-flex
+  min-width: 100px
+  max-width: 400px
+  margin-top: 7px
+  margin-right: 5px
+  margin-left: 2px
+
+ .kytos-dropdown__title
+  visibility: hidden
+  width: 12px
+
+  svg
+   visibility: visible
+   margin-left: -8px
+
+ .kytos-dropdown__select
+  margin-top: 3px
+  margin-right: 2px
 
 </style>

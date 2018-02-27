@@ -26,7 +26,9 @@ export default {
 @import '../../../assets/styles/variables'
 
 .accordion-wrapper
-  width: 100%
   position: relative
 
+.compacted
+ .accordion-wrapper
+  display: inline-flex
 </style>

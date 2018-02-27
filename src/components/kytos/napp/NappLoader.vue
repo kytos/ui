@@ -33,7 +33,7 @@ export default {
   methods: {
     load_icons () {
       var self = this
-      var components  = $('.kytos-menu-items .kytos-menu-item')
+      var components  = $('.kytos-toolbar .kytos-menu-item')
       $.each(components, function(index, component){
           self.inner_components[index].icon = component.getAttribute('icon')
           self.inner_components[index].tooltip = component.getAttribute('tooltip')
@@ -84,5 +84,8 @@ export default {
   width: 100vw
   height: 40px
   margin-top: 0px
+  box-shadow: 0px 10px 20px -10px $fill-bar;
+  overflow: hidden
+  padding: 0px
 
 </style>

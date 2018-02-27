@@ -1,15 +1,18 @@
 <template>
 <div class="container">
   <section class="kytos-menu-bar">
-    <div class="logo" v-on:click="this.toggle" v-bind:class="{ compacted: compacted  }">
-      <img v-show="!this.compacted" src="../../assets/logo-kytos.svg" class="logo-kytos" alt="Kytos" height="35">
-      <img v-show="this.compacted" src="../../assets/icon-kytos.svg" class="icon-kytos" alt="Kytos" height="35">
+    <div class="logo" v-on:click="toggle" v-bind:class="{ compacted: compacted  }">
+      <img v-show="!compacted" src="../../assets/logo-kytos.svg" class="logo-kytos" alt="Kytos" height="35">
+      <img v-show="compacted" src="../../assets/icon-kytos.svg" class="icon-kytos" alt="Kytos" height="35">
     </div>
-    <icon v-for="(component, index) in components" :key="component.icon" :name="component.icon"
-          v-bind:class="{ active: activeItem==(index+1) }"
-          v-on:click.native="setItem(index+1)"></icon>
+    <kytos-button  v-for="(component, index) in components"
+                   v-bind:class="{ active: activeItem==(index+1) }"
+                   :key="component.icon"
+                   :icon="component.icon"
+                   :tooltip="component.tooltip"
+                   @click.native="setItem(index+1)"/>
   </section>
-  <napp-loader :active="activeItem" :components.sync="components" :expanded="expanded" :url="url"></napp-loader>
+  <napp-loader :active="activeItem" :components.sync="components" :compacted="compacted" :url="url"></napp-loader>
 </div>
 </template>
 
@@ -70,23 +73,35 @@ export default {
 
 .kytos-menu-bar
 
- .active
-  background: $fill-panel
-  border-color: $fill-menubar-b
+ .kytos-button
+  width: 40px
+  height: 40px
+  margin: 0px
+  background: $fill-menubar
 
- > svg
-  vertical-align: middle
-  height: 20px
-  width: 23px
-  padding: 10px 9px 10px 5px
-  cursor: pointer
-  fill: $fill-icon
-  border-left: 3px solid transparent
+  > svg
+   vertical-align: middle
+   height: 20px
+   width: 23px
+   padding: 10px 9px 10px 5px
+   cursor: pointer
+   fill: $fill-icon
+   border-left: 3px solid transparent
 
   &:hover
    fill: $fill-icon-h
    border-color: $fill-menubar-b
    background: $kytos-dark-gray
+
+  &::-moz-focus-inner
+   border: 0
+
+  &.active
+   background: $fill-panel
+   border-color: $fill-menubar-b
+
+   > svg
+    border-left: 3px solid $fill-menubar-h
 
 .compacted
  .kytos-menu-bar

@@ -1,10 +1,10 @@
 <template>
   <div class="tab">
-	<input class="kytos-accordion-input" :id="id" type="checkbox" name="tabs" checked>
+    <input class="kytos-accordion-input" :id="id" type="checkbox" name="tabs" checked>
     <label class="kytos-accordion-label" :for="id">{{title}}</label>
     <div class="tab-content">
     <slot>
-	 <p>Empty Pannel created, please define some items inside.</p>
+       <p>Empty Pannel created, please define some items inside.</p>
     </slot>
     </div>
   </div>
@@ -85,5 +85,53 @@ export default {
   &[type=checkbox]:checked
     & + .kytos-accordion-label:after
       content: "▴"
+
+.compacted
+ .tab
+   display: inline-flex
+
+ .kytos-accordion-input
+   display: none
+ .kytos-accordion-label
+   display: none
+
+ .kytos-accordion-input
+   & ~ .tab-content
+    display: inline-flex
+    margin-top: 0px
+    height: 35px
+    max-height: 100%
+    overflow: hidden
+
+   &[type=checkbox]
+     & + .kytos-accordion-label:after
+       content: ""
+
+   &[type=checkbox]:checked
+     & + .kytos-accordion-label:after
+       content: ""
+
+ .tab
+  .tab-content
+   margin-left: 15px
+   &:before
+     content: ';;;;;;;'
+     font: 8px monospace
+     line-height: 5px
+     color: $fill-bar
+     filter: invert(50%)
+     opacity: 0.2
+     -webkit-transform: rotate(90deg)
+     -moz-transform: rotate(90deg)
+     -ms-transform: rotate(90deg)
+     transform: rotate(90deg)
+     border-bottom: 1px solid $fill-bar
+     pointer-events: none
+     width: 35px
+     height: 10px
+     position: absolute
+     left: -10px
+     top: 15px
+
 
 </style>

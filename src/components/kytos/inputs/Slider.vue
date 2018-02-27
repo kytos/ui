@@ -92,6 +92,7 @@ export default {
   outline: 0;
   order: 2;
   margin: 0px;
+  margin-top: 3px
   padding: 0px;
   cursor: pointer;
 
@@ -139,5 +140,8 @@ export default {
    &:focus
     outline: 0;
 
+.compacted
+ .kytos-slider
+  margin-top: 5px
 </style>
 
