@@ -4,7 +4,7 @@ import httpVueLoader from "./httpVueLoader.js"
 
 export default {
   name: 'napp-loader',
-  props: ["active", "expanded", "components", "url"],
+  props: ["active", "compacted", "components", "url"],
   data () {
     return {
      template: null,
@@ -54,14 +54,14 @@ export default {
       })
     },
     template_context() {
-      var context = '<div class="kytos-menu-items  kytos-toolbar" >'
-      $.each(this.inner_components, function(index, component){
-        context += '<'+ component.name +' v-show="active =='+(index+1)+'"/>'
-      })
-      context += '</div>'
-      return context
-    }
+    var context = '<div class="kytos-toolbar" >'
+    $.each(this.inner_components, function(index, component){
+      context += '<'+ component.name +' v-show="active =='+(index+1)+'"/>'
+    })
+    context += '</div>'
+    return context
   }
+}
 }
 </script>
 
@@ -70,10 +70,6 @@ export default {
 @import '../../../assets/styles/variables'
 
 .kytos-toolbar
-  display: none
-
-.expanded
- .kytos-menu-items
   -webkit-order: 2
   -ms-flex-order: 2
   z-index: 999
@@ -82,5 +78,11 @@ export default {
   background: $fill-panel
   width: 220px
   display: block
+
+.compacted
+ .kytos-toolbar
+  width: 100vw
+  height: 40px
+  margin-top: 0px
 
 </style>

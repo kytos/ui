@@ -128,7 +128,7 @@ export default {
  z-index: 900
  position: relative
  background: $kytos-dark-gray
- margin-left: 40px
+ margin-left: 280px
 
 .kytos-tabs.hiddenTabs
   margin-top: -25px
@@ -150,10 +150,6 @@ export default {
 
 .kytos-tabs:-webkit-full-screen .kytos-hidden-tab
   display: none
-
-.expanded
- .kytos-tabs
-   margin-left: 280px
 
 .kytos-tabs-nav
  overflow: hidden
@@ -225,5 +221,9 @@ export default {
   height: auto
   min-height: 100vh
   max-height: 100vh
+
+.compacted
+ .kytos-tabs
+   margin-left: 40px
 
 </style>

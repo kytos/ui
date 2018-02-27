@@ -78,12 +78,12 @@ export default {
       max-height: 100%
       overflow: hidden
 
-  &[type=checkbox] 
-    & + .kytos-accordion-label:after 
+  &[type=checkbox]
+    & + .kytos-accordion-label:after
       content: "▾"
 
   &[type=checkbox]:checked
-    & + .kytos-accordion-label:after 
+    & + .kytos-accordion-label:after
       content: "▴"
 
 </style>

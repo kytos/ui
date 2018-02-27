@@ -1,9 +1,9 @@
 <template>
 <div class="container">
   <section class="kytos-menu-bar">
-    <div class="logo" v-on:click="this.toggle" v-bind:class="{ expanded: expanded  }">
-      <img v-show="this.expanded" src="../../assets/logo-kytos.svg" class="icon-kytos" alt="Kytos" height="35">
-      <img v-show="!this.expanded" src="../../assets/icon-kytos.svg" class="logo-kytos" alt="Kytos" height="35">
+    <div class="logo" v-on:click="this.toggle" v-bind:class="{ compacted: compacted  }">
+      <img v-show="!this.compacted" src="../../assets/logo-kytos.svg" class="logo-kytos" alt="Kytos" height="35">
+      <img v-show="this.compacted" src="../../assets/icon-kytos.svg" class="icon-kytos" alt="Kytos" height="35">
     </div>
     <icon v-for="(component, index) in components" :key="component.icon" :name="component.icon"
           v-bind:class="{ active: activeItem==(index+1) }"
@@ -20,7 +20,7 @@ import Icon from '../../../node_modules/vue-awesome/components/Icon.vue'
 export default {
   name: 'kytos-menu-bar',
   mixins: [KytosBaseWithIcon],
-  props: ['toggle', 'expanded'],
+  props: ['toggle', 'compacted'],
   data() {
     return {
       url: this.$kytos_server+ 'ui/menu-items',
@@ -58,17 +58,13 @@ export default {
     margin: 0
     display: block
     height: 30px
+    width: 280px
     vertical-align: middle
     padding: 3px 0px 7px 0px
     background: $fill-menubar-h
     cursor: pointer
     text-align: center
 
- .expanded
-    width: 280px
-    background: $fill-menubar-h
-
-.expanded
  .kytos-menu-bar
    box-shadow: none
 
@@ -91,5 +87,10 @@ export default {
    fill: $fill-icon-h
    border-color: $fill-menubar-b
    background: $kytos-dark-gray
+
+.compacted
+ .kytos-menu-bar
+  .logo
+   width: 40px
 
 </style>
