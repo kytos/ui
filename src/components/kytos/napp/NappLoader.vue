@@ -88,4 +88,7 @@ export default {
   overflow: hidden
   padding: 0px
 
+  .no-compact
+   display: none
+
 </style>

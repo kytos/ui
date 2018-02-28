@@ -1,5 +1,5 @@
 <template>
-  <div class="kytos-textarea-wrap">
+  <div class="kytos-textarea-wrap no-compact">
     <icon v-if="icon" v-bind:name="icon"></icon>
     <textarea ref="textarea" @textarea="updateText($event.target.value)"  type="text" :id="id" class="kytos-textarea" :value="value" :tooltip="tooltip" :placeholder="placeholder"
       v-bind:disabled="isDisabled" onshow="this.focus()" autofocus>
