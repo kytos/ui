@@ -1,5 +1,5 @@
 <template>
-  <button :id="id" class="kytos-button"
+  <button :id="id" class="kytos-button compact"
     v-bind:title="tooltip"
     v-bind:disabled="isDisabled">
       <icon v-if="icon" v-bind:name="icon"></icon>

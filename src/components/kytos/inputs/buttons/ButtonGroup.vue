@@ -1,5 +1,5 @@
 <template>
-<div class="kytos-button-wrapper">
+<div class="kytos-button-wrapper compact">
     <a v-if="tooltip" v-bind:title="tooltip" class="kytos-button-wrapper-tooltip"></a>
     <slot />
 </div>

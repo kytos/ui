@@ -37,6 +37,20 @@ export default {
   methods: {
     toggle () {
       this.compacted = !this.compacted
+
+      $(".kytos-toolbar").show();
+
+      this.$nextTick(function () {
+      // DOM is now updated
+        $(".kytos-toolbar .kytos-menu-item").not(":hidden").each(function() {
+            $(this).each(function(){
+                if ($(this).find(".compact").length == 0){
+                    $(".compacted .kytos-toolbar").css("display","none");
+                }
+            });
+        });
+      });
+
     },
   }
 }
@@ -92,4 +106,3 @@ a
  left: 0
 
 </style>
-
