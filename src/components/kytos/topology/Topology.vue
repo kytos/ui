@@ -205,7 +205,7 @@ export default {
     },
     update_graph_data () {
       this.graph = JSON.parse(JSON.stringify(this.original_graph)) // Make a copy
-      this.add_iep_nodes()
+      // this.add_iep_nodes() // remove iep nodes added manually
 
       // variable that will be used to only allow nodes for interfaces that
       // have a link attached to it.
