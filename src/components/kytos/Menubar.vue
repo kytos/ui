@@ -26,7 +26,7 @@ export default {
   props: ['toggle', 'compacted'],
   data() {
     return {
-      url: this.$kytos_server+ 'ui/menu-items',
+      url: this.$kytos_server+ 'ui/kytos-toolbar',
       components: [{'icon': 'desktop', 'name':'mapbox-settings'}],
       activeItem: 1
     }
