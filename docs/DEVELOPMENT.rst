@@ -1,15 +1,14 @@
 Kytos UI
-########
+====================
 
+Kytos Graphical User Interface
 
 Overview
-********
+---------
 
-The Kytos UI (Kytos User Interface) is a graphical user interface to handle a
-kytos instance.  With this interface you can show the topology, list all
-installed napps, see the kytos logs, send flows to switch, etc.
+A Vue.js project that implements the Kytos graphical user interface.
 
-.. figure:: ./imgs/kytos-ui.png
+.. figure:: /docs/imgs/kytos-ui.png
    :scale: 50 %
    :alt: Kytos Graphical User Interface
    :align: center
@@ -17,126 +16,80 @@ installed napps, see the kytos logs, send flows to switch, etc.
    Kytos Graphical User Interface
 
 Kytos UI Parts
-**************
+------------------
 
-The following images we have the kytos ui parts.
-
-.. figure:: ./imgs/kytos-ui-parts.png
+.. figure:: /docs/imgs/kytos-ui-parts.svg
    :scale: 50 %
    :alt: Kytos Graphical User Interface
    :align: center
 
+**Image caption / Kytos UI Parts:**
 
+#. **kytos-menu-bar**: A button with the kytos logo, which allows to switch between the extended or non-extended version of the kytos UI;
 
-kytos-menu-bar
-==============
+   #. Non-extended version of the menu bar;
+   #. Extended version of the menu bar;
+   #. Contents of the selected item in the extended version of the menu bar;
 
-This kytos component contains the kytos logo and a list of itens to change
-the kytos-toobar content.
+#. **kytos-map**: Map representation;
+#. **kytos-info-panel**: Shows specific information of the selected component;
+#. **kytos-tabs**: Tab with the terminal, switches, notifications and logging.
 
-#. **Kytos-Logo**: When pressed the kytos-toolbar will switch between expandeded and compacted version.
-#. **Item**: Change the kytos-toolbar context to display the napps component.
-
-
-kytos-toolbar
-==============
-
-The kytos-menu-bar component contains the current activated kytos-menu-bar item.If the
-kytos-logo is in the expanded version the kytos-toolbar will change to expanded
-version, otherwise if the kytos-logo is in compacted version the kytos-toolbar
-will change to compacted version. This component is responsible to load all
-napps components and register this into the kytos-menu-bar itens.
-
-
-
-.. note:: Only components with compacted version will be displayed in to the
-          kytos-toolbar in compacted version. Kytos-toolbar doesn't will be
-          displayed if doesn't have kytos-components in compacted version.
-
-kytos-map
-=========
-
-The kytos-map component is responsible to display a map and render the network
-topology will all hosts and switch connected.
-
-
-kytos-info-panel
-================
-
-The kytos-info-panel component is responsible to show specific informations of
-the selected component or specific action activated. If you try to press
-ctrl+space a list of actions will appear at the center of kytos-ui.
-
-
-kytos-tabs
-==========
-
-The kytos-tabs components is responsible to have a terminal,
-show switch informations, logs of kytos instance and kytos ui alerts.
-
+.. note:: It is allowed to add components only in the parts 1.x, 3 and 4.
 
 List of Kytos UI Components
-***************************
+----------------------------
 
 The following list shows the Kytos UI Components organized by categories:
 
-#. Inputs
-#. Accordion
-#. Misc
-#. Property Panel
-#. Switch
-#. Interface
-#. Base
-#. Chart
-#. Map
-#. Terminal
-#. Topology
-
-
 Inputs
-======
+^^^^^^^
 
-Button:
--------
+* Button
 
    **Name**: kytos-button
 
-   **About**: This component represents a button that triggers an event when
-   clicked.
+   **About**: Triggers an event when clicked.
+
+.. figure:: /docs/imgs/components/input/kytos-button.png
+   :scale: 50 %
+   :alt: Button image.
+   :align: center
 
    **Properties**: None.
 
    **Methods**: None.
 
-.. figure:: ./imgs/components/input/kytos-button.png
-   :scale: 50 %
-   :alt: Button image.
-   :align: center
+.. Example:
 
-
-ButtonGroup
------------
+* ButtonGroup
 
    **Name**: kytos-button-group
 
    **About**: Allows to group buttons, which trigger events when clicked.
 
-   **Properties**: None.
-
-   **Methods**: None.
-
-.. figure:: ./imgs/components/input/kytos-button-group.png
+.. figure:: /docs/imgs/components/input/kytos-button-group.png
    :scale: 50 %
    :alt:  ButtonGroup image.
    :align: center
 
+   **Properties**: None.
 
-Checkbox
---------
+   **Methods**: None.
+
+.. Example:
+
+* Checkbox
 
    **Name**: kytos-check-box
 
    **About**: A GUI widget that permits the user to make a binary choice, checked (ticked) when activated or not checked when disable.
+
+.. .. figure:: /docs/imgs/components/input/kytos-checkbox.png
+   :scale: 50 %
+   :alt: Checkbox image.
+   :align: center
+..
 
    **Properties**:
 
@@ -144,20 +97,18 @@ Checkbox
 
    **Methods**: None.
 
-.. .. figure:: ./imgs/components/input/kytos-checkbox.png
-   :scale: 50 %
-   :alt: Checkbox image.
-   :align: center
-
 .. Example:
 
-
-Dropdown
---------
+* Dropdown
 
    **Name**: kytos-dropdown
 
    **About**: A toggleable menu that allows the user to choose one value from a predefined list.
+
+.. figure:: /docs/imgs/components/input/kytos-dropdown.png
+   :scale: 50 %
+   :alt: Dropdown image.
+   :align: center
 
    **Properties**:
 
@@ -168,17 +119,19 @@ Dropdown
 
       * emitEvent();
 
-.. figure:: ./imgs/components/input/kytos-dropdown.png
-   :scale: 50 %
-   :alt: Dropdown image.
-   :align: center
+.. Example:
 
-Input
------
+* Input
 
    **Name**: kytos-input
 
    **About**: An input field where the user can enter data.
+
+.. figure:: /docs/imgs/components/input/kytos-input.png
+   :scale: 50 %
+   :alt: Input image.
+   :align: center
+
 
    **Properties**:
 
@@ -191,18 +144,18 @@ Input
 
       * updateText(value).
 
-.. figure:: ./imgs/components/input/kytos-input.png
-   :scale: 50 %
-   :alt: Input image.
-   :align: center
+.. Example:
 
-
-Slider
-------
+* Slider
 
    **Name**: kytos-slider
 
    **About**: A GUI widget that allows the users specify a numeric value which must be no less than a given value, and no more than another given value.
+
+.. figure:: /docs/imgs/components/input/kytos-slider.png
+   :scale: 50 %
+   :alt: Slider image.
+   :align: center
 
    **Properties**:
 
@@ -216,17 +169,19 @@ Slider
 
       * doRange().
 
-.. figure:: ./imgs/components/input/kytos-slider.png
-   :scale: 50 %
-   :alt: Slider image.
-   :align: center
+.. Example:
 
-Textarea
---------
+* Textarea
 
    **Name**: kytos-textarea
 
    **About**: A text input field with multi-line.
+
+.. .. figure:: /docs/imgs/components/input/kytos-textarea.png
+   :scale: 50 %
+   :alt: Textarea image.
+   :align: center
+..
 
    **Properties**:
 
@@ -239,56 +194,58 @@ Textarea
 
       * updateText(value).
 
-.. .. figure:: ./imgs/components/input/kytos-textarea.png
-   :scale: 50 %
-   :alt: Textarea image.
-   :align: center
-
+.. Example:
 
 Accordion
-=========
+^^^^^^^^^^
 
-Accordion
----------
+* Accordion
 
    **Name**: kytos-accordion
 
    **About**: A GUI widget with a list of items that can be switched between hiding and showing content.
 
-   **Properties**: None.
-
-   **Methods**: None.
-
-.. figure:: ./imgs/components/accordion/kytos-accordion.png
+.. figure:: /docs/imgs/components/accordion/kytos-accordion.png
    :scale: 50 %
    :alt: Accordion image.
    :align: center
 
-AccordionItem
---------------
+   **Properties**: None.
+
+   **Methods**: None.
+
+.. Example:
+
+* AccordionItem
 
    **Name**: kytos-accordion-item
 
    **About**: Accordion item that can be switched between hiding and showing content.
 
-   **Properties**: None.
-
-   **Methods**: None.
-
-.. figure:: ./imgs/components/accordion/kytos-accordion-item.png
+.. figure:: /docs/imgs/components/accordion/kytos-accordion-item.png
    :scale: 50 %
    :alt: AccordionItem image.
    :align: center
 
-Misc
-====
+   **Properties**: None.
 
-ActionMenu
-----------
+   **Methods**: None.
+
+.. Example:
+
+Misc
+^^^^^
+
+* ActionMenu
 
    **Name**: kytos-action-menu
 
    **About**: Menu with a list of actions. Can be shown or hidden using the *Ctrl+Space* shortcut.
+
+.. figure:: /docs/imgs/components/misc/kytos-action-menu.png
+   :scale: 50 %
+   :alt: ActionMenu image.
+   :align: center
 
    **Properties**: None.
 
@@ -298,17 +255,18 @@ ActionMenu
       * hide();
       * show_info_panel(content).
 
-.. figure:: ./imgs/components/misc/kytos-action-menu.png
-   :scale: 50 %
-   :alt: ActionMenu image.
-   :align: center
+.. Example:
 
-InfoPanel
----------
+* InfoPanel
 
    **Name**: kytos-info-panel
 
    **About**: Shows details about selected kytos components. The panel can be shown or hidden using the shortcut *Ctrl+Alt+Space*.
+
+.. figure:: /docs/imgs/components/misc/kytos-info-panel.png
+   :scale: 50 %
+   :alt: infopanel image.
+   :align: center
 
    **Properties**:
 
@@ -321,17 +279,18 @@ InfoPanel
       * show(content);
       * register_listeners().
 
-.. figure:: ./imgs/components/misc/kytos-info-panel.png
-   :scale: 50 %
-   :alt: infopanel image.
-   :align: center
+.. Example:
 
-StatusBar
----------
+* StatusBar
 
    **Name**: kytos-status-bar
 
    **About**: A tabbed bar such as a Terminal, Switches, Logging, Notifications and System Information.
+
+.. figure:: /docs/imgs/components/misc/kytos-status-bar.png
+   :scale: 50 %
+   :alt: StatusBar image.
+   :align: center
 
    **Properties**: None.
 
@@ -342,36 +301,38 @@ StatusBar
       * set_status(message, error=false);
       * register_listeners().
 
-.. figure:: ./imgs/components/misc/kytos-status-bar.png
-   :scale: 50 %
-   :alt: StatusBar image.
-   :align: center
+.. Example:
 
 Property Panel
-==============
+^^^^^^^^^^^^^^^
 
-PropertyPanel
--------------
+* PropertyPanel
 
    **Name**: kytos-property-panel
 
    **About**: This component allows to create a table with two columns ( *name* and *value*). Each row in the table is a ``kytos-property-panel-item`` component, with the *value* and *name*.
 
-   **Properties**: None.
-
-   **Methods**: None.
-
-    .. figure:: ./imgs/components/ppanel/kytos-property-panel.png
+    .. figure:: /docs/imgs/components/ppanel/kytos-property-panel.png
        :scale: 50 %
        :alt: PropertyPanel image.
        :align: center
 
-PropertyPanelItem
------------------
+   **Properties**: None.
+
+   **Methods**: None.
+
+.. Example:
+
+* PropertyPanelItem
 
    **Name**: kytos-property-panel-item
 
    **About**: This component create a row in the table (``kytos-property-panel``) with two columns, *name* and *value*.
+
+.. figure:: /docs/imgs/components/ppanel/kytos-property-panel-item.png
+   :scale: 50 %
+   :alt: PropertyPanelItem image.
+   :align: center
 
    **Properties**:
 
@@ -380,20 +341,22 @@ PropertyPanelItem
 
    **Methods**: None.
 
-.. figure:: ./imgs/components/ppanel/kytos-property-panel-item.png
-   :scale: 50 %
-   :alt: PropertyPanelItem image.
-   :align: center
+.. Example:
 
 Switch
-======
+^^^^^^^
 
-Flow
-----
+* Flow
 
    **Name**: kytos-flow
 
    **About**: Representation of flows between interfaces.
+
+.. .. figure:: /docs/imgs/components/switch/kytos-flow.png
+   :scale: 50 %
+   :alt: Flow image.
+   :align: center
+..
 
    **Properties**:
 
@@ -404,17 +367,19 @@ Flow
       * get_plot_selector();
       * update_chart().
 
-.. .. figure:: ./imgs/components/switch/kytos-flow.png
-   :scale: 50 %
-   :alt: Flow image.
-   :align: center
+.. Example:
 
-Interface
----------
+* Interface
 
    **Name**: kytos-interface
 
    **About**: Representation of the interfaces (hardware) used.
+
+.. .. figure:: /docs/imgs/components/switch/interface.png
+      :scale: 50 %
+      :alt: Interface image.
+      :align: center
+..
 
    **Properties**:
 
@@ -430,61 +395,32 @@ Interface
       * parseInterfaceData (data);
       * update_chart();
 
+.. Example:
 
-Base
-====
 
-KytosBase
-----------
-   **Name**: KytosBase
+.. ### Tabs
+.. * `tabs`:
 
-   **About**: A base components used by kytos.
+ ### Base *
+ * `KytosBase`:
+ * `KytosBaseWithIcon`:
 
-   **Properties**:
-      * *title*: String
-      * *tooltip*: String
-      * *isDisabled*: Boolean (**default**: False)
-   **Methods**:
-      * *uuid4*: return a ID following the format: `xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx`
+ ### Chart *
+ * `RadarChart`:
+ * `Timeseries`:
 
-   **data**:
-      * *id*: String
+ ### Logging *
+ * `Logging-Utils`:
+ * `Logging`:
 
-KytosBaseWithIcon
------------------
+ ### Map *
+ * `Map`:
 
-   **Name**: KytosBaseWithIcon
 
-   **mixins**: KytosBase
+ ### Terminal *
+ * `Terminal`:
 
-   **About**: A base components used by kytos, with icon in property.
-
-   **Properties**:
-      * *icon*: String
-
-   **Components**
-      * *icon*: Icon component
-
-Chart
-=====
-    * `RadarChart`:
-    * `Timeseries`:
-
-Logging
-=======
-    * `Logging-Utils`:
-    * `Logging`:
-
-Map
-===
-    * `Map`:
-
-Terminal
-========
-    * `Terminal`:
-
-Topology
-========
+    ### Topology *
     * `ContextPanel`:
     * `Menubar`:
-    * `Toolbar`:
+    * `Toolbar`

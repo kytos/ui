@@ -10,7 +10,6 @@ repository, for example: ``ui/menu-items/main.kytos``. With this file the kytos
 core will identify your component and send this to the interface.
 
 ``menu-items`` is the position where your component will be fixed.
-
 ``main.kytos`` is an example of component file, you can add others files and
 the core will use that like your napp component.
 
@@ -131,14 +130,14 @@ kytos-button
 ^^^^^^^^^^^^^
 
 Create a button thats trigger an event when clicked.
-
-Example:
-
+   
+Example:   
+  
 .. code-block:: html
-
+   
    <kytos-button tooltip="Request Circuit" title="Request Circuit" icon="gear" v-on:click.native="request_circuit()"></kytos-button>
 
-.. figure:: ./imgs/components/input/kytos-button.png
+.. figure:: /docs/imgs/components/input/kytos-button.png
    :scale: 50 %
    :alt: Button image.
    :align: center
@@ -147,7 +146,7 @@ kytos-button-group
 ^^^^^^^^^^^^^^^^^^^
 
 Allows to group buttons (``kytos-buttton``), which trigger events when clicked.
-
+   
 Example:
 
 .. code-block:: html
@@ -158,7 +157,7 @@ Example:
       <kytos-button tooltip="No Background" icon="window-close-o"></kytos-button>
    </kytos-button-group>
 
-.. figure:: ./imgs/components/input/kytos-button-group.png
+.. figure:: /docs/imgs/components/input/kytos-button-group.png
    :scale: 50 %
    :alt:  ButtonGroup image.
    :align: center
@@ -187,7 +186,7 @@ Properties:
 
    <kytos-dropdown title="Switch Labels:" icon="circle-o" :options="switchLabels" :event="{name: 'topology-toggle-label', content: {node_type: 'switch'}}"></kytos-dropdown>
 
-.. figure:: ./imgs/components/input/kytos-dropdown.png
+.. figure:: /docs/imgs/components/input/kytos-dropdown.png
    :scale: 50 %
    :alt: Dropdown image.
    :align: center
@@ -209,10 +208,10 @@ Methods:
 * emitEvent().
 
 .. code-block:: html
-
+   
    <kytos-input id="vlan-a-input" title="VLAN A:" tooltip="Vlan id at endpoint A" placeholder="Vlan id" icon="tag"></kytos-input>
 
-.. figure:: ./imgs/components/input/kytos-input.png
+.. figure:: /docs/imgs/components/input/kytos-input.png
    :scale: 50 %
    :alt: Input image.
    :align: center
@@ -235,10 +234,10 @@ Methods:
 * doRange().
 
 .. code-block:: html
-
+   
    <kytos-slider icon="adjust" :initialValue="mapOpacity" :action="emitMapOpacity"></kytos-slider>
 
-.. figure:: ./imgs/components/input/kytos-slider.png
+.. figure:: /docs/imgs/components/input/kytos-slider.png
    :scale: 50 %
    :alt: Slider image.
    :align: center
@@ -259,7 +258,7 @@ Methods:
 
 * updateText(value).
 
-.. .. figure:: ./imgs/components/input/kytos-textarea.png
+.. .. figure:: /docs/imgs/components/input/kytos-textarea.png
    :scale: 50 %
    :alt: Textarea image.
    :align: center
@@ -294,7 +293,7 @@ Example:
    </kytos-accordion>
 
 
-.. figure:: ./imgs/components/accordion/kytos-accordion.png
+.. figure:: /docs/imgs/components/accordion/kytos-accordion.png
    :scale: 50 %
    :alt: Accordion image.
    :align: center
@@ -317,7 +316,7 @@ Example:
       <kytos-slider icon="adjust" :initialValue="mapOpacity" :action="emitMapOpacity"></kytos-slider>
    </kytos-accordion-item>
 
-.. figure:: ./imgs/components/accordion/kytos-accordion-item.png
+.. figure:: /docs/imgs/components/accordion/kytos-accordion-item.png
    :scale: 50 %
    :alt: AccordionItem image.
    :align: center
@@ -330,7 +329,7 @@ Example:
 .. ^^^^^^^^^^^^^^^^^^
 
 .. Menu with a list of actions. Can be shown or hidden using the *Ctrl+Space* shortcut.
-
+ 
 .. Methods:
 
 .. * toggle();
@@ -339,7 +338,7 @@ Example:
 
 .. .. code-block:: html
 
-.. .. figure:: ./imgs/components/misc/kytos-action-menu.png
+.. .. figure:: /docs/imgs/components/misc/kytos-action-menu.png
    :scale: 50 %
    :alt: ActionMenu image.
    :align: center
@@ -366,7 +365,7 @@ Example:
       <kytos-property-panel-item :name="napp.name" :value="napp.version"  v-if="napps" v-for="napp in this.napps" :key="napp.name"></kytos-property-panel-item>
    </kytos-property-panel>
 
-.. figure:: ./imgs/components/ppanel/kytos-property-panel.png
+.. figure:: /docs/imgs/components/ppanel/kytos-property-panel.png
    :scale: 50 %
    :alt: PropertyPanel image.
    :align: center
@@ -387,8 +386,8 @@ Example:
 .. code-block:: html
 
    <kytos-property-panel-item :name="napp.name" :value="napp.version"  v-if="napps" v-for="napp in this.napps" :key="napp.name"></kytos-property-panel-item>
-
-.. figure:: ./imgs/components/ppanel/kytos-property-panel-item.png
+  
+.. figure:: /docs/imgs/components/ppanel/kytos-property-panel-item.png
    :scale: 50 %
    :alt: PropertyPanelItem image.
    :align: center
