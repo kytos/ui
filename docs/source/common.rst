@@ -6,7 +6,6 @@ kytos instance.  With this interface you can show the topology, list all
 installed napps, see the kytos logs, send flows to switch, etc.
 
 .. figure:: _static/imgs/kytos-ui.png
-   :scale: 50 %
    :alt: Kytos Graphical User Interface
    :align: center
 
@@ -18,7 +17,6 @@ Kytos UI Sections
 The following images we have the kytos ui sections.
 
 .. figure:: _static/imgs/kytos-ui-parts.png
-   :scale: 50 %
    :alt: Kytos Graphical User Interface
    :align: center
 
@@ -69,4 +67,3 @@ kytos-tabs
 
 The kytos-tabs components is responsible to have a terminal,
 show switch informations, logs of kytos instance and kytos ui alerts.
-

@@ -3,31 +3,38 @@ Base
 
 KytosBase
 ----------
-   **Name**: KytosBase
 
-   **About**: A base components used by kytos.
+**Name**: KytosBase
 
-   **Properties**:
-      * *title*: String
-      * *tooltip*: String
-      * *isDisabled*: Boolean (**default**: False)
-   **Methods**:
-      * *uuid4*: return a ID following the format: `xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx`
+**About**: A base components used by kytos.
 
-   **data**:
-      * *id*: String
+**Properties**:
+
+* *title*: String
+* *tooltip*: String
+* *isDisabled*: Boolean (**default**: False)
+
+**Methods**:
+
+* *uuid4*: return a ID following the format: `xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx`
+
+**data**:
+
+* *id*: String
 
 KytosBaseWithIcon
 -----------------
 
-   **Name**: KytosBaseWithIcon
+**Name**: KytosBaseWithIcon
 
-   **mixins**: KytosBase
+**mixins**: KytosBase
 
-   **About**: A base components used by kytos, with icon in property.
+**About**: A base components used by kytos, with icon in property.
 
-   **Properties**:
-      * *icon*: String
+**Properties**:
 
-   **Components**
-      * *icon*: Icon component
+* *icon*: String
+
+**Components**:
+
+* *icon*: Icon component

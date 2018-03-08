@@ -1,4 +1,5 @@
 Logging
 =======
-    * `Logging-Utils`:
-    * `Logging`:
+
+* `Logging-Utils`:
+* `Logging`:

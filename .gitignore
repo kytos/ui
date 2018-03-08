@@ -4,3 +4,12 @@ node_modules/
 # Distribution / packaging
 dist/
 latest.zip
+
+
+# Build 
+/docs/src
+build/
+
+# Log
+*.log
+

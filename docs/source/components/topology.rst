@@ -1,5 +1,6 @@
 Topology
 ========
-    * `ContextPanel`:
-    * `Menubar`:
-    * `Toolbar`:
+
+* `ContextPanel`:
+* `Menubar`:
+* `Toolbar`:

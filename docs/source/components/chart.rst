@@ -1,4 +1,5 @@
 Chart
 =====
-    * `RadarChart`:
-    * `Timeseries`:
+
+* `RadarChart`:
+* `Timeseries`:
