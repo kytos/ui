@@ -1,5 +1,5 @@
 <template>
-  <div :id="id" class="kytos-property-panel">
+  <div :id="id" class="kytos-property-panel no-compact">
   <table>
       <slot />
   </table>

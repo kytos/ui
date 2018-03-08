@@ -1,6 +1,6 @@
 <template>
-  <div id="app" v-bind:class="{ expanded: expanded  }">
-    <kytos-menubar v-bind:toggle=toggle v-bind:expanded=expanded></kytos-menubar>
+  <div id="app" v-bind:class="{ compacted: compacted  }">
+    <kytos-menubar v-bind:toggle=toggle v-bind:compacted=compacted></kytos-menubar>
     <kytos-tabs></kytos-tabs>
 
     <section id="kytos-area">
@@ -18,7 +18,7 @@ export default {
   name: 'app',
   data () {
     return {
-     expanded: true,
+     compacted: false,
      SwitchLabels: [{value: 1, description: "DPID"},
                     {value: 2, description: "Name"},
                     {value: 3, description: "Hardware"},
@@ -36,7 +36,21 @@ export default {
   },
   methods: {
     toggle () {
-      this.expanded = !this.expanded
+      this.compacted = !this.compacted
+
+      $(".kytos-toolbar").show();
+
+      this.$nextTick(function () {
+      // DOM is now updated
+        $(".kytos-toolbar .kytos-menu-item").not(":hidden").each(function() {
+            $(this).each(function(){
+                if ($(this).find(".compact").length == 0){
+                    $(".compacted .kytos-toolbar").css("display","none");
+                }
+            });
+        });
+      });
+
     },
   }
 }
@@ -92,4 +106,3 @@ a
  left: 0
 
 </style>
-
