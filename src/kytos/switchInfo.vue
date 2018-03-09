@@ -69,7 +69,7 @@ export default {
     },
     get_flows() {
       var dpid = this.metadata.dpid
-      var endpoint = this.$kytos_server_api + "kytos/flow_manager/v1/flows/" + dpid
+      var endpoint = this.$kytos_server_api + "kytos/flow_manager/v2/flows/" + dpid
       var self = this
       d3.json(endpoint, function(error, result) {
         self.flows = result[dpid].flows

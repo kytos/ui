@@ -62,7 +62,7 @@ export default {
     },
     endpoint () {
       let url = this.$kytos_server_api + "kytos/of_stats/v1/"
-      return url + this.dpid + "/ports/" + this.port_number
+      return url + this.dpid + "/ports/" + Number(this.port_number)
     },
     utilization_color_class: function () {
       if (this.speed === null) return ''

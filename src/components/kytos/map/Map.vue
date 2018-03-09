@@ -19,7 +19,7 @@ export default {
       map_zoom: 2,
       extraComponent: undefined,
       topology: {
-        url: this.$kytos_server_api + "kytos/topology/v2/",
+        url: this.$kytos_server_api + "kytos/topology/v3/",
         graph: null
       }
     }
@@ -81,7 +81,7 @@ export default {
           this.$kytos.$emit("statusMessage", msg, true)
           throw error
         } else {
-          this.topology.graph = graph
+          this.topology.graph = graph.topology
           this.extraComponent = KytosTopology
         }
       })

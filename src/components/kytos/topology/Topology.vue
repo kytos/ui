@@ -10,7 +10,7 @@ export default {
   props: ["map", "original_graph"],
   data () {
     return {
-      topology_url: this.$kytos_server_api + "kytos/topology/v2/",
+      topology_url: this.$kytos_server_api + "kytos/topology/v3/",
       map_container: undefined,
       graph: {},
       svg: undefined,
@@ -190,8 +190,8 @@ export default {
           b: "00:24:38:af:17:00:00:00:290" // Miami Pacific
         }
       }
-
-      this.graph.links.forEach((link, index) => {
+  /**
+      $.each(this.graph.links,function( link_id, link) {
         if (link.a == atlantic_link.id || link.b == atlantic_link.id) {
             this.graph.links.splice(index, 1, atlantic_link.link1, atlantic_link.link2)
         }
@@ -202,6 +202,7 @@ export default {
           this.graph.links.splice(index, 1, pacific_link.link1, pacific_link.link2)
         }
       })
+  **/
     },
     update_graph_data () {
       this.graph = JSON.parse(JSON.stringify(this.original_graph)) // Make a copy
@@ -211,16 +212,19 @@ export default {
       // have a link attached to it.
       let interfaces_with_links = []
 
-      this.graph.links.forEach((link) => {
-        link.source = link.a
-        interfaces_with_links.push(link.a)
-        link.target= link.b
-        interfaces_with_links.push(link.b)
+      $.each(this.graph.links , function(link_id, link ){
+        link.source = link.endpoint_a.id
+        interfaces_with_links.push(link.endpoint_a.id)
+        link.target= link.endpoint_b.id
+        interfaces_with_links.push(link.endpoint_b.id)
         link.type = "link"
-        link.id = this.fix_name(link.a) + "___" + this.fix_name(link.b)
-      })
+        link.id = this.fix_name(link.endpoint_a.id) + "___" +
+                  this.fix_name(link.endpoint_b.id)
+      }.bind(this))
 
-      this.graph.nodes = Object.values(this.graph.devices)
+      this.graph.links = Object.values(this.graph.links)
+      this.graph.nodes = Object.values(this.graph.switches)
+
       this.graph.nodes.forEach((node) => {
         if (node.type == "host"){
           node.name = node.mac
