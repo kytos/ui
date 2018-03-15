@@ -9,7 +9,7 @@ Button:
 **About**: This component represents a button that triggers an event when
 clicked.
 
-**Properties**: None.
+**Mixins**: KytosBaseWithIcon
 
 **Methods**:
 
@@ -34,7 +34,11 @@ ButtonGroup
 
 **About**: Allows to group buttons (``kytos-button``), which trigger events when clicked.
 
-**Properties**: None.
+**Mixins**: KytosBase
+
+**Data**:
+
+* buttons: List of `kytos-button`
 
 **Methods**: None.
 
@@ -60,6 +64,8 @@ Checkbox
 **Name**: kytos-check-box
 
 **About**: A GUI widget that permits the user to make a binary choice, checked (ticked) when activated or not checked when disable.
+
+**mixins**: KytosBaseWithIcon
 
 **Properties**:
 
@@ -88,6 +94,8 @@ Dropdown
 
 **About**: A toggleable menu that allows the user to choose one value from a predefined list.
 
+**Mixins**: KytosBaseWithIcon
+
 **Properties**:
 
 * options: Array (required), represents all options that can be selected in the
@@ -105,6 +113,10 @@ Dropdown
 
 * icon: String representing the awsome icon displayed in the left of title button.
 * title: String is a text displayed as title button.
+
+**Data**:
+
+* selected: String
 
 **Methods**:
 
@@ -128,6 +140,8 @@ Input
 **Name**: kytos-input
 
 **About**: An input field where the user can enter data.
+
+**Mixins**: KytosBaseWithIcon
 
 **Properties**:
 
@@ -160,6 +174,8 @@ Slider
 
 **About**: A GUI widget that allows the users specify a numeric value which must be no less than a given value, and no more than another given value.
 
+**Mixins**: KytosBaseWithIcon
+
 **Properties**:
 
 * initialValue: Number;
@@ -167,6 +183,10 @@ Slider
 * min: Number;
 * max: Number;
 * step: Number.
+
+**Data**:
+
+* value: Interger
 
 **Methods**:
 
@@ -190,6 +210,8 @@ Textarea
 **Name**: kytos-textarea
 
 **About**: A text input field with multi-line.
+
+**Mixins**: KytosBaseWithIcon
 
 **Properties**:
 

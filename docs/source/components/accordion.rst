@@ -8,7 +8,11 @@ Accordion
 
 **About**: A GUI widget with a list of items that can be switched between hiding and showing content.
 
-**Properties**: None.
+**Mixins**: KytosBaseWithIcon
+
+**Data**:
+
+* tabs: List of `kytos-tabs`.
 
 **Methods**: None.
 
@@ -45,7 +49,7 @@ AccordionItem
 
 **About**: Accordion item that can be switched between hiding and showing content.
 
-**Properties**: None.
+***Mixins**: KytosBaseWithIcon
 
 **Methods**: None.
 

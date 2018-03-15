@@ -1,2 +1,2 @@
 sphinx
--e git://github.com/kytos/kytos-sphinx-theme.git#egg=kytos-sphinx-theme
+-e git://github.com/kytos/sphinx-theme.git#egg=kytos-sphinx-theme

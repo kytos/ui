@@ -197,9 +197,13 @@ and display that into the component.
     }
     </script>
 
-List of kytos component
+Base kytos components
 ***********************
 
+.. include:: ./components/base.rst
+
+List of kytos component
+***********************
 
 Napps components can use only specific kytos components. Below we have a list
 of kytos ui components organized by categories:

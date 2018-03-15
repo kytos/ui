@@ -8,7 +8,7 @@ PropertyPanel
 
 **About**: This component allows to create a table with two columns ( *name* and *value*). Each row in the table is a ``kytos-property-panel-item`` component, with the *value* and *name*.
 
-**Properties**: None.
+**Mixins**: KytosBase
 
 **Methods**: None.
 
@@ -32,6 +32,8 @@ PropertyPanelItem
 **Name**: kytos-property-panel-item
 
 **About**: This component create a row in the table (``kytos-property-panel``) with two columns, *name* and *value*.
+
+**Mixins**: KytosBase
 
 **Properties**:
 
