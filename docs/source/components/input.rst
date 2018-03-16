@@ -11,13 +11,14 @@ clicked.
 
 **Properties**: None.
 
-**Methods**: None.
+**Methods**:
+            on_click: a pointer to a function
 
 **Example**:
 
 .. code-block:: html
 
-   <kytos-button tooltip="Request Circuit" title="Request Circuit" icon="gear" v-on:click.native="request_circuit()"></kytos-button>
+   <kytos-button tooltip="Request Circuit" title="Request Circuit" icon="gear" :on_click="request_circuit"></kytos-button>
 
 **Image**:
 
