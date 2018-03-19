@@ -12,7 +12,8 @@ clicked.
 **Properties**: None.
 
 **Methods**:
-            on_click: a pointer to a function
+
+- on_click: a pointer to a function
 
 **Example**:
 
@@ -62,13 +63,23 @@ Checkbox
 
 **Properties**:
 
-* placeholder: String.
+- value: Value used in the checkbox item.
+- title: Title of the button
+- model: Array filled with all values checked.
 
-**Methods**: None.
+**Example**:
 
-.. .. figure:: /_static/imgs/components/input/kytos-checkbox.png
-   :alt: Checkbox image.
-   :align: center
+.. code-block:: html
+
+    <kytos-checkbox title="Line" :model="shapes" value="line" ></kytos-checkbox>
+    <kytos-checkbox title="Circle" :model="shapes" value="circle" :checked="true"></kytos-checkbox>
+    {{ shapes }}
+
+**Image**:
+
+.. figure:: /_static/imgs/components/input/kytos-checkbox.png
+    :alt: Checkbox image.
+    :align: center
 
 Dropdown
 --------
@@ -84,7 +95,7 @@ Dropdown
 
 **Methods**:
 
-* emitEvent();
+- emitEvent: internal event sent when the button is changed
 
 **Example**:
 
