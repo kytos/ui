@@ -25,6 +25,10 @@ export default {
     event: {
       type: Object,
       required: true
+    },
+    action: {
+      type: Function,
+      default: function (event_name, content) { return }
     }
   },
   data () {
@@ -37,6 +41,7 @@ export default {
       let content = this.event.content
       content.value = this.selected
       this.$kytos.$emit(this.event.name, content)
+      this.action(this.event.name, content)
     }
   },
   mounted () {

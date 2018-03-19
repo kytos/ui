@@ -25,11 +25,16 @@ export default {
     },
    placeholder: {
       type: String
-    }
+    },
+   action: {
+      type: Function,
+      default: function(value) {return}
+   }
   },
   methods: {
     updateText(value){
       this.$emit('textarea', value)
+      this.action(value)
     }
   }
 }

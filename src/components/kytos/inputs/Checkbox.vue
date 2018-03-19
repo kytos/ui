@@ -25,6 +25,10 @@ export default {
       checked: {
         type: Boolean,
         default: false
+      },
+      action: {
+        type: Function,
+        default: function(value) { return }
       }
   },
   methods: {
@@ -34,7 +38,8 @@ export default {
       }else{
         this.list_of_checked.splice(this.list_of_checked.indexOf(this.value),1);
       }
-    },
+      this.action(this.value)
+    }
   },
   data () {
     return {

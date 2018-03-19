@@ -74,7 +74,7 @@ export default {
     },
     actionItems() {
        var self=this;
-       return this.items.filter(function(cust){return cust.name.toLowerCase().indexOf(self.search.toLowerCase())>=0;}); 
+       return this.items.filter(function(cust){return cust.name.toLowerCase().indexOf(self.search.toLowerCase())>=0;});
     }
   },
   updated () {
@@ -105,13 +105,13 @@ export default {
  transition: 0.3s
  z-index: 900
 
-.kytos-action-list 
+.kytos-action-list
   padding: 0.5em 0.1em
   font-size: 1.1em
   margin-top: 0.3em
   text-align: left
 
-.kytos-action-item 
+.kytos-action-item
  display: flex
  flex-direction: column
  font-size: 0.8em

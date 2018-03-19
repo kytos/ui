@@ -4,7 +4,9 @@
         <kytos-accordion-item title="Custom Labels">
           <kytos-dropdown title="Switch Labels:" icon="circle-o" :options="switchLabels" :event="{name: 'topology-toggle-label', content: {node_type: 'switch'}}"></kytos-dropdown>
           <kytos-dropdown title="Interface Labels:" icon="plug" :options="interfaceLabels" :event="{name: 'topology-toggle-label', content: {node_type: 'interface'}}"></kytos-dropdown>
+          <kytos-input       icon="tag" title="my input" ></kytos-input>
         </kytos-accordion-item>
+
         <kytos-accordion-item title="Background">
           <kytos-button-group>
             <kytos-button tooltip="Map Background" icon="globe"></kytos-button>
@@ -19,6 +21,7 @@
 
 <script>
 module.exports = {
+
   methods: {
     emitMapOpacity (value) {
       this.$kytos.$emit('change-map-opacity', value)
@@ -52,7 +55,8 @@ module.exports = {
       return {
         switchLabels: [],
         interfaceLabels: [],
-        mapOpacity: 100
+        mapOpacity: 100,
+        shapes: []
       }
   }
 }

@@ -11,15 +11,15 @@ clicked.
 
 **Mixins**: KytosBaseWithIcon
 
-**Methods**:
+**Property**:
 
-- on_click: a pointer to a function
+* action: a pointer to a function
 
 **Example**:
 
 .. code-block:: html
 
-   <kytos-button tooltip="Request Circuit" title="Request Circuit" icon="gear" :on_click="request_circuit"></kytos-button>
+   <kytos-button tooltip="Request Circuit" title="Request Circuit" icon="gear" :action="request_circuit"></kytos-button>
 
 **Image**:
 
@@ -39,8 +39,6 @@ ButtonGroup
 **Data**:
 
 * buttons: List of `kytos-button`
-
-**Methods**: None.
 
 **Example**:
 
@@ -69,9 +67,11 @@ Checkbox
 
 **Properties**:
 
-- value: Value used in the checkbox item.
-- title: Title of the button
-- model: Array filled with all values checked.
+* value: Value used in the checkbox item
+* title: Title of the button
+* model: Array filled with all values checked
+* action: function trigged when the kytos-check-box is changed, this function
+  receive the value added or removed
 
 **Example**:
 
@@ -111,16 +111,15 @@ Dropdown
    content: {nody_type: "switch"}
   }
 
-* icon: String representing the awsome icon displayed in the left of title button.
+* action: Function trigged when the kytos-dropdown is changed, that receive an
+  event name and a content.
+* icon: String representing the awesome icon displayed in the left of title
+  button.
 * title: String is a text displayed as title button.
 
 **Data**:
 
-* selected: String
-
-**Methods**:
-
-- emitEvent: internal event sent when the dropdown button is changed
+* selected: String that represents the name of selected option.
 
 **Example**:
 
@@ -149,10 +148,11 @@ Input
 * placeholder: String that represents the placeholder input.
 * modelValue: String used to reference a input variable
 * tooltip: String that appear when the mouse is over the kytos-input button.
-
-**Methods**:
-
-* updateText(value): Emit a input message when the value of input fild is updated
+* icon: String representing the awesome icon displayed in the left of title
+  button.
+* title: String is a text displayed as title button.
+* action: Function that will be trigger when the kytos-input button value is
+  changed
 
 **Example**:
 
@@ -178,19 +178,18 @@ Slider
 
 **Properties**:
 
-* initialValue: Number;
-* action: Function(val):val;
-* min: Number;
-* max: Number;
-* step: Number.
+* initialValue: Number that represents the begin value of the slider button
+* action: Function that will be trigger when the button value is changed
+* min: Number that represents a minimum size of slider bar
+* max: Number that represents the maximum size of silder bar
+* step: Number that represents the increased or decreased size when the slider
+  bar is changed
+* icon: String representing the awesome icon displayed in the left of slider
+  button.
 
 **Data**:
 
 * value: Interger
-
-**Methods**:
-
-* doRange().
 
 **Example**:
 
@@ -215,14 +214,14 @@ Textarea
 
 **Properties**:
 
-* value: String;
-* modelValue: String;
-* tooltip: String;
-* placeholder: String.
 
-**Methods**:
+* value: String that represent the begin value of the user text area.
+* modelValue: String used to reference a input variable
+* tooltip: String that appear when the mouse is over the kytos-textare button.
+* placeholder: String that represents the placeholder input.
+* action: function trigged when the kytos-textarea is changed, this function
+  receive the value of kytos-textarea
 
-* updateText(value).
 
 .. .. figure:: /_static/imgs/components/input/kytos-textarea.png
    :alt: Textarea image.
