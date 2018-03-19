@@ -90,12 +90,25 @@ Dropdown
 
 **Properties**:
 
-* options: Array (required);
-* event: Object (required).
+* options: Array (required), represents all options that can be selected in the
+  dropdown button.
+* event: Object (required), an object with the properties name and content that
+  will be sent when the dropdown button is change. An example is displayed
+  below.
+
+.. code-block:: html
+
+  {
+   name:"topology",
+   content: {nody_type: "switch"}
+  }
+
+* icon: String representing the awsome icon displayed in the left of title button.
+* title: String is a text displayed as title button.
 
 **Methods**:
 
-- emitEvent: internal event sent when the button is changed
+- emitEvent: internal event sent when the dropdown button is changed
 
 **Example**:
 
@@ -118,14 +131,14 @@ Input
 
 **Properties**:
 
-* value: String;
-* modelValue: String;
-* tooltip: String;
-* placeholder: String.
+* value: String that represent the begin value of the user input.
+* placeholder: String that represents the placeholder input.
+* modelValue: String used to reference a input variable
+* tooltip: String that appear when the mouse is over the kytos-input button.
 
 **Methods**:
 
-* updateText(value).
+* updateText(value): Emit a input message when the value of input fild is updated
 
 **Example**:
 
