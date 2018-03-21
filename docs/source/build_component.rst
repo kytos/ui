@@ -1,28 +1,38 @@
-User Guide
-##########
-
-.. include:: common.rst
-
 Create new UI Component
-***********************
+#######################
 
-Napp Structure
-==============
+Sometimes, it is necessary for a Napp to interact with the user, for
+through a graphical interface (not just API REST).
 
-After create a new napp following the `tutorial
-<https://tutorials.kytos.io/napps/create_your_napp/>`_ steps the structure
-below will be created.
+We have developed `vue-js` based components (`Vuejs <https://vuejs.org>`_), so
+that you, developer, worry as little as possible about interface.
+
+In theory, you can during the construction of your NAPP UI, write any HTML code
+that Kytos will render. However, we strongly recommend that you use the
+components we have developed. The so-called ``k- *`` components.
+
+
+Napp Structure with a UI
+************************
+
+After create a new NApp (see this `NApp tutorial
+<https://tutorials.kytos.io/napps/create_your_napp/>`_ the structure below will
+be created.
 
 .. code-block:: sh
 
   <username>
   ├── __init__.py
-  └── <napp_name>
+  └── <napp_name>/
       ├── __init__.py
       ├── kytos.json
       ├── main.py
       ├── README.rst
-      └── settings.py
+      ├── settings.py
+      └── ui/
+          ├── k-info-panel/
+          ├── k-toolbar/
+          └── README
 
 
 To add a new components into the kytos UI you must create a new file following
@@ -30,9 +40,8 @@ the pattern ``ui/<section>/<file_name>.kytos``, where **<section>** should be
 the section name where the new component will be fixed and the **<file_name>**
 should be the component name.
 
-Whether I have created a new napp component into the sections ``kytos-toolbar``
-and ``kytos-info-panel`` the napp structure should have the following
-structure.
+Whether I have created a new napp component into the sections ``k-toolbar`` and
+``k-info-panel`` the napp structure should have the following structure.
 
 .. code-block:: sh
 
@@ -45,56 +54,15 @@ structure.
       ├── README.rst
       ├── settings.py
       └── ui
-          ├── kytos-info-panel
+          ├── k-info-panel
           │   └── main.kytos
-          └── kytos-toolbar
-              └── main.kytos
+          ├── k-toolbar
+          │   └── main.kytos
+          └── README
 
 
-Napp Components Registered
-==========================
-
-All napps created following the `Napp Structure`_  the kytos core is able to
-track all napp components and create endpoints to all napps loaded. All kytos
-core endpoint to list the components is listed below.
-
-To list all components from all sections you can request the kytos core with
-``ui/all``:
-
-.. code-block:: json
-
-  [
-    {
-      "name": "kytos-status-main",
-      "url": "ui/kytos/status/kytos-toolbar/main.kytos"
-    },
-    {
-      "name": "kytos-mef_eline-main",
-      "url": "ui/kytos/mef_eline/kytos-toolbar/main.kytos"
-    }
-  ]
-
-
-To list all components from a specific section, you can request the kytos core
-with ``ui/kytos-toolbar`` to get all components from section kytos-toolbar:
-
-.. code-block:: json
-
-  [
-    {
-      "name": "kytos-status-main",
-      "url": "ui/kytos/status/kytos-toolbar/main.kytos"
-    },
-    {
-      "name": "kytos-status-main",
-      "url": "ui/kytos/status/kytos-info-panel/main.kytos"
-    },
-    {
-      "name": "kytos-mef_eline-main",
-      "url": "ui/kytos/mef_eline/kytos-toolbar/main.kytos"
-    }
-  ]
-
+When the administrator enables their NApp, Kytos will automatically scan the
+`ui/*` structure to properly export to GUI.
 
 Component Template
 ******************
@@ -196,22 +164,3 @@ and display that into the component.
       }
     }
     </script>
-
-Base kytos components
-***********************
-
-.. include:: ./components/base.rst
-
-List of kytos component
-***********************
-
-Napps components can use only specific kytos components. Below we have a list
-of kytos ui components organized by categories:
-
-#. Inputs
-#. Accordion
-#. Property Panel
-
-.. include:: ./components/input.rst
-.. include:: ./components/accordion.rst
-.. include:: ./components/property-panel.rst
