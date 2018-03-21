@@ -8,7 +8,7 @@ Overview
 
 A Vue.js project that implements the Kytos graphical user interface.
 
-.. figure:: ./src/assets/imgs/development/kytos-ui.png
+.. figure:: /docs/imgs/kytos-ui.png
    :scale: 50 %
    :alt: Kytos Graphical User Interface
    :align: center
@@ -18,7 +18,7 @@ A Vue.js project that implements the Kytos graphical user interface.
 Kytos UI Parts
 ------------------
 
-.. figure:: ./src/assets/imgs/development/kytos-ui-parts.svg
+.. figure:: /docs/imgs/kytos-ui-parts.svg
    :scale: 50 %
    :alt: Kytos Graphical User Interface
    :align: center
@@ -50,13 +50,11 @@ Inputs
    **Name**: kytos-button
 
    **About**: Triggers an event when clicked.
-   
-   **Button image**:
-   
-       .. figure:: ./src/assets/imgs/development/components/input/kytos-button.png
-         :scale: 50 %
-         :alt: Button image.
-         :align: center
+
+.. figure:: /docs/imgs/components/input/kytos-button.png
+   :scale: 50 %
+   :alt: Button image.
+   :align: center
 
    **Properties**: None.
 
@@ -70,13 +68,10 @@ Inputs
 
    **About**: Allows to group buttons, which trigger events when clicked.
 
-   **ButtonGroup image**:
-   
-      .. figure:: ./src/assets/imgs/development/components/input/kytos-button-group.png
-         :scale: 50 %
-         :alt:  ButtonGroup image.
-         :align: center
-
+.. figure:: /docs/imgs/components/input/kytos-button-group.png
+   :scale: 50 %
+   :alt:  ButtonGroup image.
+   :align: center
 
    **Properties**: None.
 
@@ -86,11 +81,11 @@ Inputs
 
 * Checkbox
 
-   **Name**: kytos-checkbox
+   **Name**: kytos-check-box
 
    **About**: A GUI widget that permits the user to make a binary choice, checked (ticked) when activated or not checked when disable.
 
-.. .. figure:: ./src/assets/imgs/development/components/input/kytos-checkbox.png
+.. .. figure:: /docs/imgs/components/input/kytos-checkbox.png
    :scale: 50 %
    :alt: Checkbox image.
    :align: center
@@ -110,13 +105,10 @@ Inputs
 
    **About**: A toggleable menu that allows the user to choose one value from a predefined list.
 
-   **Dropdown image**:
-
-       .. figure:: ./src/assets/imgs/development/components/input/kytos-dropdown.png
-         :scale: 50 %
-         :alt: Dropdown image.
-         :align: center
-
+.. figure:: /docs/imgs/components/input/kytos-dropdown.png
+   :scale: 50 %
+   :alt: Dropdown image.
+   :align: center
 
    **Properties**:
 
@@ -135,12 +127,11 @@ Inputs
 
    **About**: An input field where the user can enter data.
 
-   **Input image**:
-   
-       .. figure:: ./src/assets/imgs/development/components/input/kytos-input.png
-         :scale: 50 %
-         :alt: Input image.
-         :align: center
+.. figure:: /docs/imgs/components/input/kytos-input.png
+   :scale: 50 %
+   :alt: Input image.
+   :align: center
+
 
    **Properties**:
 
@@ -161,13 +152,10 @@ Inputs
 
    **About**: A GUI widget that allows the users specify a numeric value which must be no less than a given value, and no more than another given value.
 
-   **Slider image**:
-
-       .. figure:: ./src/assets/imgs/development/components/input/kytos-slider.png
-         :scale: 50 %
-         :alt: Slider image.
-         :align: center
-
+.. figure:: /docs/imgs/components/input/kytos-slider.png
+   :scale: 50 %
+   :alt: Slider image.
+   :align: center
 
    **Properties**:
 
@@ -189,7 +177,7 @@ Inputs
 
    **About**: A text input field with multi-line.
 
-.. .. figure:: ./src/assets/imgs/development/components/textarea.png
+.. .. figure:: /docs/imgs/components/input/kytos-textarea.png
    :scale: 50 %
    :alt: Textarea image.
    :align: center
@@ -217,12 +205,10 @@ Accordion
 
    **About**: A GUI widget with a list of items that can be switched between hiding and showing content.
 
-   **Accordion image**:
-   
-       .. figure:: ./src/assets/imgs/development/components/accordion/kytos-accordion.png
-         :scale: 50 %
-         :alt: Accordion image.
-         :align: center
+.. figure:: /docs/imgs/components/accordion/kytos-accordion.png
+   :scale: 50 %
+   :alt: Accordion image.
+   :align: center
 
    **Properties**: None.
 
@@ -235,13 +221,11 @@ Accordion
    **Name**: kytos-accordion-item
 
    **About**: Accordion item that can be switched between hiding and showing content.
-   
-   **AccordionItem image**:
 
-       .. figure:: ./src/assets/imgs/development/components/accordion/kytos-accordion-item.png
-         :scale: 50 %
-         :alt: AccordionItem image.
-         :align: center
+.. figure:: /docs/imgs/components/accordion/kytos-accordion-item.png
+   :scale: 50 %
+   :alt: AccordionItem image.
+   :align: center
 
    **Properties**: None.
 
@@ -258,13 +242,10 @@ Misc
 
    **About**: Menu with a list of actions. Can be shown or hidden using the *Ctrl+Space* shortcut.
 
-   **ActionMenu image**:
-
-       .. figure:: ./src/assets/imgs/development/components/misc/kytos-action-menu.png
-         :scale: 50 %
-         :alt: ActionMenu image.
-         :align: center
-
+.. figure:: /docs/imgs/components/misc/kytos-action-menu.png
+   :scale: 50 %
+   :alt: ActionMenu image.
+   :align: center
 
    **Properties**: None.
 
@@ -282,13 +263,10 @@ Misc
 
    **About**: Shows details about selected kytos components. The panel can be shown or hidden using the shortcut *Ctrl+Alt+Space*.
 
-   **InfoPanel image**:
-
-      .. figure:: ./src/assets/imgs/development/components/misc/kytos-info-panel.png
-         :scale: 50 %
-         :alt: infopanel image.
-         :align: center
-
+.. figure:: /docs/imgs/components/misc/kytos-info-panel.png
+   :scale: 50 %
+   :alt: infopanel image.
+   :align: center
 
    **Properties**:
 
@@ -309,13 +287,10 @@ Misc
 
    **About**: A tabbed bar such as a Terminal, Switches, Logging, Notifications and System Information.
 
-   **StatusBar image**:
-
-       .. figure:: ./src/assets/imgs/development/components/misc/kytos-status-bar.png
-         :scale: 50 %
-         :alt: StatusBar image.
-         :align: center
-
+.. figure:: /docs/imgs/components/misc/kytos-status-bar.png
+   :scale: 50 %
+   :alt: StatusBar image.
+   :align: center
 
    **Properties**: None.
 
@@ -335,13 +310,12 @@ Property Panel
 
    **Name**: kytos-property-panel
 
-   **About**: Component with a list of items that are properties of the Request E-Line Circuit.
-   
-.. .. figure:: ./src/assets/imgs/development/components/ppanel/kytos-property-panel.png
-   :scale: 50 %
-   :alt: PropertyPanel image.
-   :align: center
-..
+   **About**: This component allows to create a table with two columns ( *name* and *value*). Each row in the table is a ``kytos-property-panel-item`` component, with the *value* and *name*.
+
+    .. figure:: /docs/imgs/components/ppanel/kytos-property-panel.png
+       :scale: 50 %
+       :alt: PropertyPanel image.
+       :align: center
 
    **Properties**: None.
 
@@ -353,13 +327,12 @@ Property Panel
 
    **Name**: kytos-property-panel-item
 
-   **About**: Property Panel item that can be edited.
+   **About**: This component create a row in the table (``kytos-property-panel``) with two columns, *name* and *value*.
 
-.. .. figure:: ./src/assets/imgs/development/components/ppanel/kytos-property-panel-item.png
+.. figure:: /docs/imgs/components/ppanel/kytos-property-panel-item.png
    :scale: 50 %
    :alt: PropertyPanelItem image.
    :align: center
-..
 
    **Properties**:
 
@@ -379,7 +352,7 @@ Switch
 
    **About**: Representation of flows between interfaces.
 
-.. .. figure:: ./src/assets/imgs/development/components/switch/kytos-flow.png
+.. .. figure:: /docs/imgs/components/switch/kytos-flow.png
    :scale: 50 %
    :alt: Flow image.
    :align: center
@@ -402,7 +375,7 @@ Switch
 
    **About**: Representation of the interfaces (hardware) used.
 
-.. .. figure:: ./src/assets/imgs/development/components/kytos-interface.png
+.. .. figure:: /docs/imgs/components/switch/interface.png
       :scale: 50 %
       :alt: Interface image.
       :align: center
@@ -414,10 +387,10 @@ Switch
          * mac: String (required);
          * speed: Number;
          * port_number: Number (required);
+
          * interface_id: String (required).
 
    **Methods**:
-
       * open_interface();
       * parseInterfaceData (data);
       * update_chart();

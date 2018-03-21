@@ -25,11 +25,16 @@ export default {
     },
    placeholder: {
       type: String
-    }
+    },
+   action: {
+      type: Function,
+      default: function(val) {return}
+   }
   },
   methods: {
     updateText(value){
       this.$emit('input', value)
+      this.action(value)
     }
   }
 }

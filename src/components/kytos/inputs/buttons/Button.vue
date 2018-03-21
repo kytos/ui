@@ -1,5 +1,6 @@
 <template>
   <button :id="id" class="kytos-button compact"
+    @click="this.click"
     v-bind:title="tooltip"
     v-bind:disabled="isDisabled">
       <icon v-if="icon" v-bind:name="icon"></icon>
@@ -13,6 +14,12 @@ import KytosBaseWithIcon from '../../base/KytosBaseWithIcon.vue';
 export default {
   name: 'kytos-button',
   mixins: [KytosBaseWithIcon],
+  props: ["on_click"],
+  methods: {
+    click(event){
+      this.on_click()
+    }
+  }
 }
 </script>
 

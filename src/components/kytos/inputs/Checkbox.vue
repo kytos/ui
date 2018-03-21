@@ -1,11 +1,11 @@
 <template>
   <div class="kytos-checkbox-wrap">
-    <icon v-if="icon" v-bind:name="icon"></icon>
-    <label class="checkbox">
-      <input type="checkbox">
-      <span class="slider"></span>
-    </label>
-    {{title}}
+  <icon v-if="icon" v-bind:name="icon"></icon>
+  <label class="checkbox">
+    <input type="checkbox" id="checkbox" v-model="enabled" @change="update_check()">
+    <span class="slider"></span>
+  </label>
+  {{title}}
   </div>
 </template>
 
@@ -16,9 +16,39 @@ export default {
   name: 'kytos-checkbox',
   mixins: [KytosBaseWithIcon],
   props: {
-    placeholder: {
-      type: String
+      model: {
+        type: Array,
+      },
+      value: {
+        default: 0
+      },
+      checked: {
+        type: Boolean,
+        default: false
+      },
+      action: {
+        type: Function,
+        default: function(value) { return }
+      }
+  },
+  methods: {
+    update_check(){
+      if(this.enabled){
+        this.list_of_checked.push(this.value)
+      }else{
+        this.list_of_checked.splice(this.list_of_checked.indexOf(this.value),1);
+      }
+      this.action(this.value)
     }
+  },
+  data () {
+    return {
+      enabled: this.checked,
+      list_of_checked: this.model || []
+    }
+  },
+  mounted () {
+    $(document).ready(this.update_check)
   }
 }
 </script>
