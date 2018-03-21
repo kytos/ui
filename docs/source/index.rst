@@ -1,8 +1,5 @@
-Kytos User Interface
-####################
-
 Overview
-********
+########
 
 kytos has a friendly and flexible interface.  We tried to make the UI in such a
 way that it could be coupled new components in an easy and intuitive way.
@@ -19,7 +16,6 @@ screens using the Kytos platform.
    :align: center
 
    Kytos Graphical User Interface
-
 
 Kytos UI Sections
 *****************
@@ -113,11 +109,3 @@ UI component: ``menu-actions``
 
 If you try to press ``ctrl + space`` a list of actions will appear at the
 center of Kytos UI.
-
-.. toctree::
-   :hidden:
-   :glob:
-
-   self
-   build_component
-   Kytos Components<components.rst>

@@ -1,5 +1,5 @@
-Create new UI Component
-#######################
+Create a NApp with UI
+#####################
 
 Sometimes, it is necessary for a Napp to interact with the user, for
 through a graphical interface (not just API REST).
@@ -9,14 +9,14 @@ that you, developer, worry as little as possible about interface.
 
 In theory, you can during the construction of your NAPP UI, write any HTML code
 that Kytos will render. However, we strongly recommend that you use the
-components we have developed. The so-called ``k- *`` components.
+components we have developed. The so-called ``k-*`` components.
 
 
 Napp Structure with a UI
 ************************
 
 After create a new NApp (see this `NApp tutorial
-<https://tutorials.kytos.io/napps/create_your_napp/>`_ the structure below will
+<https://tutorials.kytos.io/napps/create_your_napp/>`_) the structure below will
 be created.
 
 .. code-block:: sh
@@ -62,7 +62,7 @@ Whether I have created a new napp component into the sections ``k-toolbar`` and
 
 
 When the administrator enables their NApp, Kytos will automatically scan the
-`ui/*` structure to properly export to GUI.
+``ui/*`` structure to properly export to GUI.
 
 Component Template
 ******************
