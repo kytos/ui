@@ -20,4 +20,16 @@ help:
 	@$(SPHINXBUILD) -M $@ "$(SOURCEDIR)" "$(BUILDDIR)" $(SPHINXOPTS) $(O)
 
 livehtml:
-	sphinx-autobuild source $(BUILDDIR)/dirhtml
+	sphinx-autobuild --delay 5 \
+        --ignore "*.swp" \
+        --ignore "*.pdf" \
+        --ignore "*.log" \
+        --ignore "*.out" \
+        --ignore "*.toc" \
+        --ignore "*.aux" \
+        --ignore "*.idx" \
+        --ignore "*.ind" \
+        --ignore "*.ilg" \
+        --ignore "*.tex" \
+        --ignore "*.*~" \
+        source $(BUILDDIR)/dirhtml
