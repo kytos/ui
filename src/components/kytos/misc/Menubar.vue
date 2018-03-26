@@ -2,8 +2,8 @@
 <div class="container">
   <section class="kytos-menu-bar">
     <div class="logo" v-on:click="toggle" v-bind:class="{ compacted: compacted  }">
-      <img v-show="!compacted" src="../../assets/logo-kytos.svg" class="logo-kytos" alt="Kytos" height="35">
-      <img v-show="compacted" src="../../assets/icon-kytos.svg" class="icon-kytos" alt="Kytos" height="35">
+      <img v-show="!compacted" src="../../../assets/logo-kytos.svg" class="logo-kytos" alt="Kytos" height="35">
+      <img v-show="compacted" src="../../../assets/icon-kytos.svg" class="icon-kytos" alt="Kytos" height="35">
     </div>
     <kytos-button  v-for="(component, index) in components"
                    v-bind:class="{ active: activeItem==(index+1) }"
@@ -17,8 +17,8 @@
 </template>
 
 <script>
-import KytosBaseWithIcon from './base/KytosBaseWithIcon.vue'
-import Icon from '../../../node_modules/vue-awesome/components/Icon.vue'
+import KytosBaseWithIcon from '../base/KytosBaseWithIcon.vue'
+import Icon from '../../../../node_modules/vue-awesome/components/Icon.vue'
 
 export default {
   name: 'kytos-menu-bar',
@@ -58,7 +58,7 @@ export default {
 
 <style lang="sass">
 
-@import '../../assets/styles/variables'
+@import '../../../assets/styles/variables'
 
 .kytos-menu-bar
  -webkit-order: 1

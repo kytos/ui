@@ -9,7 +9,7 @@
 </template>
 
 <script>
-import KytosBaseWithIcon from './base/KytosBaseWithIcon.vue';
+import KytosBaseWithIcon from '../base/KytosBaseWithIcon.vue';
 
 export default {
   name: 'kytos-context-panel',
@@ -24,7 +24,7 @@ export default {
 
 <style lang="sass">
 
-@import '../../assets/styles/variables'
+@import '../../../assets/styles/variables'
 
 .kytos-context-panel
   -webkit-order: 2
@@ -39,7 +39,7 @@ export default {
   box-shadow: 10px 0px 20px -10px $fill-panel
   color: red
 
-  > svg 
+  > svg
    vertical-align: middle
    color: $fill-icon
 

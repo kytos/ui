@@ -6,18 +6,17 @@ Vue.use(VueHotkey)
 
 window.$ = window.jQuery = require('jquery');
 
-import KytosToolbar from './components/kytos/Toolbar.vue';
 import NappLoader from './components/kytos/napp/NappLoader.vue';
 import KytosMap from './components/kytos/map/Map.vue';
 import KytosTopology from './components/kytos/topology/Topology.vue';
-import KytosMenubar from './components/kytos/Menubar.vue';
-import KytosContextPanel from './components/kytos/ContextPanel.vue';
 import KytosTabs from './components/kytos/tabs/tabs.vue';
 import KytosTerminal from './components/kytos/terminal/Terminal.vue';
 import KytosLogging from './components/kytos/logging/Logging.vue';
 import KytosButton from './components/kytos/inputs/buttons/Button.vue';
 import KytosButtonGroup from './components/kytos/inputs/buttons/ButtonGroup.vue';
 import KytosDropdown from './components/kytos/inputs/Dropdown.vue';
+import KytosContextPanel from './components/kytos/misc/ContextPanel.vue';
+import KytosMenubar from './components/kytos/misc/Menubar.vue';
 import KytosActionMenu from './components/kytos/misc/ActionMenu.vue';
 import KytosInfoPanel from './components/kytos/misc/InfoPanel.vue';
 import KytosStatusBar from './components/kytos/misc/StatusBar.vue'
@@ -44,7 +43,6 @@ import KytosChartRadar from './components/kytos/chart/RadarChart.vue'
 
 
 Vue.component('kytos-menubar', KytosMenubar);
-Vue.component('kytos-toolbar', KytosToolbar);
 Vue.component('kytos-map', KytosMap);
 Vue.component('mapbox-settings', MapBoxSettings);
 Vue.component('kytos-topology', KytosTopology);
