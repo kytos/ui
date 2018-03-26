@@ -1,6 +1,7 @@
 <template>
   <div :id="id" class="kytos-property-panel no-compact">
   <table>
+     <!-- @slot Define a table content inside, a PropertyPanelItem can be used. -->
       <slot />
   </table>
   </div>

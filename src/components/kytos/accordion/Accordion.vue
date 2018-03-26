@@ -1,5 +1,6 @@
 <template>
 <div class="accordion-wrapper">
+     <!-- @slot Slot to be filled with accordion item -->
     <slot />
 </div>
 </template>

@@ -3,6 +3,7 @@
     <input class="kytos-accordion-input" :id="id" type="checkbox" name="tabs" checked>
     <label class="kytos-accordion-label" :for="id">{{title}}</label>
     <div class="tab-content">
+     <!-- @slot Empty Pannel, please define some items inside. -->
     <slot>
        <p>Empty Pannel created, please define some items inside.</p>
     </slot>

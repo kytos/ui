@@ -4,6 +4,7 @@
   <div v-if="title" class="pannel-title">
     <h1>{{title}} <small>{{subtitle}}</small></h1>
   </div>
+  <!--@slot Can be filled with the panel content -->
   <slot />
 </section>
 </template>
