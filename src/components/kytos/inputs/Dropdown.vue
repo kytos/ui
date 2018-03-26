@@ -44,6 +44,12 @@ export default {
     emitEvent () {
       let content = this.event.content
       content.value = this.selected
+      /**
+      * Emit an event when the dropdown is changed
+      *
+      * @event On kytos dropdown change
+      * @type {object}
+      */
       this.$kytos.$emit(this.event.name, content)
       this.action(this.event.name, content)
     }
