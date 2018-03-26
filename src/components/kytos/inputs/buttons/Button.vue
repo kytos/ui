@@ -14,8 +14,23 @@ import KytosBaseWithIcon from '../../base/KytosBaseWithIcon.vue';
 export default {
   name: 'kytos-button',
   mixins: [KytosBaseWithIcon],
-  props: ["on_click"],
+  props: {
+    /**
+    * Function called after the button is clicked.
+    */
+    on_click: {
+      type: Function,
+      required: true,
+      default: function(val) { return },
+    }
+  },
   methods: {
+     /**
+     * Call on_click event.
+     *
+     * @public
+     * @param {object} event trigged event
+     */
     click(event){
       this.on_click()
     }

@@ -74,6 +74,10 @@ function write_methods(component){
   var text = "**Methods**\n\n"
   var methods_headers = ['name', 'type', 'description']
 
+  if(component.methods.length === 0){
+    return ''
+  }
+
   for(i in component.methods)
   {
     method = component.methods[i]
@@ -111,14 +115,14 @@ glob(pattern, options, function (er, files) {
     if (files[i] === '../../src/components/kytos/map/MapBoxSettings.vue') continue
     current_group = files[i].replace(remove_src_kytos,'').split('/')[0]
 
-    if (last_group !== current_group){
+    if (last_group !== "" && last_group !== current_group){
       destination = "components/"+ last_group+".rst"
       writeFile(destination, content, function (err) {
         if (err) return console.log(err)
       })
-      last_group = current_group
       content = ""
     }
+    last_group = current_group
 
     if(content === "")
     {

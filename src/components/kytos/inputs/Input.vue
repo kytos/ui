@@ -14,18 +14,30 @@ export default {
   name: 'kytos-input',
   mixins: [KytosBaseWithIcon],
   props: {
+   /**
+   * Input Current value
+   */
    value: {
       type: String
-    },
+   },
+   /*
+   * Model value
+   */
    modelValue: {
       default: ""
-    },
+   },
+   /*
+   * Tooltip string for the input.
+   */
    tooltip: {
       type: String
-    },
+   },
    placeholder: {
       type: String
-    },
+   },
+   /**
+   * Function called after input changes.
+   */
    action: {
       type: Function,
       default: function(val) {return}
