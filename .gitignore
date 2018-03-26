@@ -1,3 +1,6 @@
+# Ignore components
+docs/source/components/
+
 # Ignore node_modules
 node_modules/
 
@@ -6,10 +9,9 @@ dist/
 latest.zip
 
 
-# Build 
+# Build
 /docs/src
 build/
 
 # Log
 *.log
-
