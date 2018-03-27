@@ -16,6 +16,10 @@
 <script>
 import KytosBaseWithIcon from '../base/KytosBaseWithIcon.vue';
 
+/**
+ * A tabbed bar with tabs such as a Terminal, Switches, Logging, Notifications and System Information.
+ */
+
 export default {
   name: 'kytos-info-panel',
   mixins: [KytosBaseWithIcon],
@@ -81,7 +85,7 @@ export default {
 .kytos-info-panel-max
   width: 900px !important
   min-width: 900px !important
-  
+
 .kytos-info-panel
  -webkit-order: 4
  -ms-flex-order: 4

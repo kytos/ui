@@ -6,7 +6,7 @@
         <div class="info-item" title="Cookie"><icon name="bookmark-o"></icon> {{content.cookie}}</div>
       </div>
 
-      <div class="match"> 
+      <div class="match">
         <div class="match-l2">
          <!-- L2 match -->
          <div class="match-item"><span>In:</span> {{content.match.in_port | orNone}}</div>
@@ -34,6 +34,10 @@
 import KytosBase from '../base/KytosBaseWithIcon.vue'
 const d3 = require('d3')
 
+/**
+ * Representation of flows between interfaces.
+ */
+ 
 export default {
   name: 'kytos-flow',
   mixins: [KytosBase],
@@ -229,12 +233,12 @@ export default {
 
 .kytos-flow-active
   .info
-    border-left: 3px solid $kytos-purple 
+    border-left: 3px solid $kytos-purple
 
   .match
     border-left: 3px solid $kytos-purple
 
   .actions
-    border-left: 3px solid $kytos-purple 
+    border-left: 3px solid $kytos-purple
 
 </style>

@@ -8,6 +8,10 @@
 <script>
 import KytosBase from '../../base/KytosBase.vue';
 
+/**
+ * Allows to group buttons (``kytos-button``), which trigger events when clicked.
+ */
+
 export default {
   name: 'kytos-button-group',
   mixins: [KytosBase],

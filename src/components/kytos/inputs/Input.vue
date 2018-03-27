@@ -10,6 +10,10 @@
 <script>
 import KytosBaseWithIcon from '../base/KytosBaseWithIcon.vue';
 
+/**
+ * An input field where the user can enter data.
+ */
+
 export default {
   name: 'kytos-input',
   mixins: [KytosBaseWithIcon],

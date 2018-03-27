@@ -11,6 +11,10 @@
 <script>
 import KytosBaseWithIcon from '../../base/KytosBaseWithIcon.vue';
 
+/**
+ * This component represents a button that triggers an event when clicked.
+ */
+
 export default {
   name: 'kytos-button',
   mixins: [KytosBaseWithIcon],

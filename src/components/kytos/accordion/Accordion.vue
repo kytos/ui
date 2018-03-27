@@ -7,6 +7,10 @@
 <script>
 import KytosBaseWithIcon from '../base/KytosBaseWithIcon.vue';
 
+/**
+ * A GUI widget with a list of items that can be switched between hiding and showing content.
+ */
+
 export default {
   name: 'kytos-accordion',
   mixins: [KytosBaseWithIcon],

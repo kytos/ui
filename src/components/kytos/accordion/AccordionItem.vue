@@ -13,6 +13,9 @@
 <script>
 import KytosBaseWithIcon from '../base/KytosBaseWithIcon.vue';
 
+/**
+ * Accordion item that can be switched between hiding and showing content
+ */
 export default {
   name: 'kytos-accordion-item',
   mixins: [KytosBaseWithIcon],

@@ -36,6 +36,9 @@ var searchContent = {"component": listSwitches,
                      "title": "Switch Search",
                      "subtitle": "by kytos/topology"}
 
+/**
+ * Menu with a list of actions. Can be shown or hidden using the *Ctrl+Space* shortcut.
+ */
 
 export default {
   name: 'kytos-action-menu',

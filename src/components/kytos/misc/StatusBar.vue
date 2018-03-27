@@ -5,6 +5,11 @@
 </template>
 
 <script>
+
+  /*
+   * A tabbed bar such as a Terminal, Switches, Logging, Notifications and System Information.
+   */
+   
   export default {
     name: 'kytos-status-bar',
     data(){

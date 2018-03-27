@@ -1,4 +1,9 @@
 <script>
+
+/**
+ * The base component with the common properties.
+ */
+
 export default {
   name: 'KytosBase',
   props: {

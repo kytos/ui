@@ -23,6 +23,10 @@ import KytosBase from '../base/KytosBase.vue'
 import InterfaceInfo from '../../../kytos/interfaceInfo.vue'
 import {json} from "d3-request"
 
+/**
+ * Representation of the interfaces used.
+ */
+
 export default {
   name: 'kytos-interface',
   mixins: [KytosBase],

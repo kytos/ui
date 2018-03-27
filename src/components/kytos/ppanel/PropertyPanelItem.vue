@@ -8,6 +8,11 @@
 <script>
 import KytosBase from '../base/KytosBase.vue';
 
+
+/**
+ * This component create a row in the table (``kytos-property-panel``) with two columns, *name* and *value*.
+ */
+ 
 export default {
   name: 'kytos-property-panel-item',
   mixins: [KytosBase],
@@ -44,21 +49,21 @@ export default {
    min-width: 50%
 
   td
-   display: table-cell 
+   display: table-cell
    color: $fill-text-h
    text-align: left
    border-bottom: 1px solid $fill-button-bg-h
    font-size: 0.8em
    padding: 0.5em
- 
+
   &:nth-child(odd)
    background-color: $fill-button-bg
-  
+
   &:nth-child(even)
    background-color: $fill-button-bg
-  
+
   &:hover *
-   color: $fill-shortkey   
+   color: $fill-shortkey
    background-color: $fill-button-bg-h
- 
+
 </style>

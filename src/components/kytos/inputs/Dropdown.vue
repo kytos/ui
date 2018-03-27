@@ -14,6 +14,10 @@
 <script>
 import KytosBaseWithIcon from '../base/KytosBaseWithIcon.vue';
 
+/**
+ * A toggleable menu that allows the user to choose one value from a predefined list.
+ */
+
 export default {
   name: 'kytos-dropdown',
   mixins: [KytosBaseWithIcon],
