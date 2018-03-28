@@ -4,9 +4,27 @@ var writeFile = require('write-file')
 
 var remove_src_kytos= "../src/components/kytos/"
 
-function write_header(component, filename){
+function write_header(component){
   var text = component.displayName+"\n"+Array(component.displayName.length+1).join("-")+"\n\n"
   text += component.description + "\n\n"
+  return text
+}
+
+function write_examples(component){
+  if(component.tags.hasOwnProperty('examples') === false) return ""
+
+  var text = "**Examples**\n\n"
+  for(i in component.tags.examples){
+    if (component.tags.examples[i].description.includes('/_static/'))
+    {
+      text += ".. image:: "+component.tags.examples[i].description+"\n"
+      text += "    :align: center"
+    }else{
+      text += ".. code-block:: html\n\n    "
+      text += component.tags.examples[i].description
+    }
+    text += '\n\n'
+  }
   return text
 }
 
@@ -120,9 +138,10 @@ function write_events(component){
   return text
 }
 
-function rst_content(component, filename){
+function rst_content(component){
   var rst_text = ""
-  rst_text += write_header(component, filename)
+  rst_text += write_header(component)
+  rst_text += write_examples(component)
   rst_text += write_parameters(component)
   rst_text += write_methods(component)
   rst_text += write_slots(component)
@@ -158,7 +177,7 @@ glob(pattern, options, function (er, files) {
       content += current_group+"\n"
       content += Array(current_group.length+1).join('=')+ "\n\n"
     }
-    content += rst_content(vueDocs.parse(filename), filename)
+    content += rst_content(vueDocs.parse(filename))
 
     if (files[files.length-1] === filename){
       destination = "source/components/"+ last_group+".rst"

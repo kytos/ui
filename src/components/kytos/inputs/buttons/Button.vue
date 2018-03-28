@@ -13,6 +13,8 @@ import KytosBaseWithIcon from '../../base/KytosBaseWithIcon.vue';
 
 /**
  * This component represents a button that triggers an event when clicked.
+ * @example <kytos-button tooltip="Request Circuit" title="Request Circuit" icon="gear" :action="request_circuit"></kytos-button>
+ * @example /_static/imgs/components/input/kytos-button.png
  */
 
 export default {
