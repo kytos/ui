@@ -2,12 +2,10 @@ var vueDocs = require('vue-docgen-api');
 var glob = require('glob')
 var writeFile = require('write-file')
 
-var remove_directory = "../../"
-var remove_src_kytos= "../../src/components/kytos/"
+var remove_src_kytos= "../src/components/kytos/"
 
 function write_header(component, filename){
   var text = component.displayName+"\n"+Array(component.displayName.length+1).join("-")+"\n\n"
-  text += "**source**: ``"+ filename.replace(remove_directory, '')+ "``\n\n"
   text += component.description + "\n\n"
   return text
 }
@@ -52,6 +50,7 @@ function create_rst_table(headers, content){
 }
 
 function write_parameters(component){
+  if(component.props === undefined) return ''
   var text = "**Parameters**\n\n"
   var headers = ['name', 'type', 'required', 'default', 'description']
   var content = []
@@ -131,7 +130,7 @@ function rst_content(component, filename){
   return rst_text
 }
 
-var pattern = "../../src/components/kytos/**/**/Dropdown.vue"
+var pattern = "../src/components/kytos/**/**/*.vue"
 var options = null
 
 glob(pattern, options, function (er, files) {
@@ -141,11 +140,11 @@ glob(pattern, options, function (er, files) {
   var content = ""
   for(i in files){
     var filename = files[i]
-    if (files[i] === '../../src/components/kytos/map/MapBoxSettings.vue') continue
+    if (files[i] === '../src/components/kytos/map/MapBoxSettings.vue') continue
     current_group = files[i].replace(remove_src_kytos,'').split('/')[0]
 
     if (last_group !== "" && last_group !== current_group){
-      destination = "components/"+ last_group+".rst"
+      destination = "source/components/"+ last_group+".rst"
       writeFile(destination, content, function (err) {
         if (err) return console.log(err)
       })
@@ -162,7 +161,7 @@ glob(pattern, options, function (er, files) {
     content += rst_content(vueDocs.parse(filename), filename)
 
     if (files[files.length-1] === filename){
-      destination = "components/"+ last_group+".rst"
+      destination = "source/components/"+ last_group+".rst"
       writeFile(destination, content, function (err) {
         if (err) return console.log(err)
       })
