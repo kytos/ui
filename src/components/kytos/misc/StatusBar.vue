@@ -5,50 +5,50 @@
 </template>
 
 <script>
-
-  /*
-   * A tabbed bar such as a Terminal, Switches, Logging, Notifications and System Information.
-   */
-   
-  export default {
-    name: 'kytos-status-bar',
-    data(){
-      return {
-        messages: [],
-        options:{
-            speed: 50,
-            autoStart: true,
-            breakDelay: 3000,
-            breakLines: false
-        }
-      }
-    },
-    mounted (){
-      require('typeit')
-      this.register_listeners()
-      setInterval(this.display_messages, 3000)
-    },
-    methods:{
-      display_messages(){
-        var message= this.messages.shift()
-        if (message !== undefined){
-          this.get_terminal().tiType(message).tiPause(1500).tiDelete()
-        }
-      },
-      get_terminal (){
-        return $('.terminal-status-bar span').typeIt(this.options)
-      },
-      set_status(message, error=false){
-        if (error){
-          message = "<span class='status-error'>" + message + "</span>"
-        }
-        this.messages.push(message)
-      },
-      register_listeners(){
-        this.$kytos.$on('statusMessage', this.set_status)
+/**
+ * A tabbed bar such as a Terminal, Switches, Logging, Notifications and System Information.
+ *
+ * @example /_static/imgs/components/misc/kytos-status-bar.png
+ */
+export default {
+  name: 'kytos-status-bar',
+  data(){
+    return {
+      messages: [],
+      options:{
+          speed: 50,
+          autoStart: true,
+          breakDelay: 3000,
+          breakLines: false
       }
     }
+  },
+  mounted (){
+    require('typeit')
+    this.register_listeners()
+    setInterval(this.display_messages, 3000)
+  },
+  methods:{
+    display_messages(){
+      var message= this.messages.shift()
+      if (message !== undefined){
+        this.get_terminal().tiType(message).tiPause(1500).tiDelete()
+      }
+    },
+    get_terminal (){
+      return $('.terminal-status-bar span').typeIt(this.options)
+    },
+    set_status(message, error=false){
+      if (error){
+        message = "<span class='status-error'>" + message + "</span>"
+      }
+      this.messages.push(message)
+    },
+    register_listeners(){
+      this.$kytos.$on('statusMessage', this.set_status)
+    }
   }
+}
 </script>
 
 <style lang='sass'>

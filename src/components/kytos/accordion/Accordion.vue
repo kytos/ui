@@ -10,8 +10,9 @@ import KytosBaseWithIcon from '../base/KytosBaseWithIcon.vue';
 
 /**
  * A GUI widget with a list of items that can be switched between hiding and showing content.
+ *
+ * @example /_static/imgs/components/accordion/kytos-accordion.png
  */
-
 export default {
   name: 'kytos-accordion',
   mixins: [KytosBaseWithIcon],

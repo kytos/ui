@@ -15,9 +15,10 @@
 
 <script>
 import KytosBaseWithIcon from '../base/KytosBaseWithIcon.vue';
-
 /**
  * A tabbed bar with tabs such as a Terminal, Switches, Logging, Notifications and System Information.
+ *
+ * @example /_static/imgs/components/misc/kytos-info-panel.png
  */
 
 export default {

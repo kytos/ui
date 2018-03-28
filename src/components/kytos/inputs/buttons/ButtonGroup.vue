@@ -11,6 +11,8 @@ import KytosBase from '../../base/KytosBase.vue';
 
 /**
  * Allows to group buttons (``kytos-button``), which trigger events when clicked.
+ *
+ * @example /_static/imgs/components/input/kytos-button-group.png
  */
 
 export default {

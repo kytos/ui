@@ -30,16 +30,11 @@
 import KytosBaseWithIcon from '../base/KytosBaseWithIcon.vue'
 import listSwitches from "../../../kytos/listSwitches.vue"
 
-var searchContent = {"component": listSwitches,
-                     "content": {},
-                     "icon": "search",
-                     "title": "Switch Search",
-                     "subtitle": "by kytos/topology"}
-
 /**
- * Menu with a list of actions. Can be shown or hidden using the *Ctrl+Space* shortcut.
+ * Accordion item that can be switched between hiding and showing content
+ *
+ * @example /_static/imgs/components/misc/kytos-action-menu.png
  */
-
 export default {
   name: 'kytos-action-menu',
   mixins: [KytosBaseWithIcon],
@@ -48,7 +43,7 @@ export default {
     show: false,
     search: '',
    items: [
-        { name: 'Search Switch', author: 'kytos/core', shortkey: 'Ctrl+Alt+S', content: searchContent},
+        { name: 'Search Switch', author: 'kytos/core', shortkey: 'Ctrl+Alt+S', content: this.searchContent()},
         { name: 'Search Host', author: 'kytos/core', shortkey: 'Ctrl+Alt+H'},
         { name: 'Search Interface', author: 'kytos/core', shortkey: 'Ctrl+Alt+I'}
      ]
@@ -56,6 +51,13 @@ export default {
     }
   },
   methods: {
+    searchContent(){
+      return {"component": listSwitches,
+                     "content": {},
+                     "icon": "search",
+                     "title": "Switch Search",
+                     "subtitle": "by kytos/topology"}
+    },
     toggle() {
        this.show = !this.show
     },

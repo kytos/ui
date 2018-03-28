@@ -14,6 +14,8 @@ import KytosBaseWithIcon from '../base/KytosBaseWithIcon.vue';
 
 /**
  * A GUI widget that permits the user to make a binary choice, checked (ticked) when activated or not checked when disable.
+ *
+ * @example /_static/imgs/components/input/kytos-checkbox.png
  */
 
 export default {

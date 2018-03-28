@@ -15,7 +15,6 @@ import KytosBaseWithIcon from '../base/KytosBaseWithIcon.vue';
 /**
  * Shows details about selected kytos components. The panel can be shown or hidden using the shortcut *Ctrl+Alt+Space*.
  */
-
 export default {
   name: 'kytos-context-panel',
   mixins: [KytosBaseWithIcon],

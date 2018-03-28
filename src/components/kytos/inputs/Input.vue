@@ -12,6 +12,8 @@ import KytosBaseWithIcon from '../base/KytosBaseWithIcon.vue';
 
 /**
  * An input field where the user can enter data.
+ *
+ * @example /_static/imgs/components/input/kytos-input.png
  */
 
 export default {

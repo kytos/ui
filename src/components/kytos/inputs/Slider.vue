@@ -11,6 +11,8 @@ import KytosBaseWithIcon from '../base/KytosBaseWithIcon.vue';
 
 /**
  * A GUI widget that allows the users specify a numeric value which must be no less than a given value, and no more than another given value.
+ *
+ * @example /_static/imgs/components/input/kytos-slider.png
  */
 
 export default {

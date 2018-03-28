@@ -16,6 +16,8 @@ import KytosBaseWithIcon from '../base/KytosBaseWithIcon.vue';
 
 /**
  * Accordion item that can be switched between hiding and showing content
+ *
+ * @example /_static/imgs/components/accordion/kytos-accordion-item.png
  */
 export default {
   name: 'kytos-accordion-item',
