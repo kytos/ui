@@ -32,7 +32,7 @@ be created.
       └── ui/
           ├── k-info-panel/
           ├── k-toolbar/
-          └── README
+          └── README.rst
 
 
 To add a new components into the kytos UI you must create a new file following
@@ -58,7 +58,7 @@ Whether I have created a new napp component into the sections ``k-toolbar`` and
           │   └── main.kytos
           ├── k-toolbar
           │   └── main.kytos
-          └── README
+          └── README.rst
 
 
 When the administrator enables their NApp, Kytos will automatically scan the
