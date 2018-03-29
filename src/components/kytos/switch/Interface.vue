@@ -19,7 +19,7 @@
 </template>
 
 <script>
-import KytosBase from '../base/KytosBase.vue'
+import KytosBase from '../base/KytosBase'
 import InterfaceInfo from '../../../kytos/interfaceInfo.vue'
 import {json} from "d3-request"
 

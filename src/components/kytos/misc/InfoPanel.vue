@@ -14,7 +14,9 @@
 </template>
 
 <script>
-import KytosBaseWithIcon from '../base/KytosBaseWithIcon.vue';
+import KytosBase from '../base/KytosBase';
+import KytosBaseWithIcon from '../base/KytosBaseWithIcon';
+
 /**
  * A tabbed bar with tabs such as a Terminal, Switches, Logging, Notifications and System Information.
  *

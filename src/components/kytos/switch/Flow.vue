@@ -31,16 +31,16 @@
 </template>
 
 <script>
-import KytosBase from '../base/KytosBaseWithIcon.vue'
+import KytosBase from '../base/KytosBase';
+import KytosBaseWithIcon from '../base/KytosBaseWithIcon'
 const d3 = require('d3')
 
 /**
  * Representation of flows between interfaces.
  */
- 
 export default {
   name: 'kytos-flow',
-  mixins: [KytosBase],
+  mixins: [KytosBaseWithIcon],
   props: {
     content: {
       type: Object,

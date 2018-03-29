@@ -66,7 +66,7 @@
 }
 </style>
 <script>
-import KytosBaseWithIcon from '../components/kytos/base/KytosBaseWithIcon.vue';
+import KytosBaseWithIcon from '../components/kytos/base/KytosBaseWithIcon';
 import switchInfo from "../kytos/switchInfo.vue"
 const d3 = require('d3')
 

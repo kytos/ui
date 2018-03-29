@@ -8,14 +8,12 @@
 </template>
 
 <script>
-import KytosBaseWithIcon from '../base/KytosBaseWithIcon.vue';
-
+import KytosBase from '../base/KytosBase';
+import KytosBaseWithIcon from '../base/KytosBaseWithIcon';
 
 /**
  * A text input field with multi-line.
  */
-
-
 export default {
   name: 'kytos-textarea',
   mixins: [KytosBaseWithIcon],

@@ -31,7 +31,7 @@
 </template>
 
 <script>
-import KytosBaseWithIcon from '../components/kytos/base/KytosBaseWithIcon.vue'
+import KytosBaseWithIcon from '../components/kytos/base/KytosBaseWithIcon'
 const d3 = require('d3')
 
 export default {

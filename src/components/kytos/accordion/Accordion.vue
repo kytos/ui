@@ -6,7 +6,8 @@
 </template>
 
 <script>
-import KytosBaseWithIcon from '../base/KytosBaseWithIcon.vue';
+import KytosBase from '../base/KytosBase';
+import KytosBaseWithIcon from '../base/KytosBaseWithIcon';
 
 /**
  * A GUI widget with a list of items that can be switched between hiding and showing content.

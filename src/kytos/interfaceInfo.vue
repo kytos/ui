@@ -23,7 +23,7 @@
 </template>
 
 <script>
-import KytosBaseWithIcon from "../components/kytos/base/KytosBaseWithIcon.vue"
+import KytosBaseWithIcon from "../components/kytos/base/KytosBaseWithIcon"
 import {json} from "d3-request"
 
 export default {

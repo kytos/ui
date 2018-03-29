@@ -1,9 +1,6 @@
-<script>
-
 /**
- * The base component with the common properties.
+ * @mixin
  */
-
 export default {
   name: 'KytosBase',
   props: {
@@ -45,4 +42,3 @@ export default {
     }
   },
 }
-</script>

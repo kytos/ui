@@ -10,7 +10,8 @@
 </template>
 
 <script>
-import KytosBaseWithIcon from '../base/KytosBaseWithIcon.vue';
+import KytosBase from '../base/KytosBase';
+import KytosBaseWithIcon from '../base/KytosBaseWithIcon';
 
 /**
  * A GUI widget that permits the user to make a binary choice, checked (ticked) when activated or not checked when disable.

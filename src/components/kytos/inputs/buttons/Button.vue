@@ -9,7 +9,8 @@
 </template>
 
 <script>
-import KytosBaseWithIcon from '../../base/KytosBaseWithIcon.vue';
+import KytosBase from '../../base/KytosBase';
+import KytosBaseWithIcon from '../../base/KytosBaseWithIcon';
 
 /**
  * This component represents a button that triggers an event when clicked.
@@ -26,7 +27,6 @@ export default {
     */
     on_click: {
       type: Function,
-      required: true,
       default: function(val) { return },
     }
   },

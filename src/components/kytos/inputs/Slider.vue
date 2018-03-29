@@ -7,7 +7,8 @@
 </template>
 
 <script>
-import KytosBaseWithIcon from '../base/KytosBaseWithIcon.vue';
+import KytosBase from '../base/KytosBase';
+import KytosBaseWithIcon from '../base/KytosBaseWithIcon';
 
 /**
  * A GUI widget that allows the users specify a numeric value which must be no less than a given value, and no more than another given value.

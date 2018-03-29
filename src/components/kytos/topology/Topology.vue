@@ -4,10 +4,14 @@
 <script>
 import * as d3 from "d3"
 import switchInfo from "../../../kytos/switchInfo.vue"
+import KytosBase from '../base/KytosBase';
+import KytosBaseWithIcon from '../base/KytosBaseWithIcon';
 
 export default {
   name: "kytos-topology",
   props: ["map", "original_graph"],
+  mixins: [KytosBaseWithIcon],
+
   data () {
     return {
       topology_url: this.$kytos_server_api + "kytos/topology/v3/",

@@ -8,13 +8,13 @@
 </template>
 
 <script>
+import KytosBase from '../base/KytosBase';
+
 /**
  * This component allows to create a table with two columns ( *name* and *value*). Each row in the table is a ``kytos-property-panel-item`` component, with the *value* and *name*.
  *
  * @example /_static/imgs/components/ppanel/kytos-property-panel.png
  */
-import KytosBase from '../base/KytosBase.vue';
-
 export default {
   name: 'kytos-property-panel',
   mixins: [KytosBase],

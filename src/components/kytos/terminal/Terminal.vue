@@ -14,12 +14,13 @@
 </template>
 
 <script>
-import KytosBaseWithIcon from '../base/KytosBaseWithIcon.vue';
+import KytosBase from '../base/KytosBase';
+import KytosBaseWithIcon from '../base/KytosBaseWithIcon';
 import JsTerminal from './jquery.terminal.min.js';
 
 export default {
   name: 'kytos-terminal',
-  mixins: [KytosBaseWithIcon],
+  mixins: KytosBaseWithIcon,
   terminal: [JsTerminal],
 
   methods: {

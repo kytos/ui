@@ -7,7 +7,7 @@
 </template>
 
 <script>
-import KytosBase from '../../base/KytosBase.vue';
+import KytosBase from '../../base/KytosBase';
 
 /**
  * Allows to group buttons (``kytos-button``), which trigger events when clicked.

@@ -28,8 +28,8 @@
 </template>
 
 <script>
-import KytosBaseWithIcon from '../base/KytosBaseWithIcon.vue';
-import LoggingUtils from './Logging-Utils.vue';
+import KytosBaseWithIcon from '../base/KytosBaseWithIcon';
+import LoggingUtils from './Logging-Utils';
 
 export default {
   name: 'kytos-logging',
@@ -101,7 +101,7 @@ export default {
  .kytos-input-wrap, input
   background: none
   border-color: transparent
- 
+
  .kytos-button
   font-size: 0.8em
   height: 30px

@@ -97,14 +97,16 @@ function write_methods(component){
   for(i in component.methods)
   {
     method = component.methods[i]
-    text+= "*"+method.name + "*: "+ method.description + "\n\n"
+    text+= "**"+method.name + "**: "+ method.description + "\n\n"
     var content = []
     for(l in method.params){
       var params = method.params[l]
       content.push([params.name, params.type.name, params.description])
     }
-    text += "**Parameters**\n\n"
-    text += create_rst_table(methods_headers, content)
+    if (content.length > 0){
+      text += "**Parameters**\n\n"
+      text += create_rst_table(methods_headers, content)
+    }
   }
 
   return text
@@ -160,7 +162,7 @@ glob(pattern, options, function (er, files) {
   for(i in files){
     var filename = files[i]
     if (files[i] === '../src/components/kytos/map/MapBoxSettings.vue') continue
-    current_group = files[i].replace(remove_src_kytos,'').split('/')[0]
+    current_group = files[i].replace(remove_src_kytos, '').split('/')[0]
 
     if (last_group !== "" && last_group !== current_group){
       destination = "source/components/"+ last_group+".rst"

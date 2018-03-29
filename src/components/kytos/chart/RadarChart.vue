@@ -3,7 +3,7 @@
 </template>
 
 <script>
-import KytosBase from "../base/KytosBase.vue"
+import KytosBase from "../base/KytosBase"
 import { RadarChart } from "../../../assets/js/chart/radarChart.js"
 import { scaleOrdinal } from "d3-scale"
 import { select } from "d3-selection"
