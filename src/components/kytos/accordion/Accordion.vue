@@ -12,10 +12,10 @@ import KytosBaseWithIcon from '../base/KytosBaseWithIcon';
 /**
  * A GUI widget with a list of items that can be switched between hiding and showing content.
  *
- * @example /_static/imgs/components/accordion/kytos-accordion.png
+ * @example /_static/imgs/components/accordion/k-accordion.png
  */
 export default {
-  name: 'kytos-accordion',
+  name: 'k-accordion',
   mixins: [KytosBaseWithIcon],
   data: function() {
     return {

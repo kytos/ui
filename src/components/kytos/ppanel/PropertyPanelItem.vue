@@ -1,5 +1,5 @@
 <template>
-    <tr :id="id" class="kytos-property-panel-item">
+    <tr :id="id" class="k-property-panel-item">
         <th>{{name}}</th>
         <td>{{value}}</td>
     </tr>
@@ -9,13 +9,13 @@
 import KytosBase from '../base/KytosBase';
 
 /**
- * This component create a row in the table (``kytos-property-panel``) with two columns, *name* and *value*.
+ * This component create a row in the table (``k-property-panel``) with two columns, *name* and *value*.
  *
- * @example /_static/imgs/components/ppanel/kytos-property-panel-item.png
+ * @example /_static/imgs/components/ppanel/k-property-panel-item.png
  */
 
 export default {
-  name: 'kytos-property-panel-item',
+  name: 'k-property-panel-item',
   mixins: [KytosBase],
   props: {
     name: {
@@ -34,7 +34,7 @@ export default {
 
 @import '../../../assets/styles/variables'
 
-.kytos-property-panel-item
+.k-property-panel-item
   cursor: pointer
   padding-top: 0.3em
 

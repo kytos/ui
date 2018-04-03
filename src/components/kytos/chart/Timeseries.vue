@@ -7,7 +7,7 @@ import KytosBase from "../base/KytosBase"
 const d3 = require("d3")
 
 export default {
-  name: "kytos-chart-timeseries",
+  name: "k-chart-timeseries",
   mixins: [KytosBase],
   props: {
     chartHeight: {

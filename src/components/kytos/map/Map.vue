@@ -1,5 +1,5 @@
 <template>
-  <div id="kytos-map">
+  <div id="k-map">
     <component v-bind:is="this.extraComponent" v-bind:map="this.map" v-bind:original_graph="this.topology.graph"></component>
   </div>
 </template>
@@ -11,7 +11,7 @@ import KytosTopology from '../topology/Topology.vue'
 import {json} from "d3-request"
 
 export default {
-  name: 'kytos-map',
+  name: 'k-map',
   mixins: [KytosBaseWithIcon],
   data () {
     return {
@@ -46,7 +46,7 @@ export default {
       mapboxgl.accessToken = "pk.eyJ1Ijoia3l0b3MiLCJhIjoiY2o5ZTRsbHpnMjd3ZjMzbnJxc2xqa2hibyJ9.bBZPeP_YLA5oP0heHRpL6A"
 
       var map = new mapboxgl.Map({
-        container: "kytos-map",
+        container: "k-map",
         style: "mapbox://styles/kytos/cj9e4mbtm6s532smy6767uftz",
         center: this.map_center,
         zoom: this.map_zoom
@@ -96,7 +96,7 @@ export default {
 </script>
 
 <style lang="sass">
-#kytos-map
+#k-map
   background-color: #222;
   display: -webkit-flex;
   display: flex;

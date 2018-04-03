@@ -42,40 +42,40 @@ import KytosChartTimeseries from './components/kytos/chart/Timeseries.vue'
 import KytosChartRadar from './components/kytos/chart/RadarChart.vue'
 
 
-Vue.component('kytos-menubar', KytosMenubar);
-Vue.component('kytos-map', KytosMap);
+Vue.component('k-menubar', KytosMenubar);
+Vue.component('k-map', KytosMap);
 Vue.component('mapbox-settings', MapBoxSettings);
-Vue.component('kytos-topology', KytosTopology);
-Vue.component('kytos-context-panel', KytosContextPanel);
-Vue.component('kytos-tabs', KytosTabs);
-Vue.component('kytos-terminal', KytosTerminal);
-Vue.component('kytos-logging', KytosLogging);
-Vue.component('kytos-button', KytosButton);
-Vue.component('kytos-dropdown', KytosDropdown);
-Vue.component('kytos-button-group', KytosButtonGroup);
-Vue.component('kytos-action-menu', KytosActionMenu);
-Vue.component('kytos-input', KytosInput);
-Vue.component('kytos-textarea', KytosTextarea);
-Vue.component('kytos-checkbox', KytosCheckbox);
-Vue.component('kytos-status-bar', KytosStatusBar)
+Vue.component('k-topology', KytosTopology);
+Vue.component('k-context-panel', KytosContextPanel);
+Vue.component('k-tabs', KytosTabs);
+Vue.component('k-terminal', KytosTerminal);
+Vue.component('k-logging', KytosLogging);
+Vue.component('k-button', KytosButton);
+Vue.component('k-dropdown', KytosDropdown);
+Vue.component('k-button-group', KytosButtonGroup);
+Vue.component('k-action-menu', KytosActionMenu);
+Vue.component('k-input', KytosInput);
+Vue.component('k-textarea', KytosTextarea);
+Vue.component('k-checkbox', KytosCheckbox);
+Vue.component('k-status-bar', KytosStatusBar)
 
-Vue.component('kytos-slider', KytosSlider);
-Vue.component('kytos-accordion', KytosAccordion);
-Vue.component('kytos-accordion-item', KytosAccordionItem);
-Vue.component('kytos-property-panel', KytosPropertyPanel);
-Vue.component('kytos-property-panel-item', KytosPropertyPanelItem);
-Vue.component('kytos-info-panel', KytosInfoPanel);
+Vue.component('k-slider', KytosSlider);
+Vue.component('k-accordion', KytosAccordion);
+Vue.component('k-accordion-item', KytosAccordionItem);
+Vue.component('k-property-panel', KytosPropertyPanel);
+Vue.component('k-property-panel-item', KytosPropertyPanelItem);
+Vue.component('k-info-panel', KytosInfoPanel);
 Vue.component('napp-loader', NappLoader);
 
-Vue.component('kytos-interface', KytosInterface);
-Vue.component('kytos-flow', KytosFlow);
+Vue.component('k-interface', KytosInterface);
+Vue.component('k-flow', KytosFlow);
 
-Vue.component('kytos-switch-info', KytosSwitchInfo);
-Vue.component('kytos-switch-radar', KytosSwitchRadar);
-Vue.component('kytos-interface-info', KytosInterfaceInfo);
+Vue.component('k-switch-info', KytosSwitchInfo);
+Vue.component('k-switch-radar', KytosSwitchRadar);
+Vue.component('k-interface-info', KytosInterfaceInfo);
 
-Vue.component('kytos-chart-timeseries', KytosChartTimeseries)
-Vue.component('kytos-chart-radar', KytosChartRadar)
+Vue.component('k-chart-timeseries', KytosChartTimeseries)
+Vue.component('k-chart-radar', KytosChartRadar)
 
 
 Vue.filter('humanize_bytes', function (num, precision = 0, suffix = 'bps') {

@@ -1,10 +1,10 @@
 <template>
 
-<div id="kytos-circuit-search">
+<div id="k-circuit-search">
 
-  <div id="kytos-input-search" class="kytos-input-wrap">
+  <div id="k-input-search" class="k-input-wrap">
    <icon name="search"></icon>
-   <input type="text" v-model="search" class="kytos-input" placeholder="Search for circuit" onshow="this.focus()" autofocus id="kytos-circuits-search-input">
+   <input type="text" v-model="search" class="k-input" placeholder="Search for circuit" onshow="this.focus()" autofocus id="k-circuits-search-input">
   </div>
 
   <div id="search-result">
@@ -23,19 +23,19 @@
  overflow: auto;
  height: 85vh;
 }
-#kytos-circuit-search {
+#k-circuit-search {
  color: #CCC;
  font-size: 0.9em;
  line-height: 1.2em;
 }
-#kytos-input-search {
+#k-input-search {
  margin-bottom: 10px;
  width: 96%;
  font-size: 1.2em;
 }
 
-#kytos-input-search:hover *,
-#kytos-input-search:hover {
+#k-input-search:hover *,
+#k-input-search:hover {
  background: #111;
 }
 
@@ -69,7 +69,7 @@ import switchInfo from "../kytos/switchInfo.vue"
 const d3 = require('d3')
 
 export default {
-  name: 'kytos-list-circuits',
+  name: 'k-list-circuits',
   mixins: [KytosBaseWithIcon],
   props: ["content"],
   data () {
@@ -107,7 +107,7 @@ export default {
     this.get_circuits()
   },
   updated () {
-    document.getElementById('kytos-circuits-search-input').focus()
+    document.getElementById('k-circuits-search-input').focus()
   },
   computed: {
     circuitsFiltered() {

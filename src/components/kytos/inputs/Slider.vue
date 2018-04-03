@@ -1,8 +1,8 @@
 <template>
-  <div class="kytos-slider">
+  <div class="k-slider">
     <icon v-if="icon" v-bind:name="icon"></icon>
     <span class="range-slider__value">{{value}}</span>
-    <input @input="doRange" :id="id" class="kytos-slider__range" type="range" v-model:value="value" v-bind:min="min" v-bind:max="max" v-bind:step="step">
+    <input @input="doRange" :id="id" class="k-slider__range" type="range" v-model:value="value" v-bind:min="min" v-bind:max="max" v-bind:step="step">
   </div>
 </template>
 
@@ -13,11 +13,11 @@ import KytosBaseWithIcon from '../base/KytosBaseWithIcon';
 /**
  * A GUI widget that allows the users specify a numeric value which must be no less than a given value, and no more than another given value.
  *
- * @example /_static/imgs/components/input/kytos-slider.png
+ * @example /_static/imgs/components/input/k-slider.png
  */
 
 export default {
-  name: 'kytos-slider',
+  name: 'k-slider',
   mixins: [KytosBaseWithIcon],
   props: {
     initialValue: {
@@ -62,7 +62,7 @@ export default {
 
 @import '../../../assets/styles/variables'
 
-.kytos-slider
+.k-slider
   width: 100%;
   padding: 5px;
   border-radius: 5px;
@@ -91,7 +91,7 @@ export default {
   display: block;
   float: right;
 
-.kytos-slider__range
+.k-slider__range
   -webkit-appearance: none;
   width: 100%;
   border: none;
@@ -148,6 +148,6 @@ export default {
     outline: 0;
 
 .compacted
- .kytos-slider
+ .k-slider
   margin-top: 5px
 </style>

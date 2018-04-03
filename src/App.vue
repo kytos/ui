@@ -1,14 +1,14 @@
 <template>
   <div id="app" v-bind:class="{ compacted: compacted  }">
-    <kytos-menubar v-bind:toggle=toggle v-bind:compacted=compacted></kytos-menubar>
-    <kytos-tabs></kytos-tabs>
+    <k-menubar v-bind:toggle=toggle v-bind:compacted=compacted></k-menubar>
+    <k-tabs></k-tabs>
 
-    <section id="kytos-area">
-      <kytos-map></kytos-map>
+    <section id="k-area">
+      <k-map></k-map>
     </section>
 
-    <kytos-info-panel></kytos-info-panel>
-    <kytos-action-menu></kytos-action-menu>
+    <k-info-panel></k-info-panel>
+    <k-action-menu></k-action-menu>
   </div>
 </template>
 
@@ -38,14 +38,14 @@ export default {
     toggle () {
       this.compacted = !this.compacted
 
-      $(".kytos-toolbar").show();
+      $(".k-toolbar").show();
 
       this.$nextTick(function () {
       // DOM is now updated
-        $(".kytos-toolbar .kytos-menu-item").not(":hidden").each(function() {
+        $(".k-toolbar .k-menu-item").not(":hidden").each(function() {
             $(this).each(function(){
                 if ($(this).find(".compact").length == 0){
-                    $(".compacted .kytos-toolbar").css("display","none");
+                    $(".compacted .k-toolbar").css("display","none");
                 }
             });
         });
@@ -95,7 +95,7 @@ a
   -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3)
   background-color: rgba(255,255,255,0.3)
 
-#kytos-area
+#k-area
  display: -webkit-flex
  display: flex
  width: 100%

@@ -1,13 +1,13 @@
 <template>
-  <div :id="id" class="kytos-terminal">
-    <div class="kytos-terminal-toolbar">
-        <kytos-button-group>
-          <kytos-button title="Terminal JS" tooltip="Running Terminal JS" v-on:click="this.runTerminal"></kytos-button>
-          <kytos-button title="Bash terminal" tooltip="Running Terminal Bash" @click.native="runTerminal()"></kytos-button>
-        </kytos-button-group>
+  <div :id="id" class="k-terminal">
+    <div class="k-terminal-toolbar">
+        <k-button-group>
+          <k-button title="Terminal JS" tooltip="Running Terminal JS" v-on:click="this.runTerminal"></k-button>
+          <k-button title="Bash terminal" tooltip="Running Terminal Bash" @click.native="runTerminal()"></k-button>
+        </k-button-group>
       </div>
 
-      <div class="kytos-terminal-content" id="term_demo">
+      <div class="k-terminal-content" id="term_demo">
       </div>
 
   </div>
@@ -19,8 +19,8 @@ import KytosBaseWithIcon from '../base/KytosBaseWithIcon';
 import JsTerminal from './jquery.terminal.min.js';
 
 export default {
-  name: 'kytos-terminal',
-  mixins: KytosBaseWithIcon,
+  name: 'k-terminal',
+  mixins: [KytosBaseWithIcon],
   terminal: [JsTerminal],
 
   methods: {
@@ -60,25 +60,25 @@ export default {
 
 @import '../../../assets/styles/variables'
 
-.kytos-terminal
+.k-terminal
  position: relative
  width: 100%
 
-.kytos-terminal-content
+.k-terminal-content
  height: 290px
  overflow: auto
 
-.kytos-terminal-toolbar
+.k-terminal-toolbar
  width: 100%
  background-color: $fill-button-bg-h
  height: 30px
  overflow: hidden
 
- .kytos-input
+ .k-input
   font-size: 0.7em
   height: 10px
 
- .kytos-button
+ .k-button
   font-size: 0.8em
   height: 30px
 

@@ -1,5 +1,5 @@
 <template>
-  <div :id="id" class="kytos-interface" v-on:click="open_interface">
+  <div :id="id" class="k-interface" v-on:click="open_interface">
       <div class="usage" :class="utilization_color_class"></div>
       <div class="details" :title="mac">
         <div class="name">{{name}} ({{port_number}})</div>
@@ -12,7 +12,7 @@
         </div>
       </div>
 
-      <kytos-chart-timeseries v-if="chartJsonData" :interface_id="interface_id" :jsonData="chartJsonData" :showGrid="false" :showAxis="false" :plotArea="false" :chartHeight="45"></kytos-chart-timeseries>
+      <k-chart-timeseries v-if="chartJsonData" :interface_id="interface_id" :jsonData="chartJsonData" :showGrid="false" :showAxis="false" :plotArea="false" :chartHeight="45"></k-chart-timeseries>
       <div class="warn" v-else=>&nbsp;Interface speed is unavailable</div>
 
   </div>
@@ -28,7 +28,7 @@ import {json} from "d3-request"
  */
 
 export default {
-  name: 'kytos-interface',
+  name: 'k-interface',
   mixins: [KytosBase],
   props: {
     name: {
@@ -126,7 +126,7 @@ export default {
 
 @import '../../../assets/styles/variables'
 
-.kytos-interface
+.k-interface
   display: flex
   cursor: pointer
   padding-top: 0.3em

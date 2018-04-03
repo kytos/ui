@@ -1,5 +1,5 @@
 <template>
-  <div class="kytos-checkbox-wrap">
+  <div class="k-checkbox-wrap">
   <icon v-if="icon" v-bind:name="icon"></icon>
   <label class="checkbox">
     <input type="checkbox" id="checkbox" v-model="enabled" @change="update_check()">
@@ -16,11 +16,11 @@ import KytosBaseWithIcon from '../base/KytosBaseWithIcon';
 /**
  * A GUI widget that permits the user to make a binary choice, checked (ticked) when activated or not checked when disable.
  *
- * @example /_static/imgs/components/input/kytos-checkbox.png
+ * @example /_static/imgs/components/input/k-checkbox.png
  */
 
 export default {
-  name: 'kytos-checkbox',
+  name: 'k-checkbox',
   mixins: [KytosBaseWithIcon],
   props: {
       model: {
@@ -64,7 +64,7 @@ export default {
 
 @import '../../../assets/styles/variables'
 
-.kytos-checkbox-wrap
+.k-checkbox-wrap
  display: inline-flex
  align-items: center
  vertical-align: middle
@@ -150,7 +150,7 @@ export default {
        -ms-transform: translateX(14px)
        transform: translateX(14px)
 
-.kytos-toolbar .kytos-checkbox-wrap
+.k-toolbar .k-checkbox-wrap
  background: none
 
 </style>

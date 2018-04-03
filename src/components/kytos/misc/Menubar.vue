@@ -1,16 +1,16 @@
 <template>
 <div class="container">
-  <section class="kytos-menu-bar">
+  <section class="k-menu-bar">
     <div class="logo" v-on:click="toggle" v-bind:class="{ compacted: compacted  }">
       <img v-show="!compacted" src="../../../assets/logo-kytos.svg" class="logo-kytos" alt="Kytos" height="35">
       <img v-show="compacted" src="../../../assets/icon-kytos.svg" class="icon-kytos" alt="Kytos" height="35">
     </div>
-    <kytos-button  v-for="(component, index) in components"
-                   v-bind:class="{ active: activeItem==(index+1) }"
-                   :key="component.icon"
-                   :icon="component.icon"
-                   :tooltip="component.tooltip"
-                   @click.native="setItem(index+1)"/>
+    <k-button v-for="(component, index) in components"
+              v-bind:class="{ active: activeItem==(index+1) }"
+              :key="component.icon"
+              :icon="component.icon"
+              :tooltip="component.tooltip"
+              @click.native="setItem(index+1)"/>
   </section>
   <napp-loader :active="activeItem" :components.sync="components" :compacted="compacted" :url="url"></napp-loader>
 </div>
@@ -22,12 +22,12 @@ import KytosBaseWithIcon from '../base/KytosBaseWithIcon'
 import Icon from '../../../../node_modules/vue-awesome/components/Icon.vue'
 
 export default {
-  name: 'kytos-menu-bar',
+  name: 'k-menu-bar',
   mixins: [KytosBaseWithIcon],
   props: ['toggle', 'compacted'],
   data() {
     return {
-      url: this.$kytos_server+ 'ui/kytos-toolbar',
+      url: this.$kytos_server+ 'ui/k-toolbar',
       components: [{'icon': 'desktop', 'name':'mapbox-settings'}],
       activeItem: 1
     }
@@ -38,14 +38,14 @@ export default {
     },
     setItem (item) {
       this.activeItem = item
-      $(".kytos-toolbar").show();
+      $(".k-toolbar").show();
 
       this.$nextTick(function () {
       // DOM is now updated
-        $(".kytos-toolbar .kytos-menu-item").not(":hidden").each(function() {
+        $(".k-toolbar .k-menu-item").not(":hidden").each(function() {
             $(this).each(function(){
                 if ($(this).find(".compact").length == 0){
-                    $(".compacted .kytos-toolbar").css("display","none");
+                    $(".compacted .k-toolbar").css("display","none");
                 }
             });
         });
@@ -61,7 +61,7 @@ export default {
 
 @import '../../../assets/styles/variables'
 
-.kytos-menu-bar
+.k-menu-bar
  -webkit-order: 1
  -ms-flex-order: 1
  order: 1
@@ -83,12 +83,12 @@ export default {
     cursor: pointer
     text-align: center
 
- .kytos-menu-bar
+ .k-menu-bar
    box-shadow: none
 
-.kytos-menu-bar
+.k-menu-bar
 
- .kytos-button
+ .k-button
   width: 40px
   height: 40px
   margin: 0px
@@ -119,7 +119,7 @@ export default {
     border-left: 3px solid $fill-menubar-h
 
 .compacted
- .kytos-menu-bar
+ .k-menu-bar
   .logo
    width: 40px
 

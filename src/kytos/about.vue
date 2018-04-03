@@ -1,8 +1,8 @@
 <template>
-  <kytos-accordion-item title="Property Details">
-      <kytos-property-panel>
-          <kytos-property-panel-item name="Name" value="Beraldo"></kytos-property-panel-item>
-          <kytos-property-panel-item name="Phone" value="+55 9998298"></kytos-property-panel-item>
-      </kytos-property-panel>
-  </kytos-accordion-item>
+  <k-accordion-item title="Property Details">
+      <k-property-panel>
+          <k-property-panel-item name="Name" value="Beraldo"></k-property-panel-item>
+          <k-property-panel-item name="Phone" value="+55 9998298"></k-property-panel-item>
+      </k-property-panel>
+  </k-accordion-item>
 </template>

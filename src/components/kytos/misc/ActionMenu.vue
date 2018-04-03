@@ -1,29 +1,29 @@
 <template>
-  <div class="kytos-action-menu" v-hotkey="keymap" v-show="show">
+  <div class="k-action-menu" v-hotkey="keymap" v-show="show">
 
      <!-- FIXME: o correto seria chamar o parametro abaixo com v-model="search", mas não funciona
-      <kytos-input :value="search" icon="search" id="kytos-action-menu-input" placeholder="Search for actions"></kytos-input>
+      <k-input :value="search" icon="search" id="k-action-menu-input" placeholder="Search for actions"></k-input>
       -->
 
-  <div class="kytos-input-wrap">
+  <div class="k-input-wrap">
     <icon name="search"></icon>
-    <input type="text" id="kytos-action-menu-input" v-model="search" class="kytos-input" placeholder="Search for actions" autofocus>
+    <input type="text" id="k-action-menu-input" v-model="search" class="k-input" placeholder="Search for actions" autofocus>
     </input>
   </div>
 
 
-     <div class="kytos-action-list">
+     <div class="k-action-list">
 
-       <div v-for="item in actionItems" class="kytos-action-item" @click="show_info_panel(item.content)">
+       <div v-for="item in actionItems" class="k-action-item" @click="show_info_panel(item.content)">
          {{item.name}}
-         <div class="kytos-action-extras">
+         <div class="k-action-extras">
          <span class="author">{{item.author}}</span>
             <span class="shortkey">{{item.shortkey}}</span>
          </div>
        </div>
      </div>
 
-  </div><!-- .kytos-action-menu -->
+  </div><!-- .k-action-menu -->
 </template>
 
 <script>
@@ -34,10 +34,10 @@ import listSwitches from "../../../kytos/listSwitches.vue"
 /**
  * Accordion item that can be switched between hiding and showing content
  *
- * @example /_static/imgs/components/misc/kytos-action-menu.png
+ * @example /_static/imgs/components/misc/k-action-menu.png
  */
 export default {
-  name: 'kytos-action-menu',
+  name: 'k-action-menu',
   mixins: [KytosBaseWithIcon],
   data () {
     return {
@@ -84,7 +84,7 @@ export default {
     }
   },
   updated () {
-    document.getElementById('kytos-action-menu-input').focus()
+    document.getElementById('k-action-menu-input').focus()
   }
 }
 
@@ -94,7 +94,7 @@ export default {
 
 @import '../../../assets/styles/variables'
 
-.kytos-action-menu
+.k-action-menu
  position: fixed
  top: 50%
  left: 50%
@@ -111,13 +111,13 @@ export default {
  transition: 0.3s
  z-index: 900
 
-.kytos-action-list
+.k-action-list
   padding: 0.5em 0.1em
   font-size: 1.1em
   margin-top: 0.3em
   text-align: left
 
-.kytos-action-item
+.k-action-item
  display: flex
  flex-direction: column
  font-size: 0.8em
@@ -131,7 +131,7 @@ export default {
   color: $fill-link-h
   background: $fill-input-bg
 
-.kytos-action-extras
+.k-action-extras
  display: flex
  flex-direction: row
  justify-content: space-around

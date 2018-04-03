@@ -125,7 +125,7 @@
        sodipodi:role="line"
        id="tspan4642"
        x="-245.11377"
-       y="28.282898">kytos-menu-bar</tspan></text>
+       y="28.282898">k-menu-bar</tspan></text>
   <text
      xml:space="preserve"
      style="font-style:normal;font-weight:normal;font-size:18.66666603px;line-height:25px;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
@@ -138,7 +138,7 @@
        sodipodi:role="line"
        id="tspan4642-6"
        x="-231.97589"
-       y="101.22619">kytos-toolbar</tspan></text>
+       y="101.22619">k-toolbar</tspan></text>
   <text
      xml:space="preserve"
      style="font-style:normal;font-weight:normal;font-size:18.66666603px;line-height:25px;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
@@ -162,7 +162,7 @@
        sodipodi:role="line"
        id="tspan4668"
        x="282.46155"
-       y="311.19232">kytos-tabs</tspan></text>
+       y="311.19232">k-tabs</tspan></text>
   <rect
      style="opacity:0.95;fill:#ffffff;stroke:#000000;stroke-width:1;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0"
      id="rect3771-7"
@@ -192,7 +192,7 @@
        sodipodi:role="line"
        id="tspan4668-6"
        x="889.27252"
-       y="311.83801">kytos-tabs</tspan></text>
+       y="311.83801">k-tabs</tspan></text>
   <text
      xml:space="preserve"
      style="font-style:normal;font-weight:normal;font-size:18.66666603px;line-height:25px;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
@@ -283,7 +283,7 @@
        sodipodi:role="line"
        id="tspan4642-2"
        x="-226.36462"
-       y="647.84619">kytos-menu-bar</tspan></text>
+       y="647.84619">k-menu-bar</tspan></text>
   <text
      xml:space="preserve"
      style="font-style:normal;font-weight:normal;font-size:18.66666603px;line-height:25px;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
@@ -296,7 +296,7 @@
        sodipodi:role="line"
        id="tspan4642-6-7"
        x="810.02423"
-       y="32.366329">kytos-toolbar</tspan></text>
+       y="32.366329">k-toolbar</tspan></text>
   <rect
      style="opacity:0.95;fill:#ffffff;fill-opacity:1;stroke:#00000b;stroke-width:1.09956241;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
      id="rect4636-2"
@@ -317,7 +317,7 @@
        sodipodi:role="line"
        id="tspan4668-9"
        x="852.77533"
-       y="312.27957">kytos-tabs</tspan></text>
+       y="312.27957">k-tabs</tspan></text>
   <text
      xml:space="preserve"
      style="font-style:normal;font-weight:normal;font-size:18.66666603px;line-height:25px;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"

@@ -39,9 +39,9 @@ The bar menu is a small vertical band that sits on the left side of the screen
 under the logo. This menu consists of buttons that trigger the respective
 oolbars, or trigger other actions.
 
-#. **k-logo**: When pressed the kytos-toolbar will switch between
+#. **k-logo**: When pressed the k-toolbar will switch between
    expandeded and compacted version.
-#. **Item**: Change the kytos-toolbar context to display the napps component.
+#. **Item**: Change the k-toolbar context to display the napps component.
 
 
 The amount of buttons that will appear here will depend on how many NApps you
@@ -99,7 +99,7 @@ Tabs
 ====
 UI component: ``k-tabs``
 
-The kytos-tabs components is responsible to have a terminal, show switch
+The k-tabs components is responsible to have a terminal, show switch
 informations, logs of kytos instance and kytos ui alerts.
 
 

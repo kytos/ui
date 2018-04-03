@@ -33,7 +33,7 @@ export default {
   methods: {
     load_icons () {
       var self = this
-      var components  = $('.kytos-toolbar .kytos-menu-item')
+      var components  = $('.k-toolbar .k-menu-item')
       $.each(components, function(index, component){
           self.inner_components[index].icon = component.getAttribute('icon')
           self.inner_components[index].tooltip = component.getAttribute('tooltip')
@@ -54,7 +54,7 @@ export default {
       })
     },
     template_context() {
-    var context = '<div class="kytos-toolbar" >'
+    var context = '<div class="k-toolbar" >'
     $.each(this.inner_components, function(index, component){
       context += '<'+ component.name +' v-show="active =='+(index+1)+'"/>'
     })
@@ -69,7 +69,7 @@ export default {
 
 @import '../../../assets/styles/variables'
 
-.kytos-toolbar
+.k-toolbar
   -webkit-order: 2
   -ms-flex-order: 2
   z-index: 999
@@ -80,7 +80,7 @@ export default {
   display: block
 
 .compacted
- .kytos-toolbar
+ .k-toolbar
   width: 100vw
   height: 40px
   margin-top: 0px

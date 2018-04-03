@@ -1,5 +1,5 @@
 <template>
-<section class="kytos-context-panel">
+<section class="k-context-panel">
   <icon v-if="icon" v-bind:name="icon"></icon>
   <div v-if="title" class="pannel-title">
     <h1>{{title}} <small>{{subtitle}}</small></h1>
@@ -17,7 +17,7 @@ import KytosBaseWithIcon from '../base/KytosBaseWithIcon';
  * Shows details about selected kytos components. The panel can be shown or hidden using the shortcut *Ctrl+Alt+Space*.
  */
 export default {
-  name: 'kytos-context-panel',
+  name: 'k-context-panel',
   mixins: [KytosBaseWithIcon],
   props: {
     subtitle: {
@@ -31,7 +31,7 @@ export default {
 
 @import '../../../assets/styles/variables'
 
-.kytos-context-panel
+.k-context-panel
   -webkit-order: 2
   -ms-flex-order: 2
   order: 2

@@ -83,7 +83,7 @@ Below a template of kytos component is displayed.
 
    <template>
     <!-- This template tag is optional -->
-    <div class="kytos-menu-item"  icon="my_icon" tooltip="Sample Tooltip">
+    <div class="k-menu-item"  icon="my_icon" tooltip="Sample Tooltip">
        <!-- You could put yours kytos components here -->
     </div>
    </template>
@@ -109,9 +109,9 @@ Below a template of kytos component is displayed.
 
 
 You should replace the **my_icon** to an **awesome icon**, the kytos interface
-will read that icon and create a new button into the **kytos-menu-bar**.  You
+will read that icon and create a new button into the **k-menu-bar**.  You
 can replace the string **Sample Tooltip** to display a tooltip in your
-**kytos-menu-bar** button.
+**k-menu-bar** button.
 
 
 Sample Component
@@ -120,24 +120,24 @@ Sample Component
 Status-Component
 ================
 
-Below we have a ``ui/kytos-toolbar/status-component.kytos`` file. This
+Below we have a ``ui/k-toolbar/status-component.kytos`` file. This
 component was build to request the kytos server and get all napps informations
 and display that into the component.
 
 .. code-block:: html
 
     <template>
-     <kytos-context-panel v-if="expanded">
-      <kytos-accordion >
-        <kytos-accordion-item title="Installed NApps">
-          <kytos-property-panel>
-            <kytos-property-panel-item v-if="napps"
+     <k-context-panel v-if="expanded">
+      <k-accordion >
+        <k-accordion-item title="Installed NApps">
+          <k-property-panel>
+            <k-property-panel-item v-if="napps"
               v-for="napp in this.napps" :key="napp.name" :name="napp.name" :value="napp.version">
-            </kytos-property-panel-item>
-          </kytos-property-panel>
-        </kytos-accordion-item>
-      </kytos-accordion>
-     </kytos-context-panel>
+            </k-property-panel-item>
+          </k-property-panel>
+        </k-accordion-item>
+      </k-accordion>
+     </k-context-panel>
     </template>
     <script>
     module.exports = {

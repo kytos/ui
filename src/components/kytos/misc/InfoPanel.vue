@@ -1,12 +1,12 @@
 <template>
   <section v-bind:class="classObject" v-hotkey="keymap" v-show="this.infoPanelView">
-   <div class="kytos-info-title">
+   <div class="k-info-title">
     <icon v-if="myIcon" v-bind:name="myIcon"></icon>
     <div v-if="myTitle" class="panel-title">
       <h1>{{myTitle}} <small v-if="mySubtitle">{{mySubtitle}}</small></h1>
     </div>
    </div>
-   <div class="kytos-info-wrapper">
+   <div class="k-info-wrapper">
     <component v-bind:is="this.infoPanelView" v-bind:content="this.content">
     </component>
    </div>
@@ -20,11 +20,11 @@ import KytosBaseWithIcon from '../base/KytosBaseWithIcon';
 /**
  * A tabbed bar with tabs such as a Terminal, Switches, Logging, Notifications and System Information.
  *
- * @example /_static/imgs/components/misc/kytos-info-panel.png
+ * @example /_static/imgs/components/misc/k-info-panel.png
  */
 
 export default {
-  name: 'kytos-info-panel',
+  name: 'k-info-panel',
   mixins: [KytosBaseWithIcon],
   props: {
     subtitle: {
@@ -41,8 +41,8 @@ export default {
       mySubtitle: '',
       maximized: false,
       classObject: {
-        'kytos-info-panel': true,
-        'kytos-info-panel-max': false
+        'k-info-panel': true,
+        'k-info-panel-max': false
       }
     }
   },
@@ -60,7 +60,7 @@ export default {
       this.myTitle = content.title
       this.mySubtitle = content.subtitle
       this.myIcon = content.icon
-      this.classObject['kytos-info-panel-max'] =  content.maximized
+      this.classObject['k-info-panel-max'] =  content.maximized
     },
     register_listeners () {
       this.$kytos.$on('hideInfoPanel', this.hide)
@@ -85,11 +85,11 @@ export default {
 
 @import '../../../assets/styles/variables'
 
-.kytos-info-panel-max
+.k-info-panel-max
   width: 900px !important
   min-width: 900px !important
 
-.kytos-info-panel
+.k-info-panel
  -webkit-order: 4
  -ms-flex-order: 4
  order: 4
@@ -105,12 +105,12 @@ export default {
  z-index: 999
  box-shadow: 10px 0px 20px 5px rgba(0, 0, 0, 0.4)
 
-.kytos-info-wrapper
+.k-info-wrapper
  -webkit-flex: 1 1 auto;
  overflow-y: auto;
  height: 0px;
 
-.kytos-info-title
+.k-info-title
  display: flex
  flex-direction: row
  align-items: center

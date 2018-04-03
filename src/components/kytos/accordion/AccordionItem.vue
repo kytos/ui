@@ -1,7 +1,7 @@
 <template>
   <div class="tab">
-    <input class="kytos-accordion-input" :id="id" type="checkbox" name="tabs" checked>
-    <label class="kytos-accordion-label" :for="id">{{title}}</label>
+    <input class="k-accordion-input" :id="id" type="checkbox" name="tabs" checked>
+    <label class="k-accordion-label" :for="id">{{title}}</label>
     <div class="tab-content">
      <!-- @slot Empty Pannel, please define some items inside. -->
     <slot>
@@ -18,10 +18,10 @@ import KytosBaseWithIcon from '../base/KytosBaseWithIcon';
 /**
  * Accordion item that can be switched between hiding and showing content
  *
- * @example /_static/imgs/components/accordion/kytos-accordion-item.png
+ * @example /_static/imgs/components/accordion/k-accordion-item.png
  */
 export default {
-  name: 'kytos-accordion-item',
+  name: 'k-accordion-item',
   mixins: [KytosBaseWithIcon],
 }
 </script>
@@ -30,15 +30,15 @@ export default {
 
 @import '../../../assets/styles/variables'
 
-.kytos-accordion-input
+.k-accordion-input
   position: absolute
   opacity: 0
   z-index: 99
 
-.tab:hover .kytos-accordion-label
+.tab:hover .k-accordion-label
  color: #DDD
 
-.kytos-accordion-label
+.k-accordion-label
   position: relative
   display: block
   padding: 1px 0 5px 20px
@@ -79,30 +79,30 @@ export default {
     p
       margin: 1em
 
-.kytos-accordion-input
+.k-accordion-input
   &:checked
     & ~ .tab-content
       max-height: 100%
       overflow: hidden
 
   &[type=checkbox]
-    & + .kytos-accordion-label:after
+    & + .k-accordion-label:after
       content: "▾"
 
   &[type=checkbox]:checked
-    & + .kytos-accordion-label:after
+    & + .k-accordion-label:after
       content: "▴"
 
 .compacted
  .tab
    display: inline-flex
 
- .kytos-accordion-input
+ .k-accordion-input
    display: none
- .kytos-accordion-label
+ .k-accordion-label
    display: none
 
- .kytos-accordion-input
+ .k-accordion-input
    & ~ .tab-content
     display: inline-flex
     margin-top: 0px
@@ -111,11 +111,11 @@ export default {
     overflow: hidden
 
    &[type=checkbox]
-     & + .kytos-accordion-label:after
+     & + .k-accordion-label:after
        content: ""
 
    &[type=checkbox]:checked
-     & + .kytos-accordion-label:after
+     & + .k-accordion-label:after
        content: ""
 
  .tab

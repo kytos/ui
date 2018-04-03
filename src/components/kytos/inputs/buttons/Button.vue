@@ -1,5 +1,5 @@
 <template>
-  <button :id="id" class="kytos-button compact"
+  <button :id="id" class="k-button compact"
     @click="this.click"
     v-bind:title="tooltip"
     v-bind:disabled="isDisabled">
@@ -14,12 +14,12 @@ import KytosBaseWithIcon from '../../base/KytosBaseWithIcon';
 
 /**
  * This component represents a button that triggers an event when clicked.
- * @example <kytos-button tooltip="Request Circuit" title="Request Circuit" icon="gear" :action="request_circuit"></kytos-button>
- * @example /_static/imgs/components/input/kytos-button.png
+ * @example <k-button tooltip="Request Circuit" title="Request Circuit" icon="gear" :action="request_circuit"></k-button>
+ * @example /_static/imgs/components/input/k-button.png
  */
 
 export default {
-  name: 'kytos-button',
+  name: 'k-button',
   mixins: [KytosBaseWithIcon],
   props: {
     /**
@@ -48,7 +48,7 @@ export default {
 
 @import '../../../../assets/styles/variables'
 
-.kytos-button
+.k-button
   display: block
   outline: 0
   border: none

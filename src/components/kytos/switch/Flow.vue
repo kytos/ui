@@ -1,5 +1,5 @@
 <template>
-  <div :id="id" v-bind:class="{ 'kytos-flow': true, 'kytos-flow-active': isOwner }">
+  <div :id="id" v-bind:class="{ 'k-flow': true, 'k-flow-active': isOwner }">
       <div class="info">
         <div class="info-item" title="Priority"><icon name="level-up"></icon> {{content.priority}}</div>
         <div class="info-item" title="Hard/Idle Timeouts"><icon name="clock-o"></icon> {{content.hard_timeout}} / {{content.idle_timeout}}</div>
@@ -39,7 +39,7 @@ const d3 = require('d3')
  * Representation of flows between interfaces.
  */
 export default {
-  name: 'kytos-flow',
+  name: 'k-flow',
   mixins: [KytosBaseWithIcon],
   props: {
     content: {
@@ -143,7 +143,7 @@ export default {
 <style lang="sass">
 
 @import '../../../assets/styles/variables'
-.kytos-flow
+.k-flow
   cursor: pointer
   margin-bottom: 5px
   width: 100%
@@ -231,7 +231,7 @@ export default {
     path:first-child
       stroke: #FF00FF
 
-.kytos-flow-active
+.k-flow-active
   .info
     border-left: 3px solid $kytos-purple
 

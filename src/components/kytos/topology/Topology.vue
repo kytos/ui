@@ -8,7 +8,7 @@ import KytosBase from '../base/KytosBase';
 import KytosBaseWithIcon from '../base/KytosBaseWithIcon';
 
 export default {
-  name: "kytos-topology",
+  name: "k-topology",
   props: ["map", "original_graph"],
   mixins: [KytosBaseWithIcon],
 
@@ -34,10 +34,10 @@ export default {
   },
   computed: {
     map_width () {
-      return $("#kytos-map canvas").width()
+      return $("#k-map canvas").width()
     },
     map_height () {
-      return $("#kytos-map canvas").height()
+      return $("#k-map canvas").height()
     }
   },
   mounted () {
@@ -528,7 +528,7 @@ export default {
 </script>
 
 <style lang="sass">
-#kytos-map
+#k-map
   svg, #svg-topo
     width: 100%;
     height: 100vh;

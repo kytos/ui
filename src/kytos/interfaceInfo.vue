@@ -1,25 +1,25 @@
 <template>
-    <kytos-accordion>
+    <k-accordion>
 
-      <kytos-accordion-item title="Interface Plot" v-if="chartJsonData">
-        <kytos-button-group>
-            <!-- input type="text" class="kytos-input" placeholder="Zoom" disabled -->
-            <kytos-button title="5" tooltip="5 minutes" v-on:click.native="change_plotRange(5)"></kytos-button>
-            <kytos-button title="10" tooltip="10 minutes" v-on:click.native="change_plotRange(10)"></kytos-button>
-            <kytos-button title="15" tooltip="15 minutes" v-on:click.native="change_plotRange(15)"></kytos-button>
-            <kytos-button title="60" tooltip="60 minutes" v-on:click.native="change_plotRange(60)"></kytos-button>
-            <kytos-button title="120" tooltip="120 minutes" v-on:click.native="change_plotRange(120)"></kytos-button>
-          </kytos-button-group>
-        <kytos-chart-timeseries :interface_id="metadata.interface_id" :jsonData="chartJsonData" :display_legend="true" :chartHeight="200" ></kytos-chart-timeseries>
-      </kytos-accordion-item>
+      <k-accordion-item title="Interface Plot" v-if="chartJsonData">
+        <k-button-group>
+            <!-- input type="text" class="k-input" placeholder="Zoom" disabled -->
+            <k-button title="5" tooltip="5 minutes" v-on:click.native="change_plotRange(5)"></k-button>
+            <k-button title="10" tooltip="10 minutes" v-on:click.native="change_plotRange(10)"></k-button>
+            <k-button title="15" tooltip="15 minutes" v-on:click.native="change_plotRange(15)"></k-button>
+            <k-button title="60" tooltip="60 minutes" v-on:click.native="change_plotRange(60)"></k-button>
+            <k-button title="120" tooltip="120 minutes" v-on:click.native="change_plotRange(120)"></k-button>
+          </k-button-group>
+        <k-chart-timeseries :interface_id="metadata.interface_id" :jsonData="chartJsonData" :display_legend="true" :chartHeight="200" ></k-chart-timeseries>
+      </k-accordion-item>
 
-      <kytos-accordion-item title="Basic Details">
-          <kytos-property-panel>
-              <kytos-property-panel-item :name="key" :value="value" :key="key" v-if="content" v-for="(value, key) in this.metadata"></kytos-property-panel-item>
-          </kytos-property-panel>
-      </kytos-accordion-item>
+      <k-accordion-item title="Basic Details">
+          <k-property-panel>
+              <k-property-panel-item :name="key" :value="value" :key="key" v-if="content" v-for="(value, key) in this.metadata"></k-property-panel-item>
+          </k-property-panel>
+      </k-accordion-item>
 
-    </kytos-accordion>
+    </k-accordion>
 </template>
 
 <script>
@@ -27,7 +27,7 @@ import KytosBaseWithIcon from "../components/kytos/base/KytosBaseWithIcon"
 import {json} from "d3-request"
 
 export default {
-  name: 'kytos-interface-info',
+  name: 'k-interface-info',
   mixins: [KytosBaseWithIcon],
   props: ["content"],
   data () {

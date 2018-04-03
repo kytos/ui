@@ -1,5 +1,5 @@
 <template>
-  <div class="terminal-status-bar">
+  <div class="k-status-bar">
     <span class='terminal-status-background'>&nbsp;</span>
   </div>
 </template>
@@ -8,10 +8,10 @@
 /**
  * A tabbed bar such as a Terminal, Switches, Logging, Notifications and System Information.
  *
- * @example /_static/imgs/components/misc/kytos-status-bar.png
+ * @example /_static/imgs/components/misc/k-status-bar.png
  */
 export default {
-  name: 'kytos-status-bar',
+  name: 'k-status-bar',
   data(){
     return {
       messages: [],
@@ -36,7 +36,7 @@ export default {
       }
     },
     get_terminal (){
-      return $('.terminal-status-bar span').typeIt(this.options)
+      return $('.k-status-bar span').typeIt(this.options)
     },
     set_status(message, error=false){
       if (error){
@@ -52,7 +52,7 @@ export default {
 </script>
 
 <style lang='sass'>
-.terminal-status-bar
+.k-status-bar
   display: inline-flex
   background: #222
   padding: 6px 0;
@@ -60,10 +60,10 @@ export default {
   color: #adadad
   font-size: 12px
 
-.terminal-status-bar:before
+.k-status-bar:before
   content: '|'
 
-.terminal-status-bar .status-error
+.k-status-bar .status-error
   color: #b35151
 
 </style>
