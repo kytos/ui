@@ -1,7 +1,8 @@
 <template>
   <div class="k-input-wrap">
     <icon v-if="icon" v-bind:name="icon"></icon>
-    <input ref="input" @input="updateText($event.target.value)"  type="text" :id="id" class="k-input" :value="value" :tooltip="tooltip" :placeholder="placeholder"
+    <input v-model="value" :id="id" class="k-input" :tooltip="tooltip" :placeholder="placeholder"
+      @input="updateText"
       v-bind:disabled="isDisabled" onshow="this.focus()" autofocus>
     </input>
   </div>
@@ -25,7 +26,8 @@ export default {
    * Input Current value
    */
    value: {
-      type: String
+      type: String,
+      default: ""
    },
    /*
    * Model value
@@ -39,6 +41,9 @@ export default {
    tooltip: {
       type: String
    },
+   /**
+   * Placeholder string displayed in input field.
+   */
    placeholder: {
       type: String
    },
