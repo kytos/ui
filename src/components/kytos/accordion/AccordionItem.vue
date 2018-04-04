@@ -1,6 +1,6 @@
 <template>
   <div class="tab">
-    <input class="k-accordion-input" :id="id" type="checkbox" name="tabs" checked>
+    <input class="k-accordion-input" :id="id" type="checkbox" name="tabs" v-model="checked">
     <label class="k-accordion-label" :for="id">{{title}}</label>
     <div class="tab-content">
      <!-- @slot Empty Pannel, please define some items inside. -->
@@ -23,6 +23,12 @@ import KytosBaseWithIcon from '../base/KytosBaseWithIcon';
 export default {
   name: 'k-accordion-item',
   mixins: [KytosBaseWithIcon],
+  props:{
+    checked: {
+      type: Boolean,
+      default: true
+    }
+  }
 }
 </script>
 
