@@ -1,4 +1,5 @@
 <template>
+<div>
   <div class="k-action-menu" v-hotkey="keymap" v-show="show">
   <div class="k-input-wrap">
     <k-input :action="searchValue" :value="search" icon="search" id="k-action-menu-input" placeholder="Search for actions"></k-input>
@@ -13,6 +14,8 @@
        </div>
      </div>
   </div>
+  <k-action-menu-item ></k-action-menu-item>
+</div>
 </template>
 
 <script>
@@ -32,33 +35,16 @@ export default {
     return {
     show: false,
     search: '',
-    items: [
-        { name: 'Search Switch', author: 'kytos/core', shortkey: 'ctrl+alt+s', action: this.show_search},
-        { name: 'Search Host', author: 'kytos/core', shortkey: 'ctrl+alt+H'},
-        { name: 'Search Interface', author: 'kytos/core', shortkey: 'ctrl+alt+I'}
-     ]
+    items: [ ]
     }
   },
   methods: {
-    show_search() {
-      this.$kytos.$emit("showInfoPanel", this.searchContent())
-    },
     /**
     * Update the search value, this methos is called when the search input is changed.
     * @params {string} query Text that will be used to filter de action itens
     */
     searchValue(query){
       this.search = query
-    },
-    /**
-    * Method to return a object with search content.
-    */
-    searchContent(){
-      return {"component": listSwitches,
-              "content": {},
-              "icon": "search",
-              "title": "Switch Search",
-              "subtitle": "by kytos/topology"}
     },
     /**
     * Toggle visibility of action menu.

@@ -6,7 +6,8 @@ Vue.use(VueHotkey)
 
 window.$ = window.jQuery = require('jquery');
 
-import NappLoader from './components/kytos/napp/NappLoader.vue';
+import KytosToolbar from './components/kytos/napp/Toolbar.vue';
+import KytosActionMenuItem from './components/kytos/napp/ActionMenuItem.vue';
 import KytosMap from './components/kytos/map/Map.vue';
 import KytosTopology from './components/kytos/topology/Topology.vue';
 import KytosTabs from './components/kytos/tabs/tabs.vue';
@@ -65,7 +66,8 @@ Vue.component('k-accordion-item', KytosAccordionItem);
 Vue.component('k-property-panel', KytosPropertyPanel);
 Vue.component('k-property-panel-item', KytosPropertyPanelItem);
 Vue.component('k-info-panel', KytosInfoPanel);
-Vue.component('napp-loader', NappLoader);
+Vue.component('k-toolbar', KytosToolbar);
+Vue.component('k-action-menu-item', KytosActionMenuItem);
 
 Vue.component('k-interface', KytosInterface);
 Vue.component('k-flow', KytosFlow);
