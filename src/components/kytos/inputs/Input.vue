@@ -52,7 +52,7 @@ export default {
   },
   methods: {
     updateText(value){
-      this.$emit('input', value)
+      this.$emit('update:value', value)
       this.action(value)
     }
   }
