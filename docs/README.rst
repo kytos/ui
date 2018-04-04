@@ -5,7 +5,9 @@ Kytos UI Documentation
 Requirements
 ============
 
-To install the docs requirements you must use the line command below.
+To install the docs requirements you must to have the python3.6 and the nodejs
+v9.5.0, after that just install the requirements to build the docs using the
+command below.
 
 .. code-block:: sh
 

@@ -3,13 +3,13 @@
 </template>
 
 <script>
-import KytosBase from "../base/KytosBase.vue"
+import KytosBase from "../base/KytosBase"
 import { RadarChart } from "../../../assets/js/chart/radarChart.js"
 import { scaleOrdinal } from "d3-scale"
 import { select } from "d3-selection"
 
 export default {
-  name: "kytos-chart-radar",
+  name: "k-chart-radar",
   mixins: [KytosBase],
   props: {
     data: {

@@ -1,10 +1,10 @@
 <template>
 
-<div id="kytos-switch-search">
+<div id="k-switch-search">
 
-  <div id="kytos-input-search" class="kytos-input-wrap">
+  <div id="k-input-search" class="k-input-wrap">
    <icon name="search"></icon>
-   <input type="text" v-model="search" class="kytos-input" tooltip="Search for switches" placeholder="Search for switches" onshow="this.focus()" autofocus id="kytos-switches-search-input">
+   <input type="text" v-model="search" class="k-input" tooltip="Search for switches" placeholder="Search for switches" onshow="this.focus()" autofocus id="k-switches-search-input">
   </div>
 
   <div id="search-result">
@@ -25,19 +25,19 @@
  overflow: auto;
  height: 85vh;
 }
-#kytos-switch-search {
+#k-switch-search {
  color: #CCC;
  font-size: 0.9em;
  line-height: 1.2em;
 }
-#kytos-input-search {
+#k-input-search {
  margin-bottom: 10px;
  width: 96%;
  font-size: 1.2em;
 }
 
-#kytos-input-search:hover *,
-#kytos-input-search:hover {
+#k-input-search:hover *,
+#k-input-search:hover {
  background: #111;
 }
 
@@ -66,12 +66,12 @@
 }
 </style>
 <script>
-import KytosBaseWithIcon from '../components/kytos/base/KytosBaseWithIcon.vue';
+import KytosBaseWithIcon from '../components/kytos/base/KytosBaseWithIcon';
 import switchInfo from "../kytos/switchInfo.vue"
 const d3 = require('d3')
 
 export default {
-  name: 'kytos-list-switches',
+  name: 'k-list-switches',
   mixins: [KytosBaseWithIcon],
   props: ["content"],
   data () {
@@ -108,7 +108,7 @@ export default {
     this.get_switches()
   },
   updated () {
-    document.getElementById('kytos-switches-search-input').focus()
+    document.getElementById('k-switches-search-input').focus()
   },
   watch: {
     content () {

@@ -11,11 +11,14 @@
   },
   "dependencies": {
     "d3": "^4.11.0",
+    "glob": "^7.1.2",
     "socket.io-client": "^2.0.4",
     "typeit": "^4.4.1",
     "v-hotkey": "^0.2.0",
     "vue": "^2.3.3",
-    "webpack-merge": "^4.1.1"
+    "vue-docgen-api": "^2.3.3",
+    "webpack-merge": "^4.1.1",
+    "write-file": "^1.0.0"
   },
   "devDependencies": {
     "babel-core": "^6.0.0",

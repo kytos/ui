@@ -1,41 +1,41 @@
 <template>
 
-    <kytos-accordion>
+    <k-accordion>
 
-    <kytos-accordion-item title="Usage Radar" v-if="this.metadata.id">
-      <kytos-switch-radar :dpid="metadata.id" :showGrid="true" :showAxis="true" :showLabels="true" :showLegend="false"></kytos-switch-radar>
-    </kytos-accordion-item>
+    <k-accordion-item title="Usage Radar" v-if="this.metadata.id">
+      <k-switch-radar :dpid="metadata.id" :showGrid="true" :showAxis="true" :showLabels="true" :showLegend="false"></k-switch-radar>
+    </k-accordion-item>
 
-    <kytos-accordion-item title="Basic Details">
-        <kytos-property-panel>
-            <kytos-property-panel-item :name="key" :value="value" :key="key" v-if="content" v-for="(value, key) in this.metadata"></kytos-property-panel-item>
-        </kytos-property-panel>
-    </kytos-accordion-item>
+    <k-accordion-item title="Basic Details">
+        <k-property-panel>
+            <k-property-panel-item :name="key" :value="value" :key="key" v-if="content" v-for="(value, key) in this.metadata"></k-property-panel-item>
+        </k-property-panel>
+    </k-accordion-item>
 
-    <kytos-accordion-item title="Custom Properties" v-if="this.custom_properties">
-        <kytos-property-panel>
-            <kytos-property-panel-item :name="key" :value="value" v-if="content" :key="key" v-for="(value, key) in this.custom_properties"></kytos-property-panel-item>
-        </kytos-property-panel>
-    </kytos-accordion-item>
+    <k-accordion-item title="Custom Properties" v-if="this.custom_properties">
+        <k-property-panel>
+            <k-property-panel-item :name="key" :value="value" v-if="content" :key="key" v-for="(value, key) in this.custom_properties"></k-property-panel-item>
+        </k-property-panel>
+    </k-accordion-item>
 
-    <kytos-accordion-item title="Interfaces" v-if="this.interfaces">
-       <kytos-interface :interface_id="interface.id" :name="interface.name" :port_number="interface.port_number" :mac="interface.mac" :speed="interface.speed" :key="interface.name" v-for="interface in this.interfaces"></kytos-interface>
-    </kytos-accordion-item>
+    <k-accordion-item title="Interfaces" v-if="this.interfaces">
+       <k-interface :interface_id="interface.id" :name="interface.name" :port_number="interface.port_number" :mac="interface.mac" :speed="interface.speed" :key="interface.name" v-for="interface in this.interfaces"></k-interface>
+    </k-accordion-item>
 
-    <kytos-accordion-item title="Flows" v-if="this.flows">
-       <kytos-flow :content="flow" :key="flow.id" v-for="flow in this.flows"></kytos-flow>
-    </kytos-accordion-item>
+    <k-accordion-item title="Flows" v-if="this.flows">
+       <k-flow :content="flow" :key="flow.id" v-for="flow in this.flows"></k-flow>
+    </k-accordion-item>
 
 
-    </kytos-accordion>
+    </k-accordion>
 </template>
 
 <script>
-import KytosBaseWithIcon from '../components/kytos/base/KytosBaseWithIcon.vue'
+import KytosBaseWithIcon from '../components/kytos/base/KytosBaseWithIcon'
 const d3 = require('d3')
 
 export default {
-  name: 'kytos-switch-info',
+  name: 'k-switch-info',
   mixins: [KytosBaseWithIcon],
   props: ["content"],
   data () {

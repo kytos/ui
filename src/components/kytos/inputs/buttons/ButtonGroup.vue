@@ -1,15 +1,22 @@
 <template>
-<div class="kytos-button-wrapper compact">
-    <a v-if="tooltip" v-bind:title="tooltip" class="kytos-button-wrapper-tooltip"></a>
+<div class="k-button-wrapper compact">
+    <a v-if="tooltip" v-bind:title="tooltip" class="k-button-wrapper-tooltip"></a>
+     <!-- @slot Slot to be filled with a buttons set -->
     <slot />
 </div>
 </template>
 
 <script>
-import KytosBase from '../../base/KytosBase.vue';
+import KytosBase from '../../base/KytosBase';
+
+/**
+ * Allows to group buttons (``k-button``), which trigger events when clicked.
+ *
+ * @example /_static/imgs/components/input/k-button-group.png
+ */
 
 export default {
-  name: 'kytos-button-group',
+  name: 'k-button-group',
   mixins: [KytosBase],
   data: function() {
     return {
@@ -27,7 +34,7 @@ export default {
 
 @import '../../../../assets/styles/variables'
 
-.kytos-button-wrapper
+.k-button-wrapper
  display: inline-flex
  position: relative
  vertical-align: middle

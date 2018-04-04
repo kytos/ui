@@ -1,17 +1,21 @@
 <template>
-  <div class="kytos-textarea-wrap no-compact">
+  <div class="k-textarea-wrap no-compact">
     <icon v-if="icon" v-bind:name="icon"></icon>
-    <textarea ref="textarea" @textarea="updateText($event.target.value)"  type="text" :id="id" class="kytos-textarea" :value="value" :tooltip="tooltip" :placeholder="placeholder"
+    <textarea ref="textarea" @textarea="updateText($event.target.value)"  type="text" :id="id" class="k-textarea" :value="value" :tooltip="tooltip" :placeholder="placeholder"
       v-bind:disabled="isDisabled" onshow="this.focus()" autofocus>
     </textarea>
   </div>
 </template>
 
 <script>
-import KytosBaseWithIcon from '../base/KytosBaseWithIcon.vue';
+import KytosBase from '../base/KytosBase';
+import KytosBaseWithIcon from '../base/KytosBaseWithIcon';
 
+/**
+ * A text input field with multi-line.
+ */
 export default {
-  name: 'kytos-textarea',
+  name: 'k-textarea',
   mixins: [KytosBaseWithIcon],
   props: {
    value: {
@@ -44,7 +48,7 @@ export default {
 
 @import '../../../assets/styles/variables'
 
-.kytos-textarea-wrap
+.k-textarea-wrap
  border: 1px solid $fill-input-bg
  border-radius: 0.2em
  background: $fill-input-bg
@@ -63,7 +67,7 @@ export default {
   fill: $fill-icon
   padding: 0.3em 0.5em
 
-.kytos-textarea
+.k-textarea
  padding: 0.2em
  border: none
  border-radius: 0.2em

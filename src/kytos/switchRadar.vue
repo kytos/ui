@@ -1,13 +1,13 @@
 <template>
-  <kytos-chart-radar v-if="data" :data="data" :showGrid="showGrid" :showAxis="showAxis" :showLabels="showLabels" :showLegend="showLegend"></kytos-chart-radar>
+  <k-chart-radar v-if="data" :data="data" :showGrid="showGrid" :showAxis="showAxis" :showLabels="showLabels" :showLegend="showLegend"></k-chart-radar>
 </template>
 
 <script>
-import KytosBaseWithIcon from '../components/kytos/base/KytosBaseWithIcon.vue'
+import KytosBaseWithIcon from '../components/kytos/base/KytosBaseWithIcon'
 import {json} from "d3-request"
 
 export default {
-  name: 'kytos-switch-radar',
+  name: 'k-switch-radar',
   mixins: [KytosBaseWithIcon],
   props: {
     dpid: {

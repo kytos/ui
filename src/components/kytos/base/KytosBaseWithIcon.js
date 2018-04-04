@@ -1,12 +1,19 @@
-<script>
-import KytosBase from './KytosBase.vue';
+import KytosBase from './KytosBase'
 import 'vue-awesome/icons';
 import Icon from 'vue-awesome/components/Icon.vue';
 
+/**
+ * A base components with icon in property.
+ * @mixin
+ */
+
 export default {
-  name: 'KytosBaseWithIcon',
+  name: 'KytosWithIcon',
   mixins: [KytosBase],
   props: {
+    /**
+     * An Icon string
+     */
     icon: {
       type: String,
     },
@@ -15,4 +22,3 @@ export default {
       'icon': Icon
   }
 }
-</script>

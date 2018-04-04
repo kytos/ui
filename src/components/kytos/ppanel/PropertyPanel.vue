@@ -1,16 +1,22 @@
 <template>
-  <div :id="id" class="kytos-property-panel no-compact">
+  <div :id="id" class="k-property-panel no-compact">
   <table>
+     <!-- @slot Define a table content inside, a PropertyPanelItem can be used. -->
       <slot />
   </table>
   </div>
 </template>
 
 <script>
-import KytosBase from '../base/KytosBase.vue';
+import KytosBase from '../base/KytosBase';
 
+/**
+ * This component allows to create a table with two columns ( *name* and *value*). Each row in the table is a ``k-property-panel-item`` component, with the *value* and *name*.
+ *
+ * @example /_static/imgs/components/ppanel/k-property-panel.png
+ */
 export default {
-  name: 'kytos-property-panel',
+  name: 'k-property-panel',
   mixins: [KytosBase],
 }
 </script>
@@ -19,7 +25,7 @@ export default {
 
 @import '../../../assets/styles/variables'
 
-.kytos-property-panel
+.k-property-panel
  color: $fill-text
  overflow: auto
  max-height: 250px

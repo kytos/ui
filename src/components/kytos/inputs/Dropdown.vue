@@ -1,10 +1,10 @@
 <template>
-   <label class="kytos-dropdown">
-    <div class="kytos-dropdown__title">
+   <label class="k-dropdown">
+    <div class="k-dropdown__title">
       <icon v-if="icon" v-bind:name="icon"></icon>
       {{title}}
     </div>
-    <select class="kytos-dropdown__select" v-model="selected" @change.prevent="emitEvent">
+    <select class="k-dropdown__select" v-model="selected" @change.prevent="emitEvent">
       <option v-for="item in options"
               :value="item.value">{{item.description}}</option>
     </select>
@@ -12,10 +12,17 @@
 </template>
 
 <script>
-import KytosBaseWithIcon from '../base/KytosBaseWithIcon.vue';
+import KytosBase from '../base/KytosBase';
+import KytosBaseWithIcon from '../base/KytosBaseWithIcon';
+
+/**
+ * A toggleable menu that allows the user to choose one value from a predefined list.
+ *
+ * @example /_static/imgs/components/input/k-dropdown.png
+ */
 
 export default {
-  name: 'kytos-dropdown',
+  name: 'k-dropdown',
   mixins: [KytosBaseWithIcon],
   props: {
     options: {
@@ -40,6 +47,12 @@ export default {
     emitEvent () {
       let content = this.event.content
       content.value = this.selected
+      /**
+      * Emit an event when the dropdown is changed
+      *
+      * @event On kytos dropdown change
+      * @type {object}
+      */
       this.$kytos.$emit(this.event.name, content)
       this.action(this.event.name, content)
     }
@@ -66,7 +79,7 @@ export default {
 
 @import '../../../assets/styles/variables'
 
-.kytos-dropdown
+.k-dropdown
  position: relative
  display: block
  width: 100%
@@ -108,12 +121,12 @@ export default {
   min-width: 140px
   overflow: hidden
 
-  .kytos-dropdown__title
+  .k-dropdown__title
    padding-bottom: 2px
    padding-left: 3px
    padding-top: 0px
 
-  .kytos-dropdown__select
+  .k-dropdown__select
    margin-left: 5px
    width: 130px
    max-width: 130px
@@ -125,7 +138,7 @@ export default {
    text-align: center
    top: 4.5px
 
-.kytos-dropdown__title
+.k-dropdown__title
  padding-bottom: 10px
  padding-top: 5px
  padding-left: 10px
@@ -136,7 +149,7 @@ export default {
   margin-bottom: -5px
   margin-right: 5px
 
-.kytos-dropdown__select
+.k-dropdown__select
  -webkit-appearance: none
  -moz-appearance: none
  appearance: none
@@ -170,7 +183,7 @@ export default {
   box-shadow: 0 0 10px 10px rgba(0,0,0,0.5) inset
 
 .compacted
- .kytos-dropdown
+ .k-dropdown
   display: inline-flex
   min-width: 100px
   max-width: 400px
@@ -178,7 +191,7 @@ export default {
   margin-right: 5px
   margin-left: 2px
 
- .kytos-dropdown__title
+ .k-dropdown__title
   visibility: hidden
   width: 12px
 
@@ -186,7 +199,7 @@ export default {
    visibility: visible
    margin-left: -8px
 
- .kytos-dropdown__select
+ .k-dropdown__select
   margin-top: 3px
   margin-right: 2px
 

@@ -1,24 +1,24 @@
 <template>
-  <div :id="id" class="kytos-logging">
-    <div class="kytos-logging-toolbar">
-        <kytos-button-group>
-          <kytos-button icon="trash" v-on:click.native="clear" tooltip="Clear Logging"></kytos-button>
-          <kytos-button v-bind:icon="playing" v-on:click.native="play_pause" tooltip="Pause/Play Logging" ></kytos-button>
-          <kytos-checkbox icon="paint-brush" v-on:change.native="change_colors" class="round"></kytos-checkbox>
-        </kytos-button-group>
-        <kytos-button-group>
-          <kytos-button title="All" @click.native="select('all')" tooltip="All logs"></kytos-button>
-          <kytos-button title="Info" @click.native="select('info')" tooltip="Only info messages"></kytos-button>
-          <kytos-button title="Warn" @click.native="select('warn')"  tooltip="Only warning messages"></kytos-button>
-          <kytos-button title="Error" @click.native="select('error')"  tooltip="Only error messages"></kytos-button>
-          <kytos-button title="Debug" @click.native="select('debug')"  tooltip="Only debug messages"></kytos-button>
-        </kytos-button-group>
-        <kytos-button-group>
-          <kytos-input v-model="highlight_string" v-on:change.native='highlight' icon="lightbulb-o" tooltip="Highlight string" placeholder="Highlight string"></kytos-input>
-        </kytos-button-group>
+  <div :id="id" class="k-logging">
+    <div class="k-logging-toolbar">
+        <k-button-group>
+          <k-button icon="trash" v-on:click.native="clear" tooltip="Clear Logging"></k-button>
+          <k-button v-bind:icon="playing" v-on:click.native="play_pause" tooltip="Pause/Play Logging" ></k-button>
+          <k-checkbox icon="paint-brush" v-on:change.native="change_colors" class="round"></k-checkbox>
+        </k-button-group>
+        <k-button-group>
+          <k-button title="All" @click.native="select('all')" tooltip="All logs"></k-button>
+          <k-button title="Info" @click.native="select('info')" tooltip="Only info messages"></k-button>
+          <k-button title="Warn" @click.native="select('warn')"  tooltip="Only warning messages"></k-button>
+          <k-button title="Error" @click.native="select('error')"  tooltip="Only error messages"></k-button>
+          <k-button title="Debug" @click.native="select('debug')"  tooltip="Only debug messages"></k-button>
+        </k-button-group>
+        <k-button-group>
+          <k-input v-model="highlight_string" v-on:change.native='highlight' icon="lightbulb-o" tooltip="Highlight string" placeholder="Highlight string"></k-input>
+        </k-button-group>
       </div>
 
-      <div class="kytos-logging-content" v-bind:class="colors">
+      <div class="k-logging-content" v-bind:class="colors">
         <div v-for="log in logs" :class="log.level" v-show="log.display">
            {{log.msg}}
         </div>
@@ -28,11 +28,11 @@
 </template>
 
 <script>
-import KytosBaseWithIcon from '../base/KytosBaseWithIcon.vue';
-import LoggingUtils from './Logging-Utils.vue';
+import KytosBaseWithIcon from '../base/KytosBaseWithIcon';
+import LoggingUtils from './Logging-Utils';
 
 export default {
-  name: 'kytos-logging',
+  name: 'k-logging',
   mixins: [KytosBaseWithIcon, LoggingUtils],
   methods: {
     select: function(selected){
@@ -61,7 +61,7 @@ export default {
       this.colors = (this.colors == "colors")? "no_colors": "colors"
     },
    highlight: function(){
-     var logs = $('.kytos-logging-content div')
+     var logs = $('.k-logging-content div')
      for (let log of logs){
       if (log.innerText.includes(this.highlight_string) > 0){
         var pattern = new RegExp(this.highlight_string, 'ig')
@@ -88,21 +88,21 @@ export default {
 
 @import '../../../assets/styles/variables'
 
-.kytos-logging
+.k-logging
  position: relative
  width: 100%
 
-.kytos-logging-toolbar
+.k-logging-toolbar
  width: 100%
  background-color: $fill-button-bg-h
  height: 30px
  overflow: hidden
 
- .kytos-input-wrap, input
+ .k-input-wrap, input
   background: none
   border-color: transparent
- 
- .kytos-button
+
+ .k-button
   font-size: 0.8em
   height: 30px
   margin: 0px
@@ -111,7 +111,7 @@ export default {
  svg
   width: 10px
 
-.kytos-logging-content
+.k-logging-content
  overflow: auto
  max-height: 280px
  min-height: 280px
@@ -141,11 +141,11 @@ export default {
    cursor: pointer
 
 *:-moz-full-screen
- .kytos-logging-content
+ .k-logging-content
   max-height: none
 
 *:-webkit-full-screen
- .kytos-logging-content
+ .k-logging-content
   max-height: none
 
 </style>

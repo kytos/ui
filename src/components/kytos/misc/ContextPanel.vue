@@ -1,18 +1,23 @@
 <template>
-<section class="kytos-context-panel">
+<section class="k-context-panel">
   <icon v-if="icon" v-bind:name="icon"></icon>
   <div v-if="title" class="pannel-title">
     <h1>{{title}} <small>{{subtitle}}</small></h1>
   </div>
+  <!--@slot Can be filled with the panel content -->
   <slot />
 </section>
 </template>
 
 <script>
-import KytosBaseWithIcon from './base/KytosBaseWithIcon.vue';
+import KytosBase from '../base/KytosBase';
+import KytosBaseWithIcon from '../base/KytosBaseWithIcon';
 
+/**
+ * Shows details about selected kytos components. The panel can be shown or hidden using the shortcut *Ctrl+Alt+Space*.
+ */
 export default {
-  name: 'kytos-context-panel',
+  name: 'k-context-panel',
   mixins: [KytosBaseWithIcon],
   props: {
     subtitle: {
@@ -24,9 +29,9 @@ export default {
 
 <style lang="sass">
 
-@import '../../assets/styles/variables'
+@import '../../../assets/styles/variables'
 
-.kytos-context-panel
+.k-context-panel
   -webkit-order: 2
   -ms-flex-order: 2
   order: 2
@@ -39,7 +44,7 @@ export default {
   box-shadow: 10px 0px 20px -10px $fill-panel
   color: red
 
-  > svg 
+  > svg
    vertical-align: middle
    color: $fill-icon
 

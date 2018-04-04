@@ -1,8 +1,5 @@
-Kytos User Interface
-####################
-
 Overview
-********
+########
 
 kytos has a friendly and flexible interface.  We tried to make the UI in such a
 way that it could be coupled new components in an easy and intuitive way.
@@ -19,7 +16,6 @@ screens using the Kytos platform.
    :align: center
 
    Kytos Graphical User Interface
-
 
 Kytos UI Sections
 *****************
@@ -43,9 +39,9 @@ The bar menu is a small vertical band that sits on the left side of the screen
 under the logo. This menu consists of buttons that trigger the respective
 oolbars, or trigger other actions.
 
-#. **k-logo**: When pressed the kytos-toolbar will switch between
+#. **k-logo**: When pressed the k-toolbar will switch between
    expandeded and compacted version.
-#. **Item**: Change the kytos-toolbar context to display the napps component.
+#. **Item**: Change the k-toolbar context to display the napps component.
 
 
 The amount of buttons that will appear here will depend on how many NApps you
@@ -103,7 +99,7 @@ Tabs
 ====
 UI component: ``k-tabs``
 
-The kytos-tabs components is responsible to have a terminal, show switch
+The k-tabs components is responsible to have a terminal, show switch
 informations, logs of kytos instance and kytos ui alerts.
 
 
@@ -113,11 +109,3 @@ UI component: ``menu-actions``
 
 If you try to press ``ctrl + space`` a list of actions will appear at the
 center of Kytos UI.
-
-.. toctree::
-   :hidden:
-   :glob:
-
-   self
-   build_component
-   Kytos Components<components.rst>

@@ -1,34 +1,34 @@
 <template>
-  <div id="tabs-panel" class="kytos-tabs" v-bind:class="{ hiddenTabs: hiddenTabs }">
-    <div class="kytos-tabs-nav">
+  <div id="tabs-panel" class="k-tabs" v-bind:class="{ hiddenTabs: hiddenTabs }">
+    <div class="k-tabs-nav">
 
-      <kytos-button class="tab-nav" title="Terminal" icon="terminal" @click.native="openTab('terminal')"></kytos-button>
-      <kytos-button class="tab-nav" title="Switches" icon="circle-o" @click.native="openTab('switches')"></kytos-button>
-      <kytos-button class="tab-nav active" title="Logging" icon="heartbeat" @click.native="openTab('logging')"></kytos-button>
-      <kytos-button class="tab-nav" title="Notifications" icon="bell-o" @click.native="openTab('notifications')"></kytos-button>
-      <kytos-status-bar></kytos-status-bar>
+      <k-button class="tab-nav" title="Terminal" icon="terminal" @click.native="openTab('terminal')"></k-button>
+      <k-button class="tab-nav" title="Switches" icon="circle-o" @click.native="openTab('switches')"></k-button>
+      <k-button class="tab-nav active" title="Logging" icon="heartbeat" @click.native="openTab('logging')"></k-button>
+      <k-button class="tab-nav" title="Notifications" icon="bell-o" @click.native="openTab('notifications')"></k-button>
+      <k-status-bar></k-status-bar>
 
-      <div class="kytos-tabs-control">
-        <a class="kytos-hidden-tab" v-on:click="this.toggleTerminal">
+      <div class="k-tabs-control">
+        <a class="k-hidden-tab" v-on:click="this.toggleTerminal">
             <icon v-if="!hiddenTabs" name="chevron-down"></icon>
             <icon v-else name="chevron-up"></icon>
         </a>
         <a v-on:click="this.fullTerminal">
             <icon name="arrows-alt"></icon>
         </a>
-      </div><!-- .kytos-tabs-control -->
+      </div><!-- .k-tabs-control -->
 
-    </div><!-- .kytos-tab-nav -->
+    </div><!-- .k-tab-nav -->
 
     <div id="terminal" class="tabcontent">
-      <kytos-terminal></kytos-terminal>
+      <k-terminal></k-terminal>
     </div>
 
     <div id="switches" class="tabcontent">
     </div>
 
     <div id="logging" class="tabcontent">
-      <kytos-logging></kytos-logging>
+      <k-logging></k-logging>
     </div>
 
     <div id="notifications" class="tabcontent">
@@ -38,10 +38,11 @@
 </template>
 
 <script>
-import KytosBaseWithIcon from '../base/KytosBaseWithIcon.vue';
+import KytosBase from '../base/KytosBase';
+import KytosBaseWithIcon from '../base/KytosBaseWithIcon';
 
 export default {
-  name: 'kytos-tabs',
+  name: 'k-tabs',
   mixins: [KytosBaseWithIcon],
   data () {
     return {
@@ -122,7 +123,7 @@ export default {
 
 @import '../../../assets/styles/variables'
 
-.kytos-tabs
+.k-tabs
  height: 350px
  margin-top: -350px
  z-index: 900
@@ -130,34 +131,34 @@ export default {
  background: $kytos-dark-gray
  margin-left: 280px
 
-.kytos-tabs.hiddenTabs
+.k-tabs.hiddenTabs
   margin-top: -25px
   height: 25px
   overflow: hidden
 
-.kytos-tabs:-moz-full-screen
+.k-tabs:-moz-full-screen
   width: 100%
   height: 100vh
 
-.kytos-tabs:-webkit-full-screen
+.k-tabs:-webkit-full-screen
   width: 100%
   height: 100vh
   margin: 0px
   padding: 0px
 
-.kytos-tabs:-moz-full-screen .kytos-hidden-tab
+.k-tabs:-moz-full-screen .k-hidden-tab
   display: none
 
-.kytos-tabs:-webkit-full-screen .kytos-hidden-tab
+.k-tabs:-webkit-full-screen .k-hidden-tab
   display: none
 
-.kytos-tabs-nav
+.k-tabs-nav
  overflow: hidden
  height: 25px
  background-color: $fill-bar
  box-shadow: 0 -5px 5px -5px $kytos-dark-gray
 
-.kytos-tabs-nav button
+.k-tabs-nav button
  float: left
  color: $fill-text
  border: none
@@ -170,21 +171,21 @@ export default {
  transition: 0.3s
  border-right: 1px solid $kytos-dark-gray
 
-.kytos-tabs-nav button:hover
+.k-tabs-nav button:hover
   color: $fill-text-h
   background-color: rgba(0,0,0,0.4)
 
-.kytos-tabs-nav .active
+.k-tabs-nav .active
   color: $fill-link
   background-color: $fill-button-bg-h
 
-.kytos-tabs-nav button:hover svg
+.k-tabs-nav button:hover svg
   fill: $fill-icon-h
 
-.kytos-tabs-nav .active svg
+.k-tabs-nav .active svg
   fill: $fill-icon
 
-.kytos-tabs-nav svg
+.k-tabs-nav svg
   width: 13px
   margin-right: 5px
 
@@ -197,33 +198,33 @@ export default {
   overflow: auto
   padding: 0px 0px 0px
 
-.kytos-tabs-control
+.k-tabs-control
   float: right
   display: inline-flex
 
-.kytos-tabs-control svg
+.k-tabs-control svg
   width: 8px
 
-.kytos-tabs-control a
+.k-tabs-control a
   display: block
   cursor: pointer
   padding: 5px
 
-.kytos-tabs-control a:hover svg
+.k-tabs-control a:hover svg
   fill: $fill-icon-h
 
-.kytos-tabs:-moz-full-screen .tabcontent
+.k-tabs:-moz-full-screen .tabcontent
   height: auto
   min-height: 100vh
   max-height: 100vh
 
-.kytos-tabs:-webkit-full-screen .tabcontent
+.k-tabs:-webkit-full-screen .tabcontent
   height: auto
   min-height: 100vh
   max-height: 100vh
 
 .compacted
- .kytos-tabs
+ .k-tabs
    margin-left: 40px
 
 </style>

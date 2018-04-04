@@ -1,6 +1,0 @@
-Topology
-========
-
-* `ContextPanel`:
-* `Menubar`:
-* `Toolbar`:

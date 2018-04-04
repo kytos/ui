@@ -1,5 +1,5 @@
 <template>
-  <button :id="id" class="kytos-button compact"
+  <button :id="id" class="k-button compact"
     @click="this.click"
     v-bind:title="tooltip"
     v-bind:disabled="isDisabled">
@@ -9,13 +9,34 @@
 </template>
 
 <script>
-import KytosBaseWithIcon from '../../base/KytosBaseWithIcon.vue';
+import KytosBase from '../../base/KytosBase';
+import KytosBaseWithIcon from '../../base/KytosBaseWithIcon';
+
+/**
+ * This component represents a button that triggers an event when clicked.
+ * @example <k-button tooltip="Request Circuit" title="Request Circuit" icon="gear" :action="request_circuit"></k-button>
+ * @example /_static/imgs/components/input/k-button.png
+ */
 
 export default {
-  name: 'kytos-button',
+  name: 'k-button',
   mixins: [KytosBaseWithIcon],
-  props: ["on_click"],
+  props: {
+    /**
+    * Function called after the button is clicked.
+    */
+    on_click: {
+      type: Function,
+      default: function(val) { return },
+    }
+  },
   methods: {
+     /**
+     * Call on_click event.
+     *
+     * @public
+     * @param {object} event trigged event
+     */
     click(event){
       this.on_click()
     }
@@ -27,7 +48,7 @@ export default {
 
 @import '../../../../assets/styles/variables'
 
-.kytos-button
+.k-button
   display: block
   outline: 0
   border: none

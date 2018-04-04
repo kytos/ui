@@ -1,5 +1,5 @@
-Create new UI Component
-#######################
+Create a NApp with UI
+#####################
 
 Sometimes, it is necessary for a Napp to interact with the user, for
 through a graphical interface (not just API REST).
@@ -9,14 +9,14 @@ that you, developer, worry as little as possible about interface.
 
 In theory, you can during the construction of your NAPP UI, write any HTML code
 that Kytos will render. However, we strongly recommend that you use the
-components we have developed. The so-called ``k- *`` components.
+components we have developed. The so-called ``k-*`` components.
 
 
 Napp Structure with a UI
 ************************
 
 After create a new NApp (see this `NApp tutorial
-<https://tutorials.kytos.io/napps/create_your_napp/>`_ the structure below will
+<https://tutorials.kytos.io/napps/create_your_napp/>`_) the structure below will
 be created.
 
 .. code-block:: sh
@@ -32,7 +32,7 @@ be created.
       └── ui/
           ├── k-info-panel/
           ├── k-toolbar/
-          └── README
+          └── README.rst
 
 
 To add a new components into the kytos UI you must create a new file following
@@ -58,11 +58,11 @@ Whether I have created a new napp component into the sections ``k-toolbar`` and
           │   └── main.kytos
           ├── k-toolbar
           │   └── main.kytos
-          └── README
+          └── README.rst
 
 
 When the administrator enables their NApp, Kytos will automatically scan the
-`ui/*` structure to properly export to GUI.
+``ui/*`` structure to properly export to GUI.
 
 Component Template
 ******************
@@ -83,7 +83,7 @@ Below a template of kytos component is displayed.
 
    <template>
     <!-- This template tag is optional -->
-    <div class="kytos-menu-item"  icon="my_icon" tooltip="Sample Tooltip">
+    <div class="k-menu-item"  icon="my_icon" tooltip="Sample Tooltip">
        <!-- You could put yours kytos components here -->
     </div>
    </template>
@@ -109,9 +109,9 @@ Below a template of kytos component is displayed.
 
 
 You should replace the **my_icon** to an **awesome icon**, the kytos interface
-will read that icon and create a new button into the **kytos-menu-bar**.  You
+will read that icon and create a new button into the **k-menu-bar**.  You
 can replace the string **Sample Tooltip** to display a tooltip in your
-**kytos-menu-bar** button.
+**k-menu-bar** button.
 
 
 Sample Component
@@ -120,24 +120,24 @@ Sample Component
 Status-Component
 ================
 
-Below we have a ``ui/kytos-toolbar/status-component.kytos`` file. This
+Below we have a ``ui/k-toolbar/status-component.kytos`` file. This
 component was build to request the kytos server and get all napps informations
 and display that into the component.
 
 .. code-block:: html
 
     <template>
-     <kytos-context-panel v-if="expanded">
-      <kytos-accordion >
-        <kytos-accordion-item title="Installed NApps">
-          <kytos-property-panel>
-            <kytos-property-panel-item v-if="napps"
+     <k-context-panel v-if="expanded">
+      <k-accordion >
+        <k-accordion-item title="Installed NApps">
+          <k-property-panel>
+            <k-property-panel-item v-if="napps"
               v-for="napp in this.napps" :key="napp.name" :name="napp.name" :value="napp.version">
-            </kytos-property-panel-item>
-          </kytos-property-panel>
-        </kytos-accordion-item>
-      </kytos-accordion>
-     </kytos-context-panel>
+            </k-property-panel-item>
+          </k-property-panel>
+        </k-accordion-item>
+      </k-accordion>
+     </k-context-panel>
     </template>
     <script>
     module.exports = {
