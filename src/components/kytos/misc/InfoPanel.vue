@@ -7,10 +7,9 @@
     </div>
    </div>
    <div class="k-info-wrapper">
-    <component v-bind:is="this.infoPanelView" v-bind:content="this.content">
-    </component>
+    <component v-bind:is="this.infoPanelView" v-bind:content="content"></component>
    </div>
-</section>
+  </section>
 </template>
 
 <script>

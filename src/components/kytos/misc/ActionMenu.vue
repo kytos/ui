@@ -21,7 +21,6 @@
 <script>
 import KytosBase from '../base/KytosBase'
 import KytosBaseWithIcon from '../base/KytosBaseWithIcon'
-import listSwitches from "../../../kytos/listSwitches.vue"
 
 /**
  * Accordion item that can be switched between hiding and showing content
@@ -70,7 +69,9 @@ export default {
     * @params {object} options Object with the params [name, author, shortkey, content]
     */
     add_action_menu_item(options){
-      this.items.push(options)
+      var found = false
+      for(var i in this.items){if(options.name === this.items[i].name) found = true}
+      if(found === false) this.items.push(options)
     },
     /**
     * Method to register all listeners used by this component.

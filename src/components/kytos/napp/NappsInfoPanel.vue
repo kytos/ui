@@ -1,5 +1,5 @@
 <template>
- <div class='k-action-menu-item' >
+ <div class='k-napps-info-panel'>
   <component v-show="false" v-for="component in components" :is="component.name" v-bind:key="component.name"></component>
  </div>
 </template>
@@ -9,10 +9,10 @@ import Vue from 'vue'
 import httpVueLoader from "./httpVueLoader.js"
 
 export default {
-  name: 'k-action-menu-item',
+  name: 'k-napps-info-panel',
   data () {
     return {
-      url: this.$kytos_server+ 'ui/k-action-menu',
+      url: this.$kytos_server+ 'ui/k-info-panel',
       components: [],
     }
   },
