@@ -3,10 +3,11 @@ import Vue from 'vue'
 import httpVueLoader from "./httpVueLoader.js"
 
 export default {
-  name: 'napp-loader',
-  props: ["active", "compacted", "components", "url"],
+  name: 'k-toolbar',
+  props: ["active", "compacted", "components"],
   data () {
     return {
+     url: this.$kytos_server+ 'ui/k-toolbar',
      template: null,
      inner_components: this.components || [] ,
     }
@@ -49,7 +50,7 @@ export default {
         if('url' in component){
           // random is needed to avoid cache of components.
           var url = self.$kytos_server+component.url+"?random="+Math.random()
-          self.$options.components[component.name] = httpVueLoader(url)
+          Vue.component(component.name, httpVueLoader(url))
         }
       })
     },
@@ -61,7 +62,7 @@ export default {
     context += '</div>'
     return context
   }
-}
+ }
 }
 </script>
 

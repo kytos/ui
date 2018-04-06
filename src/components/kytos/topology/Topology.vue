@@ -3,7 +3,6 @@
 
 <script>
 import * as d3 from "d3"
-import switchInfo from "../../../kytos/switchInfo.vue"
 import KytosBase from '../base/KytosBase';
 import KytosBaseWithIcon from '../base/KytosBaseWithIcon';
 
@@ -318,8 +317,8 @@ export default {
         this.node_highlight(_interface)
         this.get_node_links(_interface).forEach((_link) => {this.link_highlight(_link)})
       })
-
-      var content = {component: switchInfo,
+      // this event need to be registered to be better
+      var content = {component: 'kytos-topology-switch_info',
                      content: obj,
                      icon: "gear",
                      title: "Switch Details",

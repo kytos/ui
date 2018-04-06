@@ -1,19 +1,19 @@
 <template>
-<div class="container">
-  <section class="k-menu-bar">
-    <div class="logo" v-on:click="toggle" v-bind:class="{ compacted: compacted  }">
-      <img v-show="!compacted" src="../../../assets/logo-kytos.svg" class="logo-kytos" alt="Kytos" height="35">
-      <img v-show="compacted" src="../../../assets/icon-kytos.svg" class="icon-kytos" alt="Kytos" height="35">
-    </div>
-    <k-button v-for="(component, index) in components"
-              v-bind:class="{ active: activeItem==(index+1) }"
-              :key="component.icon"
-              :icon="component.icon"
-              :tooltip="component.tooltip"
-              @click.native="setItem(index+1)"/>
-  </section>
-  <napp-loader :active="activeItem" :components.sync="components" :compacted="compacted" :url="url"></napp-loader>
-</div>
+ <div class="container">
+   <section class="k-menu-bar">
+     <div class="logo" v-on:click="toggle" v-bind:class="{ compacted: compacted  }">
+       <img v-show="!compacted" src="../../../assets/logo-kytos.svg" class="logo-kytos" alt="Kytos" height="35">
+       <img v-show="compacted" src="../../../assets/icon-kytos.svg" class="icon-kytos" alt="Kytos" height="35">
+     </div>
+     <k-button v-for="(component, index) in components"
+               v-bind:class="{ active: activeItem==(index+1) }"
+               :key="component.icon"
+               :icon="component.icon"
+               :tooltip="component.tooltip"
+               @click.native="setItem(index+1)"/>
+   </section>
+   <k-toolbar :active="activeItem" :components.sync="components" :compacted="compacted"></k-toolbar>
+ </div>
 </template>
 
 <script>
@@ -27,7 +27,6 @@ export default {
   props: ['toggle', 'compacted'],
   data() {
     return {
-      url: this.$kytos_server+ 'ui/k-toolbar',
       components: [{'icon': 'desktop', 'name':'mapbox-settings'}],
       activeItem: 1
     }

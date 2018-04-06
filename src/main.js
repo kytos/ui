@@ -5,8 +5,11 @@ import App from './App.vue'
 Vue.use(VueHotkey)
 
 window.$ = window.jQuery = require('jquery');
+window.d3 = window.D3 = require('d3');
 
-import NappLoader from './components/kytos/napp/NappLoader.vue';
+import KytosToolbar from './components/kytos/napp/Toolbar.vue';
+import KytosNappsInfoPanel from './components/kytos/napp/NappsInfoPanel.vue';
+import KytosActionMenuItem from './components/kytos/napp/ActionMenuItem.vue';
 import KytosMap from './components/kytos/map/Map.vue';
 import KytosTopology from './components/kytos/topology/Topology.vue';
 import KytosTabs from './components/kytos/tabs/tabs.vue';
@@ -34,7 +37,6 @@ import KytosPropertyPanelItem from './components/kytos/ppanel/PropertyPanelItem.
 import KytosInterface from './components/kytos/switch/Interface.vue';
 import KytosFlow from './components/kytos/switch/Flow.vue';
 
-import KytosSwitchInfo from './kytos/switchInfo.vue';
 import KytosSwitchRadar from './kytos/switchRadar.vue';
 import KytosInterfaceInfo from './kytos/interfaceInfo.vue';
 
@@ -65,12 +67,13 @@ Vue.component('k-accordion-item', KytosAccordionItem);
 Vue.component('k-property-panel', KytosPropertyPanel);
 Vue.component('k-property-panel-item', KytosPropertyPanelItem);
 Vue.component('k-info-panel', KytosInfoPanel);
-Vue.component('napp-loader', NappLoader);
+Vue.component('k-toolbar', KytosToolbar);
+Vue.component('k-action-menu-item', KytosActionMenuItem);
+Vue.component('k-napps-info-panel', KytosNappsInfoPanel);
 
 Vue.component('k-interface', KytosInterface);
 Vue.component('k-flow', KytosFlow);
 
-Vue.component('k-switch-info', KytosSwitchInfo);
 Vue.component('k-switch-radar', KytosSwitchRadar);
 Vue.component('k-interface-info', KytosInterfaceInfo);
 

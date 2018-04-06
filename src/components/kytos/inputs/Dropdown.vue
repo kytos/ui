@@ -25,17 +25,21 @@ export default {
   name: 'k-dropdown',
   mixins: [KytosBaseWithIcon],
   props: {
+    value:{
+      type: String,
+      default: ""
+    },
     options: {
       type: Array,
       required: true
     },
     event: {
       type: Object,
-      required: true
+      default: undefined
     },
     action: {
       type: Function,
-      default: function (event_name, content) { return }
+      default: function (value) { return }
     }
   },
   data () {
@@ -44,17 +48,20 @@ export default {
     }
   },
   methods: {
+    /**
+    * Emit an event when the dropdown is changed
+    *
+    * @event On kytos dropdown change
+    * @type {object}
+    */
     emitEvent () {
-      let content = this.event.content
-      content.value = this.selected
-      /**
-      * Emit an event when the dropdown is changed
-      *
-      * @event On kytos dropdown change
-      * @type {object}
-      */
-      this.$kytos.$emit(this.event.name, content)
-      this.action(this.event.name, content)
+      if (this.event !== undefined){
+        let content = this.event.content
+        content.value = this.selected
+        this.$kytos.$emit(this.event.name, content)
+      }
+      this.$emit('update:value', this.selected)
+      this.action(this.selected)
     }
   },
   mounted () {

@@ -1,35 +1,26 @@
 <template>
+<div>
   <div class="k-action-menu" v-hotkey="keymap" v-show="show">
-
-     <!-- FIXME: o correto seria chamar o parametro abaixo com v-model="search", mas não funciona
-      <k-input :value="search" icon="search" id="k-action-menu-input" placeholder="Search for actions"></k-input>
-      -->
-
   <div class="k-input-wrap">
-    <icon name="search"></icon>
-    <input type="text" id="k-action-menu-input" v-model="search" class="k-input" placeholder="Search for actions" autofocus>
-    </input>
+    <k-input :action="searchValue" :value="search" icon="search" id="k-action-menu-input" placeholder="Search for actions"></k-input>
   </div>
-
-
-     <div class="k-action-list">
-
-       <div v-for="item in actionItems" class="k-action-item" @click="show_info_panel(item.content)">
-         {{item.name}}
-         <div class="k-action-extras">
-         <span class="author">{{item.author}}</span>
-            <span class="shortkey">{{item.shortkey}}</span>
+  <div class="k-action-list">
+     <div v-for="item in actionItems" class="k-action-item" @click="show_info_panel(item)">
+     {{item.name}}
+     <div class="k-action-extras">
+     <span class="author">{{item.author}}</span>
+        <span class="shortkey">{{item.shortkey}}</span>
          </div>
        </div>
      </div>
-
-  </div><!-- .k-action-menu -->
+  </div>
+  <k-action-menu-item ></k-action-menu-item>
+</div>
 </template>
 
 <script>
 import KytosBase from '../base/KytosBase'
 import KytosBaseWithIcon from '../base/KytosBaseWithIcon'
-import listSwitches from "../../../kytos/listSwitches.vue"
 
 /**
  * Accordion item that can be switched between hiding and showing content
@@ -43,40 +34,71 @@ export default {
     return {
     show: false,
     search: '',
-   items: [
-        { name: 'Search Switch', author: 'kytos/core', shortkey: 'Ctrl+Alt+S', content: this.searchContent()},
-        { name: 'Search Host', author: 'kytos/core', shortkey: 'Ctrl+Alt+H'},
-        { name: 'Search Interface', author: 'kytos/core', shortkey: 'Ctrl+Alt+I'}
-     ]
-
+    items: [ ]
     }
   },
   methods: {
-    searchContent(){
-      return {"component": listSwitches,
-                     "content": {},
-                     "icon": "search",
-                     "title": "Switch Search",
-                     "subtitle": "by kytos/topology"}
+    /**
+    * Update the search value, this methos is called when the search input is changed.
+    * @params {string} query Text that will be used to filter de action itens
+    */
+    searchValue(query){
+      this.search = query
     },
+    /**
+    * Toggle visibility of action menu.
+    */
     toggle() {
        this.show = !this.show
     },
+    /**
+    * Method to change the visibility of action menu to invisible.
+    */
     hide() {
        this.show = false
     },
-    show_info_panel(content) {
-      this.$kytos.$emit("showInfoPanel", content)
+    /**
+    * Send to info panel the content to be displayed and hide the action menu.
+    */
+    show_info_panel(item) {
+      item.action()
       this.hide()
+    },
+    /**
+    * Method to add new action menu item
+    * @params {object} options Object with the params [name, author, shortkey, content]
+    */
+    add_action_menu_item(options){
+      var found = false
+      for(var i in this.items){if(options.name === this.items[i].name) found = true}
+      if(found === false) this.items.push(options)
+    },
+    /**
+    * Method to register all listeners used by this component.
+    */
+    register_listeners(){
+      this.$kytos.$on('addActionMenuItem', this.add_action_menu_item)
+    },
+    /**
+    * Method to return all shortkeys registereds
+    *
+    */
+    keys(){
+      var all_keys = {'ctrl+space': this.toggle, 'esc': this.hide}
+      $.each(this.items, function(index, value){
+        if(value.action !== undefined){
+          all_keys[value.shortkey] = value.action
+        }
+      })
+      return all_keys
     }
   },
-
+  mounted() {
+    this.register_listeners()
+  },
   computed: {
     keymap () {
-      return {
-        'ctrl+space': this.toggle,
-        'esc': this.hide,
-      }
+      return this.keys()
     },
     actionItems() {
        var self=this;
@@ -148,5 +170,8 @@ export default {
   text-align: right
   font-size: 0.8em
   color: $fill-shortkey
+
+#k-action-menu-input
+ width: 100vh
 
 </style>

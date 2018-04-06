@@ -9,6 +9,7 @@
 
     <k-info-panel></k-info-panel>
     <k-action-menu></k-action-menu>
+    <k-napps-info-panel></k-napps-info-panel>
   </div>
 </template>
 
