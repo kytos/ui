@@ -46,7 +46,6 @@ export default {
    color: $fill-text
    text-align: right
    padding: 0.5em
-   text-transform: capitalize
    min-width: 50%
 
   td
