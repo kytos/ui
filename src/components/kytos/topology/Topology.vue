@@ -50,10 +50,24 @@ export default {
   },
   methods: {
     setListeners () {
+      this.$kytos.$on('changeLinksColor', this.change_links_color)
+      this.$kytos.$on('clearLinksColor', this.clear_links_color)
       this.$kytos.$on("topology-highlightAll", (p) => {
         if (!this.check_switch_under_click(p)) this.highlight_all_elements()
       })
       this.$kytos.$on("topology-toggle-label", this.toggle_labels)
+    },
+    clear_links_color(){
+      $.each(this.graph.links, function(index, link){
+          d3.select('#link-'+link.id).attr("stroke", 'gray')
+      })
+    },
+    change_links_color(color, links){
+      var self = this
+      $.each(links, function(index, link){
+          var link_id = self.fix_name(link.a) + '___' + self.fix_name(link.b)
+          d3.select('#link-'+link_id).attr("stroke", color)
+      })
     },
     check_switch_under_click (p) {
       // p: point that was clicked with p.x and p.y attributes
@@ -557,9 +571,6 @@ export default {
 
     .hide
       display: none;
-
-    line
-      stroke: rgba(255, 255, 255, 0.5);
 
     .node
       cursor: pointer;
