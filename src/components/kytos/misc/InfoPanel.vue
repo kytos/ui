@@ -53,6 +53,19 @@ export default {
       this.infoPanelView = undefined
       this.content = undefined
     },
+    /**
+     * Show the Info Panel displayed in the right.
+     *
+     * @public
+     * @param {object} content An object filled with:
+     *
+     *                         {
+     *                          **component**: "search-hosts",
+     *                          **content**: {**msg**:"content used in the component"},
+     *                          **title**: "Search Hosts",
+     *                          **icon**: "desktop"
+     *                         }
+     */
     show (content) {
       this.infoPanelView = content.component
       this.content = content.content
@@ -62,7 +75,20 @@ export default {
       this.classObject['k-info-panel-max'] =  content.maximized
     },
     register_listeners () {
+      /**
+       * Hide the info panel displayed in the right.
+       *
+       * @event hideInfoPanel
+       * @type {NULL}
+       */
       this.$kytos.$on('hideInfoPanel', this.hide)
+
+      /**
+       * Show the info panel in the right.
+       *
+       * @event showInfoPanel
+       * @type {Object} An content to be displayed by InfoPanel.
+       */
       this.$kytos.$on('showInfoPanel', this.show)
     }
   },

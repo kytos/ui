@@ -35,6 +35,9 @@ export default {
   name: 'k-logging',
   mixins: [KytosBaseWithIcon, LoggingUtils],
   methods: {
+    /**
+     * Method called to change the log level.
+     */
     select: function(selected){
       for (let log of this.logs){
         if (selected == 'all')
@@ -45,9 +48,15 @@ export default {
           log.display = false
       }
     },
+    /**
+     * Method to clear all logs stored.
+     */
     clear: function () {
       this.logs = []
     },
+    /**
+     * Method to start and stop store the logs from socked channel.
+     */
     play_pause(){
       if(this.playing == "play"){
         this.join_channel('log')
@@ -57,18 +66,24 @@ export default {
         this.playing = "play"
       }
     },
+    /**
+     * Change the logs colors.
+     */
     change_colors(){
       this.colors = (this.colors == "colors")? "no_colors": "colors"
     },
-   highlight: function(){
-     var logs = $('.k-logging-content div')
-     for (let log of logs){
-      if (log.innerText.includes(this.highlight_string) > 0){
-        var pattern = new RegExp(this.highlight_string, 'ig')
-        log.innerHTML = log.innerText.replace( pattern,"<span class='highlight'>"+this.highlight_string+"</span>")
+    /**
+     * Highlight the word searched.
+     */
+    highlight: function(){
+      var logs = $('.k-logging-content div')
+      for (let log of logs){
+       if (log.innerText.includes(this.highlight_string) > 0){
+         var pattern = new RegExp(this.highlight_string, 'ig')
+         log.innerHTML = log.innerText.replace( pattern,"<span class='highlight'>"+this.highlight_string+"</span>")
+       }
       }
-     }
-   }
+    }
   },
   mounted(){
     this.channels.add('log')

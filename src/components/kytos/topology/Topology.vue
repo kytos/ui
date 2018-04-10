@@ -52,9 +52,21 @@ export default {
     setListeners () {
       this.$kytos.$on('changeLinksColor', this.change_links_color)
       this.$kytos.$on('clearLinksColor', this.clear_links_color)
+      /**
+       * Highlight all switches of topology.
+       *
+       * @event topology-highlightAll
+       * @type {object} Pointer that was cliced with p.x and p.y attributes
+       */
       this.$kytos.$on("topology-highlightAll", (p) => {
         if (!this.check_switch_under_click(p)) this.highlight_all_elements()
       })
+      /**
+       * Change the switches label
+       *
+       * @event topology-toggle-label
+       * @type {object} A content with label and node-type
+       */
       this.$kytos.$on("topology-toggle-label", this.toggle_labels)
     },
     clear_links_color(){

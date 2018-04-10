@@ -12,7 +12,7 @@ export default {
   mixins: [KytosBase],
   props: {
     /**
-     * An Icon string
+     * An Icon string representing a awesome icon.
      */
     icon: {
       type: String,
