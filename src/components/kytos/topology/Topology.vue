@@ -233,19 +233,17 @@ export default {
           node.name = node.mac
           node.id = this.fix_name(node.mac)
         } else {
-          // set the custom_properties as 'properties'
-          if (node.custom_properties) {
-            for (let prop in node.custom_properties) {
-              node[prop] = node.custom_properties[prop]
+          // fix node positions
+          if (node.metadata) {
+            for (let prop in node.metadata) {
+              node[prop] = node.metadata[prop]
             }
           }
-          // here we only have switches. Let's create the interfaces nodes.
           node.lat = null
           node.lng = null
-          // setting switch position based on its lat-lng.
-          if (node.custom_properties && node.custom_properties.lat) {
-            node.lat = node.custom_properties.lat
-            node.lng = node.custom_properties.long
+          if (node.metadata && node.metadata.lat) {
+            node.lat = node.metadata.lat
+            node.lng = node.metadata.lng
             let ll = this.project(node.lat, node.lng)
             node.x = node.fx = ll.x
             node.y = node.fy = ll.y
@@ -449,8 +447,8 @@ export default {
                .classed("iep", function(d){ return d.type == "iep" })
                .classed("switch", function(d){ return d.type == "switch" })
                .classed("interface", function(d){ return d.type == "interface" })
-               .classed("amlight", function(d) { return d.custom_properties && d.custom_properties.network && d.custom_properties.network.indexOf("Amlight") != -1 })
-               .classed("fibre", function(d) { return d.custom_properties && d.custom_properties.network && d.custom_properties.network.indexOf("Fibre") != -1 })
+               .classed("amlight", function(d) { return d.metadata && d.metadata.network && d.metadata.network.indexOf("Amlight") != -1 })
+               .classed("fibre", function(d) { return d.metadata && d.metadata.network && d.metadata.network.indexOf("Fibre") != -1 })
                .attr("r", this.gnode_radius)
                .on("click", this.highlight_switch)
 
