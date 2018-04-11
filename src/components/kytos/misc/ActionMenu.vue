@@ -1,6 +1,7 @@
 <template>
 <div>
-  <div class="k-action-menu" v-hotkey="keymap" v-show="show">
+  <div class="k-action-menu" v-show="show">
+  <span  v-for="item in keymap"  v-hotkey = "item" v-show="false"></span>
   <div class="k-input-wrap">
     <k-input :action="searchValue" :value="search" icon="search" id="k-action-menu-input" placeholder="Search for actions"></k-input>
   </div>
@@ -70,8 +71,8 @@ export default {
     */
     add_action_menu_item(options){
       var found = false
-      for(var i in this.items){if(options.name === this.items[i].name) found = true}
-      if(found === false) this.items.push(options)
+      for(var i in this.items){if(options.name == this.items[i].name) found = true}
+      if(found == false){ this.items.push(options) }
     },
     /**
     * Method to register all listeners used by this component.
@@ -79,26 +80,19 @@ export default {
     register_listeners(){
       this.$kytos.$on('addActionMenuItem', this.add_action_menu_item)
     },
-    /**
-    * Method to return all shortkeys registereds
-    *
-    */
-    keys(){
-      var all_keys = {'ctrl+space': this.toggle, 'esc': this.hide}
-      $.each(this.items, function(index, value){
-        if(value.action !== undefined){
-          all_keys[value.shortkey] = value.action
-        }
-      })
-      return all_keys
-    }
   },
   mounted() {
     this.register_listeners()
   },
   computed: {
     keymap () {
-      return this.keys()
+      var keys = [{'ctrl+space': this.toggle, 'esc': this.hide }]
+      $.each(this.items, function(index, item){
+        var key = {}
+        key[item.shortkey] = item.action
+        keys.push(key)
+      })
+      return keys
     },
     actionItems() {
        var self=this;
