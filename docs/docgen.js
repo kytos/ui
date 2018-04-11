@@ -4,8 +4,8 @@ var writeFile = require('write-file')
 
 var remove_src_kytos= "../src/components/kytos/"
 
-function write_header(component){
-  var text = component.displayName+"\n"+Array(component.displayName.length+1).join("-")+"\n\n"
+function write_header(component, key='-'){
+  var text = component.displayName+"\n"+Array(component.displayName.length+1).join(key)+"\n\n"
   text += component.description + "\n\n"
   return text
 }
@@ -138,7 +138,7 @@ function write_slots(component){
 
 function write_events(component){
   if (Object.keys(component.events) == 0) return ""
-  var text = "**Events**\n\n"
+  var text = "**"+component.displayName+"**\n\n"
   var content = []
   var event_header = ['name', 'type', 'description']
   for(name in component.events){
@@ -156,11 +156,12 @@ function rst_content(component){
   rst_text += write_parameters(component)
   rst_text += write_methods(component)
   rst_text += write_slots(component)
-  rst_text += write_events(component)
   return rst_text
 }
 
 var pattern = "../src/components/kytos/**/**/*.vue"
+var ignore_list = ['logging', 'map', 'terminal', 'topology',
+                   'napp', 'tabs', 'chart', 'switch']
 var options = null
 
 glob(pattern, options, function (er, files) {
@@ -168,33 +169,39 @@ glob(pattern, options, function (er, files) {
   var destination = ""
   var current_group = ""
   var content = ""
+  var events = ""
+
+  files = files.filter(function(item){
+    for(var i in ignore_list ){
+      if(item.includes(ignore_list[i]))
+        return false
+    }
+    return true
+  })
+
   for(i in files){
     var filename = files[i]
-    if (files[i] === '../src/components/kytos/map/MapBoxSettings.vue') continue
     current_group = files[i].replace(remove_src_kytos, '').split('/')[0]
 
-    if (last_group !== "" && last_group !== current_group){
-      destination = "source/components/"+ last_group+".rst"
-      writeFile(destination, content, function (err) {
-        if (err) return console.log(err)
-      })
-      content = ""
-    }
-    last_group = current_group
-
-    if(content === "")
+    if(last_group != current_group)
     {
       content += Array(current_group.length+1).join('=')+ "\n"
       content += current_group+"\n"
       content += Array(current_group.length+1).join('=')+ "\n\n"
     }
-    content += rst_content(vueDocs.parse(filename))
-
-    if (files[files.length-1] === filename){
-      destination = "source/components/"+ last_group+".rst"
-      writeFile(destination, content, function (err) {
-        if (err) return console.log(err)
-      })
-    }
+    last_group = current_group
+    component = vueDocs.parse(filename)
+    content += rst_content(component)
+    events += write_events(component)
   }
+
+  destination = "source/components.rst"
+  writeFile(destination, content, function (err) {
+    if (err) return console.log(err)
+  })
+
+  destination = "source/events.rst"
+  writeFile(destination, events, function (err) {
+    if (err) return console.log(err)
+  })
 })

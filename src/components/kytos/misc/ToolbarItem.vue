@@ -10,6 +10,10 @@
 import KytosBase from '../base/KytosBase'
 import KytosBaseWithIcon from '../base/KytosBaseWithIcon'
 
+/**
+ * Component representing a toolbar item
+ *
+ */
 export default {
   name: 'k-toolbar-item',
   mixins: [KytosBaseWithIcon],
