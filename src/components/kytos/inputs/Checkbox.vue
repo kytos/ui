@@ -23,16 +23,28 @@ export default {
   name: 'k-checkbox',
   mixins: [KytosBaseWithIcon],
   props: {
+      /**
+       * Model store the checked values.
+       */
       model: {
         type: Array,
       },
+      /**
+       * The value to checkbox button.
+       */
       value: {
         default: 0
       },
+      /**
+       * Initial value to checkbox, when true the checkbox will be checked, otherwise unchecked.
+       */
       checked: {
         type: Boolean,
         default: false
       },
+      /**
+       * Optinal action called after check a checkbox button.
+       */
       action: {
         type: Function,
         default: function(value) { return }

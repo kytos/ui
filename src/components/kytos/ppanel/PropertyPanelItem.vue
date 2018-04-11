@@ -18,10 +18,16 @@ export default {
   name: 'k-property-panel-item',
   mixins: [KytosBase],
   props: {
+    /**
+     * Name displayed in the header of property panel item.
+     */
     name: {
       type: String,
       required: true,
     },
+    /**
+     * Value displayed in the data of property panel item.
+     */
     value: {
       type: [String, Number],
       required: true,

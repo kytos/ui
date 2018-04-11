@@ -80,8 +80,12 @@ function write_parameters(component){
     var defaultValue = ""
     if(prop.hasOwnProperty("defaultValue"))
       defaultValue = prop.defaultValue.value
-    var description = prop.description
-    content.push([name, type, required, defaultValue, description])
+    var descriptions = prop.description.split('\n')
+    content.push([name, type, required, defaultValue, descriptions[0].trim()])
+    for(d in descriptions){
+      if (d == 0) continue
+      content.push(['', '', '', '', descriptions[d].trim()])
+    }
   }
   text += create_rst_table(headers, content)
   return text
@@ -101,7 +105,12 @@ function write_methods(component){
     var content = []
     for(l in method.params){
       var params = method.params[l]
-      content.push([params.name, params.type.name, params.description])
+      descriptions = params.description.split('\n')
+      content.push([params.name, params.type.name, descriptions[0].trim()])
+      for(d in descriptions){
+        if(d == 0) continue
+        content.push(['', '', descriptions[d].trim()])
+      }
     }
     if (content.length > 0){
       text += "**Parameters**\n\n"

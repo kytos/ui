@@ -83,7 +83,7 @@ Below a template of kytos component is displayed.
 
    <template>
     <!-- This template tag is optional -->
-    <div class="k-menu-item"  icon="my_icon" tooltip="Sample Tooltip">
+    <div class="k-menu-item"  icon="desktop" tooltip="Sample Tooltip">
        <!-- You could put yours kytos components here -->
     </div>
    </template>
@@ -127,18 +127,21 @@ and display that into the component.
 .. code-block:: html
 
     <template>
-     <k-context-panel v-if="expanded">
-      <k-accordion >
-        <k-accordion-item title="Installed NApps">
-          <k-property-panel>
-            <k-property-panel-item v-if="napps"
-              v-for="napp in this.napps" :key="napp.name" :name="napp.name" :value="napp.version">
-            </k-property-panel-item>
-          </k-property-panel>
-        </k-accordion-item>
-      </k-accordion>
-     </k-context-panel>
+     <div class="k-menu-item" icon="cube" tooltip="Napp Status">
+      <k-context-panel>
+       <k-accordion >
+         <k-accordion-item title="Installed NApps">
+           <k-property-panel>
+             <k-property-panel-item v-if="napps"
+               v-for="napp in this.napps" :key="napp.name" :name="napp.name" :value="napp.version">
+             </k-property-panel-item>
+           </k-property-panel>
+         </k-accordion-item>
+       </k-accordion>
+      </k-context-panel>
+     </div>
     </template>
+
     <script>
     module.exports = {
       methods: {

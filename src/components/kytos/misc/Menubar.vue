@@ -7,7 +7,7 @@
      </div>
      <k-button v-for="(component, index) in components"
                v-bind:class="{ active: activeItem==(index+1) }"
-               :key="component.icon"
+               :key="component.name"
                :icon="component.icon"
                :tooltip="component.tooltip"
                @click.native="setItem(index+1)"/>

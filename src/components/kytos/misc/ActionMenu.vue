@@ -39,45 +39,37 @@ export default {
     }
   },
   methods: {
-    /**
-    * Update the search value, this methos is called when the search input is changed.
-    * @params {string} query Text that will be used to filter de action itens
-    */
     searchValue(query){
       this.search = query
     },
-    /**
-    * Toggle visibility of action menu.
-    */
     toggle() {
        this.show = !this.show
     },
-    /**
-    * Method to change the visibility of action menu to invisible.
-    */
     hide() {
        this.show = false
     },
-    /**
-    * Send to info panel the content to be displayed and hide the action menu.
-    */
     show_info_panel(item) {
       item.action()
       this.hide()
     },
     /**
-    * Method to add new action menu item
-    * @params {object} options Object with the params [name, author, shortkey, content]
-    */
+     * Method to add new action menu item
+     *
+     * @public
+     * @param {object} options An object with the params [name, author, shortkey, content]
+     */
     add_action_menu_item(options){
       var found = false
       for(var i in this.items){if(options.name == this.items[i].name) found = true}
       if(found == false){ this.items.push(options) }
     },
-    /**
-    * Method to register all listeners used by this component.
-    */
     register_listeners(){
+      /**
+       * Add a new action item in the k-action-menu.
+       *
+       * @event addActionMenuItem
+       * @type {object}
+       */
       this.$kytos.$on('addActionMenuItem', this.add_action_menu_item)
     },
   },

@@ -27,6 +27,12 @@ export default {
   },
   methods: {
     setListeners () {
+      /**
+       * Change the map opacity based on number value.
+       *
+       * @event change-map-opacity
+       * @type {Number} The Opacity number
+       */
       this.$kytos.$on("change-map-opacity", this.changeMapOpacity);
     },
     changeMapOpacity (value) {

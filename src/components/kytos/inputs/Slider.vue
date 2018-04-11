@@ -20,22 +20,37 @@ export default {
   name: 'k-slider',
   mixins: [KytosBaseWithIcon],
   props: {
+    /**
+     * Initial value assigned to slider input.
+     */
     initialValue: {
       type: Number,
       default: 0
     },
+    /**
+     * Optinal action called after change the range of slider input.
+     */
     action: {
       type: Function,
       default: function (val) { return }
     },
+    /**
+     * Minimum value assigned to slider input.
+     */
     min: {
       type: Number,
       default: 0
     },
+    /**
+     * Maximum value assigned to slider input.
+     */
     max: {
       type: Number,
       default: 100
     },
+    /**
+     * The minimum change when the slider increase or decrease.
+     */
     step: {
       type: Number,
       default: 1

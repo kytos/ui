@@ -23,8 +23,8 @@ export default {
   mixins: [KytosBaseWithIcon],
   props: {
    /**
-   * Input Current value
-   */
+    * The value to input button.
+    */
    value: {
       type: String,
       default: ""

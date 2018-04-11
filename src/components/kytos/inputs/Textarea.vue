@@ -18,18 +18,30 @@ export default {
   name: 'k-textarea',
   mixins: [KytosBaseWithIcon],
   props: {
+   /**
+    * The value text used in TextArea.
+    */
    value: {
       type: String
     },
    modelValue: {
       default: ""
     },
+   /**
+    * A tooltip displayed in the text-area
+    */
    tooltip: {
       type: String
     },
+   /**
+    * String displayed when the text-area is empty.
+    */
    placeholder: {
       type: String
     },
+   /**
+    * Optimal action called after textarea changes.
+    */
    action: {
       type: Function,
       default: function(value) {return}

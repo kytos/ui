@@ -25,18 +25,31 @@ export default {
   name: 'k-dropdown',
   mixins: [KytosBaseWithIcon],
   props: {
+    /**
+     * Property with the selected option.
+     */
     value:{
       type: String,
       default: ""
     },
+    /**
+     * A collection with all options that could be selected.
+     */
     options: {
       type: Array,
       required: true
     },
+    /**
+     * An event triggered when the dropdown change, this event should have the
+     * following content: {**name**: 'event_name', **content**: {} }
+     */
     event: {
       type: Object,
       default: undefined
     },
+    /**
+     * Optinal action called after select a dropdown option.
+     */
     action: {
       type: Function,
       default: function (value) { return }
@@ -48,12 +61,6 @@ export default {
     }
   },
   methods: {
-    /**
-    * Emit an event when the dropdown is changed
-    *
-    * @event On kytos dropdown change
-    * @type {object}
-    */
     emitEvent () {
       if (this.event !== undefined){
         let content = this.event.content

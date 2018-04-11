@@ -38,6 +38,13 @@ export default {
     get_terminal (){
       return $('.k-status-bar span').typeIt(this.options)
     },
+    /**
+     * Display a message inside the k-status-bar.
+     *
+     * @public
+     * @param {string} message Message to be displayed.
+     * @param {boolean} error  If true will display the message in red, default is false
+     */
     set_status(message, error=false){
       if (error){
         message = "<span class='status-error'>" + message + "</span>"
@@ -45,6 +52,12 @@ export default {
       this.messages.push(message)
     },
     register_listeners(){
+      /**
+       * Show a status message in StatusBar
+       *
+       * @event statusMessage
+       * @type {string}
+       */
       this.$kytos.$on('statusMessage', this.set_status)
     }
   }
