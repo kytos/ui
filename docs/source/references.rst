@@ -3,5 +3,5 @@
    :glob:
 
    index
-   create_a_napp_with_ui
-   kytos_components
+   creating_a_napp
+   kytos_components_api
