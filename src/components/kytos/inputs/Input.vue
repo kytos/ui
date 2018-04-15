@@ -1,8 +1,9 @@
 <template>
   <div class="k-input-wrap">
     <icon v-if="icon" v-bind:name="icon"></icon>
-    <input v-model="value" :id="id" class="k-input" :tooltip="tooltip" :placeholder="placeholder"
+    <input :value="value" :id="id" class="k-input" :tooltip="tooltip" :placeholder="placeholder"
       @input="updateText"
+      ref="inputValue"
       v-bind:disabled="isDisabled" onshow="this.focus()" autofocus>
     </input>
   </div>
@@ -30,12 +31,6 @@ export default {
       default: ""
    },
    /*
-   * Model value
-   */
-   modelValue: {
-      default: ""
-   },
-   /*
    * Tooltip string for the input.
    */
    tooltip: {
@@ -56,9 +51,9 @@ export default {
    }
   },
   methods: {
-    updateText(value){
-      this.$emit('update:value', value)
-      this.action(value)
+    updateText(){
+      this.$emit('update:value', this.$refs.inputValue.value)
+      this.action(this.$refs.inputValue.value)
     }
   }
 }
