@@ -11,6 +11,13 @@
                :icon="component.icon"
                :tooltip="component.tooltip"
                @click.native="setItem(index+1)"/>
+
+     <div id="kytos-version">
+        kytos<br>
+        version<br>
+        {{version}}
+     </div>
+
    </section>
    <k-toolbar :active="activeItem" :components.sync="components" :compacted="compacted"></k-toolbar>
  </div>
@@ -27,6 +34,7 @@ export default {
   props: ['toggle', 'compacted'],
   data() {
     return {
+      version: this.$kytos_version,
       components: [{'icon': 'desktop', 'name':'mapbox-settings'}],
       activeItem: 1
     }
@@ -121,5 +129,12 @@ export default {
  .k-menu-bar
   .logo
    width: 40px
+
+#kytos-version
+  bottom: 0px
+  position: absolute
+  padding: 2px
+  font-size: 10px
+  color: white
 
 </style>

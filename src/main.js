@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import VueHotkey from 'v-hotkey'
 import App from './App.vue'
+import {version} from '../package.json';
 
 Vue.use(VueHotkey)
 
@@ -108,6 +109,7 @@ Vue.filter('humanize_bytes', function (num, precision = 0, suffix = 'bps') {
 Vue.prototype.$kytos = new Vue()
 Vue.prototype.$kytos_server = window.kytos_server
 Vue.prototype.$kytos_server_api =  window.kytos_server_api
+Vue.prototype.$kytos_version = version
 
 var kytos = new Vue({
   el: '#app',
