@@ -342,7 +342,7 @@ export default {
         this.get_node_links(_interface).forEach((_link) => {this.link_highlight(_link)})
       })
       // this event need to be registered to be better
-      var content = {component: 'kytos-topology-k-action-menu-switch_info',
+      var content = {component: 'kytos-topology-k-info-panel-switch_info',
                      content: obj,
                      icon: "gear",
                      title: "Switch Details",
