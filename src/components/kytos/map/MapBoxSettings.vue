@@ -1,6 +1,6 @@
 <template>
- <section class="k-menu-item"  icon="desktop" tooltip="MapBox Settings">
-    <k-accordion>
+    <k-toolbar-item icon="desktop" tooltip="MapBox Settings">
+      <k-accordion>
         <k-accordion-item title="Custom Labels">
           <k-dropdown title="Switch Labels:" icon="circle-o" :options="switchLabels" :event="{name: 'topology-toggle-label', content: {node_type: 'switch'}}"></k-dropdown>
           <k-dropdown title="Interface Labels:" icon="plug" :options="interfaceLabels" :event="{name: 'topology-toggle-label', content: {node_type: 'interface'}}"></k-dropdown>
@@ -14,7 +14,7 @@
           <k-slider icon="adjust" :initial-value="mapOpacity" :action="emitMapOpacity"></k-slider>
         </k-accordion-item>
       </k-accordion>
-  </section>
+    </k-toolbar-item>
 </template>
 
 <script>

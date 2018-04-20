@@ -1,3 +1,13 @@
+<template>
+ <div class='k-toolbar' >
+  <component v-show="active == (index+1)"
+             v-for="(component, index) in inner_components"
+             :is="component.name"
+             v-bind:key="component.name">
+  </component>
+ </div>
+</template>
+
 <script>
 import Vue from 'vue'
 import httpVueLoader from "./httpVueLoader.js"
@@ -27,22 +37,18 @@ export default {
         }
       }).always(function(){
           self.load_components()
-          self.load_template()
           setTimeout(self.load_icons, 2000)
       })
   },
   methods: {
     load_icons () {
       var self = this
-      var components  = $('.k-toolbar .k-menu-item')
+      var components  = $('.k-toolbar .k-toolbar-item')
       $.each(components, function(index, component){
           self.inner_components[index].icon = component.getAttribute('icon')
           self.inner_components[index].tooltip = component.getAttribute('tooltip')
       })
       self.$emit('update:components', self.inner_components)
-    },
-    load_template () {
-      this.template = Vue.compile(this.template_context()).render;
     },
     load_components (){
       var self = this
@@ -53,15 +59,7 @@ export default {
           Vue.component(component.name, httpVueLoader(url))
         }
       })
-    },
-    template_context() {
-    var context = '<div class="k-toolbar" >'
-    $.each(this.inner_components, function(index, component){
-      context += '<'+ component.name +' v-show="active =='+(index+1)+'"/>'
-    })
-    context += '</div>'
-    return context
-  }
+    }
  }
 }
 </script>

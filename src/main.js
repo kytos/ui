@@ -8,6 +8,7 @@ Vue.use(VueHotkey)
 window.$ = window.jQuery = require('jquery');
 window.d3 = window.D3 = require('d3');
 
+import KytosToolbarItem from './components/kytos/misc/ToolbarItem.vue';
 import KytosToolbar from './components/kytos/napp/Toolbar.vue';
 import KytosNappsInfoPanel from './components/kytos/napp/NappsInfoPanel.vue';
 import KytosActionMenuItem from './components/kytos/napp/ActionMenuItem.vue';
@@ -72,6 +73,7 @@ Vue.component('k-property-panel', KytosPropertyPanel);
 Vue.component('k-property-panel-item', KytosPropertyPanelItem);
 Vue.component('k-info-panel', KytosInfoPanel);
 Vue.component('k-toolbar', KytosToolbar);
+Vue.component('k-toolbar-item', KytosToolbarItem);
 Vue.component('k-action-menu-item', KytosActionMenuItem);
 Vue.component('k-napps-info-panel', KytosNappsInfoPanel);
 

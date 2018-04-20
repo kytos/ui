@@ -1,5 +1,6 @@
 # Ignore components
-docs/source/components/
+docs/source/components.rst
+docs/source/events.rst
 
 # Ignore node_modules
 node_modules/
