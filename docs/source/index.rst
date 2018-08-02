@@ -1,7 +1,7 @@
 Overview
 ########
 
-kytos has a friendly and flexible interface.  We tried to make the UI in such a
+Kytos has a friendly and flexible interface.  We tried to make the UI in such a
 way that it could be coupled new components in an easy and intuitive way.
 
 The developer of an NApp (`Dev Guide
@@ -37,9 +37,9 @@ Menu Bar
 ========
 UI component: `k-menu-bar`
 
-The bar menu is a small vertical band that sits on the left side of the screen
-under the logo. This menu consists of buttons that trigger the respective
-toolbars, or trigger other actions.
+The `k-menu-bar` is a vertical menu on the left side of the screen
+under the Kytos logo. This menu consists of buttons that trigger the respective
+NApp UI content on the toolbars.
 
 The amount of buttons (items) that will appear here will depend on how many
 NApps you have enabled in Kytos. As a NApp developer, you can register a new
@@ -72,7 +72,7 @@ top of the screen.
     using the compact form.
 
     If a component is too big to be compacted it will not be displayed on
-    `k-toolbar` compacted version. 
+    `k-toolbar` compacted version.
 
 
 Map/Topology
@@ -82,7 +82,7 @@ UI component: `k-map`
 The `k-map` component is responsible for display a map and render the network
 topology will all hosts and connected switches.
 
-For now, you, the developer of NAPP, do not have to worry about this section.
+For now, you, the developer of NApp, do not have to worry about this section.
 In the future we pretend to make some actions available so you can manipulate
 the topology and the map.
 
@@ -101,9 +101,9 @@ Tabs
 UI component: `k-tabs`
 
 The `k-tabs` components is responsible to have a terminal, show switch
-informations, logs of kytos instance and kytos ui alerts.
+informations, logs of kytos instance and kytos UI alerts.
 
-For now, you, the developer of NAPP, do not have to worry about this section.
+For now, you, the developer of NApp, do not have to worry about this section.
 In the future we pretend to make some actions available so you can manipulate
 the topology and the map.
 
@@ -112,6 +112,6 @@ Actions Menu
 ============
 UI component: `menu-actions`
 
-If you try to press `ctrl + space` a list of actions will appear at the center
-of Kytos UI. This is another way to trigger actions that you think that is not
-suitable for the toolbar, for instance.
+If you try to press `ctrl + space` a list of actions their shortcuts will appear
+at the center of Kytos UI. This is another way to trigger actions that you think
+that is not suitable for the toolbar, for instance.

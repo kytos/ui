@@ -31,6 +31,7 @@ will be created.
       ├── README.rst
       ├── settings.py
       └── ui/
+          ├── k-action-menu/
           ├── k-info-panel/
           ├── k-toolbar/
           └── README.rst
@@ -41,8 +42,20 @@ the pattern ``ui/<section>/<file_name>.kytos``, where **<section>** should be
 the section name where the new component will be fixed and the **<file_name>**
 should be the component name. You are free to choose any file name here.
 
-Whether you have created a new NApp component into the sections ``k-toolbar``
-and ``k-info-panel`` the NApp structure should have the following structure.
+Sections
+--------
+
+* ``k-action-menu``: Add actions and their shortcuts in `k-action-menu`;
+
+* ``k-info-panel``: Show generic information in `k-info-panel`;
+
+* ``k-toolbar``: Create the NApp UI.
+
+
+Whether you have created a new NApp component into the sections
+``k-action-menu``, ``k-toolbar`` and ``k-info-panel`` the NApp structure should
+have the following structure.
+
 
 .. code-block:: sh
 
@@ -55,6 +68,8 @@ and ``k-info-panel`` the NApp structure should have the following structure.
       ├── README.rst
       ├── settings.py
       └── ui/
+          ├── k-action-menu/
+          │   └── main.kytos
           ├── k-info-panel/
           │   └── main.kytos
           ├── k-toolbar/

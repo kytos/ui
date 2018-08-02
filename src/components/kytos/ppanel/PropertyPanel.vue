@@ -14,6 +14,15 @@ import KytosBase from '../base/KytosBase';
  * This component allows to create a table with two columns ( *name* and *value*). Each row in the table is a ``k-property-panel-item`` component, with the *value* and *name*.
  *
  * @example /_static/imgs/components/ppanel/k-property-panel.png
+ * @example
+ *   <k-property-panel>
+ *     <k-property-panel-item v-if="napps"
+ *                            v-for="napp in this.napps"
+ *                            :key="napp.name"
+ *                            :name="napp.name"
+ *                            :value="napp.version">
+ *     </k-property-panel-item>
+ *   </k-property-panel>
  */
 export default {
   name: 'k-property-panel',

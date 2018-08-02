@@ -12,6 +12,7 @@
   "dependencies": {
     "d3": "^4.11.0",
     "glob": "^7.1.2",
+    "jsdocgen": "^0.2.4",
     "socket.io-client": "^2.0.4",
     "typeit": "^4.4.1",
     "v-hotkey": "^0.2.0",

@@ -2,16 +2,16 @@
 Kytos Components API
 ####################
 
-Bellow you can find all Kytos components that you can use in your code.
+Bellow you can find all Kytos components that you can use in your code to
+implement the NApp UI.
 
-K-* components
-**************
+Kytos Components
+****************
 
 .. include:: ./components.rst
 
 
-K-* Events
-**********
+Kytos Events
+************
 
 .. include:: ./events.rst
-

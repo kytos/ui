@@ -16,6 +16,14 @@
 import KytosBase from '../base/KytosBase';
 import KytosBaseWithIcon from '../base/KytosBaseWithIcon';
 
+/**
+ * This component is a form control and can be used to collect the selected user
+ * input from a list of options.
+ *
+ * @example <k-select icon="link" title="Undesired links:" :options="get_links" :value.sync ="undesired_links"></k-select>
+ * @example /_static/imgs/components/input/k-select.png
+ */
+
 export default {
   name: 'k-select',
   mixins: [KytosBaseWithIcon],

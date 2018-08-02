@@ -12,6 +12,11 @@ import KytosBase from '../base/KytosBase';
  * This component create a row in the table (``k-property-panel``) with two columns, *name* and *value*.
  *
  * @example /_static/imgs/components/ppanel/k-property-panel-item.png
+ * @example  <k-property-panel>
+ *     <k-property-panel-item :name="kytos/mef_eline"
+ *                            :value="2.2.0
+ *     </k-property-panel-item>
+ *   </k-property-panel>
  */
 
 export default {
