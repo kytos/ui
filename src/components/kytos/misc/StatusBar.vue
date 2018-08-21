@@ -6,7 +6,7 @@
 
 <script>
 /**
- * A tabbed bar such as a Terminal, Switches, Logging, Notifications and System Information.
+ * A GUI widget the shows notifications and System Information.
  *
  * @example /_static/imgs/components/misc/k-status-bar.png
  */

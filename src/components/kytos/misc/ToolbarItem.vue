@@ -11,7 +11,8 @@ import KytosBase from '../base/KytosBase'
 import KytosBaseWithIcon from '../base/KytosBaseWithIcon'
 
 /**
- * Component representing a toolbar item
+ * Component representing a toolbar item that create a new item in the
+ * ``k-menu-bar`` and shows the content in the ``k-toolbar``.
  *
  */
 export default {

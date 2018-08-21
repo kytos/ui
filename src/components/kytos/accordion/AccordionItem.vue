@@ -16,7 +16,7 @@ import KytosBase from '../base/KytosBase';
 import KytosBaseWithIcon from '../base/KytosBaseWithIcon';
 
 /**
- * Accordion item that can be switched between hiding and showing content
+ * A GUI widget that can be switched between hiding and showing content
  *
  * @example <k-accordion>
  *    <k-accordion-item title="Background">

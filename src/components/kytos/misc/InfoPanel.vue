@@ -17,7 +17,9 @@ import KytosBase from '../base/KytosBase';
 import KytosBaseWithIcon from '../base/KytosBaseWithIcon';
 
 /**
- * A tabbed bar with tabs such as a Terminal, Switches, Logging, Notifications and System Information.
+ * Shows details about selected kytos components. This panel appears on the
+ * right of the Kytos GUI and the NApp developer can choose what to display on
+ * the panel.
  *
  * @example /_static/imgs/components/misc/k-info-panel.png
  */
