@@ -18,6 +18,7 @@ import KytosBaseWithIcon from '../base/KytosBaseWithIcon';
 /**
  * A toggleable menu that allows the user to choose one value from a predefined list.
  *
+ * @example k-dropdown title="Switch Labels:" icon="circle-o" :options="switchLabels" :event="{name: 'topology-toggle-label', content: {node_type: 'switch'}}"></k-dropdown>
  * @example /_static/imgs/components/input/k-dropdown.png
  */
 

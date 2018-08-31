@@ -13,13 +13,15 @@ function write_header(component, key='-'){
 function write_examples(component){
   if(component.tags.hasOwnProperty('examples') === false) return ""
 
-  var text = "**Examples**\n\n"
+  var text = ""
   for(i in component.tags.examples){
     if (component.tags.examples[i].description.includes('/_static/'))
     {
+      text += "**Image**\n\n"
       text += ".. image:: "+component.tags.examples[i].description+"\n"
       text += "    :align: center"
     }else{
+      text += "**Example**\n\n"
       text += ".. code-block:: html\n\n    "
       text += component.tags.examples[i].description
     }

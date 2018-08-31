@@ -24,7 +24,8 @@ import KytosBase from '../base/KytosBase'
 import KytosBaseWithIcon from '../base/KytosBaseWithIcon'
 
 /**
- * Accordion item that can be switched between hiding and showing content
+ * Menu with a list of actions and their shortcuts. The menu can be shown or
+ * hidden using the shortcut *Ctrl+Alt+Space*.
  *
  * @example /_static/imgs/components/misc/k-action-menu.png
  */
