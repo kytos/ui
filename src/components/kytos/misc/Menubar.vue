@@ -99,6 +99,7 @@ export default {
   width: 40px
   height: 40px
   margin: 0px
+  padding: 0px
   background: $fill-menubar
 
   > svg

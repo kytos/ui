@@ -54,11 +54,10 @@ export default {
   border: none
   min-width: 30px
   height: 30px
-  margin: 2px
-  margin-top: 5px
+  margin: 5px 2px
   text-align: center
   cursor: Pointer
-  padding: 0px
+  padding: 0 5px
   transition: 0.3s
   color: $fill-button
   background: $fill-button-bg
@@ -80,5 +79,13 @@ export default {
    vertical-align: middle
    fill: $fill-icon
    outline: 0
+
+.k-toolbar
+
+ .k-button
+   border: 1px outset $fill-button-bg
+
+   &:hover
+    border: 1px inset $fill-button-bg-h
 
 </style>
