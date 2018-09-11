@@ -20,9 +20,9 @@ $kytos-red: #dd2c00 !global;
 
 /* Gradient BGs */
 
-$gradient-dark: linear-gradient(-45deg, #111 0%,$kytos-extra-dark 30%,$kytos-extra-dark 30%) !global;
-$gradient-gray: linear-gradient(-45deg, $kytos-purple 0%,$kytos-gray 30%,$kytos-gray 50%) !global;
-$gradient-dark-gray: linear-gradient(-45deg, $kytos-dark-purple 0%,$kytos-dark-gray 50%,$kytos-dark-gray 50%) !global;
+$gradient-dark: $kytos-extra-dark linear-gradient(-45deg, #111 0%,$kytos-extra-dark 30%,$kytos-extra-dark 30%) !global;
+$gradient-gray: $kytos-gray linear-gradient(-45deg, $kytos-purple 0%,$kytos-gray 30%,$kytos-gray 50%) !global;
+$gradient-dark-gray: $kytos-dark-gray linear-gradient(-45deg, $kytos-dark-purple 0%,$kytos-dark-gray 50%,$kytos-dark-gray 50%) !global;
 
 /* UI: Elements and Actons */
 
