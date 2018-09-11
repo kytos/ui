@@ -13,9 +13,7 @@
                @click.native="setItem(index+1)"/>
 
      <div id="kytos-version">
-        kytos<br>
-        version<br>
-        {{version}}
+          Kytos version {{version}}
      </div>
 
    </section>
@@ -75,8 +73,8 @@ export default {
  z-index: 998
  width: 40px
  height: 100vh
- background: $fill-menubar
- box-shadow: 10px 0px 20px -10px $fill-menubar
+ background: $gradient-gray
+ box-shadow: 5px 0px 10px $fill-panel
 
  .logo
     padding: 0
@@ -135,7 +133,8 @@ export default {
   bottom: 0px
   position: absolute
   padding: 2px
-  font-size: 10px
-  color: white
+  font-size: 0.5em
+  cursor: pointer
+  width: 35px
 
 </style>
