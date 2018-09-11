@@ -83,9 +83,9 @@ export default {
 .k-toolbar
 
  .k-button
-   border: 1px outset $fill-button-bg
+   box-shadow: 0 0 2px $fill-button-bg, 0 2px 2px $fill-button-bg;
 
    &:hover
-    border: 1px inset $fill-button-bg-h
+    box-shadow: 0 0 4px $fill-button-bg-h, 0 4px 4px $fill-button-bg-h;
 
 </style>
