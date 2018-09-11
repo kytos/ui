@@ -54,13 +54,16 @@ export default {
   border: none
   min-width: 30px
   height: 30px
-  margin: 5px 2px
+  margin: 3px
   text-align: center
   cursor: Pointer
-  padding: 0 5px
+  padding: 0px 5px
   transition: 0.3s
   color: $fill-button
   background: $fill-button-bg
+
+  svg
+   padding: 5px
 
   &:hover
    color: $fill-button-hover
@@ -83,9 +86,10 @@ export default {
 .k-toolbar
 
  .k-button
-   box-shadow: 0 0 2px $fill-button-bg, 0 2px 2px $fill-button-bg;
+   box-shadow: 0 0 2px $fill-button-bg-h, 0 2px 2px $fill-button-bg-h
+   font-size: 0.8em
 
    &:hover
-    box-shadow: 0 0 4px $fill-button-bg-h, 0 4px 4px $fill-button-bg-h;
+    box-shadow: 0 0 4px $fill-button-bg, 0 4px 4px $fill-button-bg
 
 </style>
