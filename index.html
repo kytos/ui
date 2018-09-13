@@ -9,9 +9,9 @@
   </head>
   <body>
     <div id="app"></div>
-    <script >
-      window.kytos_server = "http://localhost:8181/"
-      window.kytos_server_api = "http://localhost:8181/api/"
+    <script>
+      window.kytos_server = location.protocol + "//" + location.host;
+      window.kytos_server_api = location.protocol + "//" + location.host + "/api/";
     </script>
     <script src="/dist/build.js"></script>
   </body>
