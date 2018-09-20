@@ -65,18 +65,21 @@ export default {
 </script>
 
 <style lang='sass'>
+
+@import '../../../assets/styles/variables'
+
 .k-status-bar
   display: inline-flex
-  background: #222
+  background: $kytos-dark-gray
   padding: 6px 0;
   font-family: monospace
-  color: #adadad
+  color: $kytos-blue
   font-size: 12px
 
 .k-status-bar:before
   content: '|'
 
 .k-status-bar .status-error
-  color: #b35151
+  color: $kytos-red
 
 </style>

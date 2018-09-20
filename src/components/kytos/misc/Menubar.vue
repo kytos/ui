@@ -2,7 +2,10 @@
  <div class="container">
    <section class="k-menu-bar">
      <div class="logo" v-on:click="toggle" v-bind:class="{ compacted: compacted  }">
-       <img v-show="!compacted" src="../../../assets/logo-kytos.svg" class="logo-kytos" alt="Kytos" height="35">
+       <div v-show="!compacted" id="kytos-version">
+         <img src="../../../assets/logo-kytos.svg" class="logo-kytos" alt="Kytos" height="35">
+            v{{version}}
+       </div>
        <img v-show="compacted" src="../../../assets/icon-kytos.svg" class="icon-kytos" alt="Kytos" height="35">
      </div>
      <k-button v-for="(component, index) in components"
@@ -11,11 +14,6 @@
                :icon="component.icon"
                :tooltip="component.tooltip"
                @click.native="setItem(index+1)"/>
-
-     <div id="kytos-version">
-          Kytos version {{version}}
-     </div>
-
    </section>
    <k-toolbar :active="activeItem" :components.sync="components" :compacted="compacted"></k-toolbar>
  </div>
@@ -73,7 +71,7 @@ export default {
  z-index: 998
  width: 40px
  height: 100vh
- background: $gradient-gray
+ background: $kytos-medium-gray
  box-shadow: 5px 0px 10px $fill-panel
 
  .logo
@@ -84,7 +82,7 @@ export default {
     width: 280px
     vertical-align: middle
     padding: 3px 0px 7px 0px
-    background: $fill-menubar-h
+    background: $kytos-gradient
     cursor: pointer
     text-align: center
 
@@ -122,7 +120,7 @@ export default {
    border-color: $fill-menubar-b
 
    > svg
-    border-left: 3px solid $fill-menubar-h
+    border-left: 3px solid $kytos-blue
 
 .compacted
  .k-menu-bar
@@ -130,11 +128,8 @@ export default {
    width: 40px
 
 #kytos-version
-  bottom: 0px
-  position: absolute
-  padding: 2px
   font-size: 0.5em
-  cursor: pointer
-  width: 35px
+  color: $kytos-white
+  padding-left: -60px
 
 </style>

@@ -133,7 +133,7 @@ export default {
  font-size: 0.8em
  line-height: 1.3em
  padding: 0.5em 1em
- background: $fill-input-hover
+ background: $kytos-black
  color: $fill-input
 
  .highlight

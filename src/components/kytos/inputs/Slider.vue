@@ -127,8 +127,8 @@ export default {
     background: $fill-input-bg;
 
    &::-moz-range-progress
-    background-color: $fill-icon-h;
-    border: 1px solid $fill-icon-h;
+    background-color: $kytos-purple;
+    border: 1px solid $kytos-purple;
     border-radius: 5px;
 
    &::-moz-range-thumb

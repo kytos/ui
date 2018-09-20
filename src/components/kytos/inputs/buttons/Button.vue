@@ -86,10 +86,10 @@ export default {
 .k-toolbar
 
  .k-button
-   box-shadow: 0 0 2px $fill-button-bg-h, 0 2px 2px $fill-button-bg-h
+   border-radius: 3px
    font-size: 0.8em
 
    &:hover
-    box-shadow: 0 0 4px $fill-button-bg, 0 4px 4px $fill-button-bg
+    box-shadow: 0 0 4px $kytos-black
 
 </style>

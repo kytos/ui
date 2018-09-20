@@ -83,7 +83,7 @@ export default {
   width: 100vw
   height: 40px
   margin-top: 0px
-  box-shadow: 0px 10px 20px -10px $fill-bar;
+  box-shadow: 5px 2px 10px $kytos-black;
   overflow: hidden
   padding: 0px
 

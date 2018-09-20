@@ -70,7 +70,7 @@ export default {
 
 .k-terminal-toolbar
  width: 100%
- background-color: $fill-button-bg-h
+ background-color: $kytos-black
  height: 30px
  overflow: hidden
 
