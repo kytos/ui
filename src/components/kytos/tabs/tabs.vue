@@ -90,7 +90,7 @@ export default {
       }
    },
 
-    openTab: function (cityName) {
+    openTab: function (tabName) {
       // Declare all variables
       var i, tabcontent, tablinks;
 
@@ -108,7 +108,7 @@ export default {
 
       // TODO: Fix this active button
       // Show the current tab, and add an "active" class to the button that opened the tab
-      document.getElementById(cityName).style.display = "block";
+      document.getElementById(tabName).style.display = "block";
       //evt.currentTarget.className += " active";
 
       // Open select tab on click

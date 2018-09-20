@@ -71,11 +71,11 @@ export default {
  flex-direction: row
 
  &:hover
-  border-color: $fill-input-hover
-  background: $fill-input-hover
+  border-color: $kytos-extra-dark
+  background: $kytos-extra-dark
 
   input, svg
-   background: $fill-input-hover
+   background: $kytos-extra-dark
    fill: $fill-icon-h
 
  svg
@@ -98,6 +98,6 @@ export default {
  &:hover
   border-color: $fill-input-hover
   color: $fill-text
-  background: $fill-input-hover
+  background: $kytos-extra-dark
 
 </style>
