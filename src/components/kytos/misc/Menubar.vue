@@ -2,9 +2,9 @@
  <div class="container">
    <section class="k-menu-bar">
      <div class="logo" v-on:click="toggle" v-bind:class="{ compacted: compacted  }">
-       <div v-show="!compacted" id="kytos-version">
+       <div v-show="!compacted">
          <img src="../../../assets/logo-kytos.svg" class="logo-kytos" alt="Kytos" height="35">
-            v{{version}}
+         <div id="kytos-version">v{{version}}</div>
        </div>
        <img v-show="compacted" src="../../../assets/icon-kytos.svg" class="icon-kytos" alt="Kytos" height="35">
      </div>
@@ -128,8 +128,12 @@ export default {
    width: 40px
 
 #kytos-version
-  font-size: 0.5em
-  color: $kytos-white
-  padding-left: -60px
+ font-size: 0.5em
+ color: #EEE
+ margin: 0 auto
+ position: absolute
+ top: 25px
+ left: 175px
+ font-weight: bold
 
 </style>
