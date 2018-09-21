@@ -115,6 +115,8 @@ export default {
 .compacted
  .tab
    display: inline-flex
+   width: auto
+   float: left
 
  .k-accordion-input
    display: none
@@ -139,6 +141,7 @@ export default {
 
  .tab
   .tab-content
+   min-width: 230px
    margin-left: 15px
    &:before
      content: ';;;;;;;'
@@ -159,5 +162,7 @@ export default {
      left: -10px
      top: 15px
 
+  .k-button-wrapper
+   min-width: 120px
 
 </style>
