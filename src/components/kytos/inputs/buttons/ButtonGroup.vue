@@ -45,4 +45,15 @@ export default {
  .k-button
    float: left
 
+.k-toolbar
+
+ .k-button
+  float: left
+
+ .k-button-wrapper
+  clear: both
+
+  .k-button
+   clear: none
+
 </style>
