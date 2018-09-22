@@ -160,7 +160,7 @@ export default {
 
 .k-tabs-nav button
  float: left
- color: $fill-panel-h
+ color: $fill-icon
  border: none
  outline: none
  cursor: pointer
@@ -173,7 +173,7 @@ export default {
  border-right: 1px solid $fill-panel
 
 .k-tabs-nav button:hover
-  color: $fill-panel-h
+  color: $fill-icon-h
   background-color: $fill-panel
 
 .k-tabs-nav .active
@@ -200,18 +200,19 @@ export default {
   padding: 0px 0px 0px
 
 .k-tabs-control
-  float: right
-  display: inline-flex
+ float: right
+ display: inline-flex
 
-.k-tabs-control svg
+ svg
   width: 8px
+  fill: $fill-icon
 
-.k-tabs-control a
+ a
   display: block
   cursor: pointer
   padding: 5px
 
-.k-tabs-control a:hover svg
+ a:hover svg
   fill: $fill-icon-h
 
 .k-tabs:-moz-full-screen .tabcontent

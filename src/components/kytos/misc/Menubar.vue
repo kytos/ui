@@ -72,7 +72,7 @@ export default {
  width: 40px
  height: 100vh
  background: $fill-menubar
- box-shadow: 5px 0px 10px $fill-panel
+ box-shadow: 0px 0px 10px $fill-panel
 
  .logo
     padding: 0

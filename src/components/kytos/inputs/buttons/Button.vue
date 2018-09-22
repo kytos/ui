@@ -92,7 +92,7 @@ export default {
    font-size: 0.9em
 
    &:hover
-    box-shadow: 0 0 5px 2px $kytos-black
+    box-shadow: 0 0 2px $fill-bar
 
    &:disabled
     opacity: 0.5
