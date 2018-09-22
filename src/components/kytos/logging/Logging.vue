@@ -109,12 +109,9 @@ export default {
 
 .k-logging-toolbar
  width: 100%
- background-color: $kytos-medium-gray
+ background-color: $fill-menubar-b
  height: 30px
  overflow: hidden
-
- .k-checkbox-wrap
-  margin-top: 4px
 
  .k-input-wrap
   margin-top: 1px
@@ -124,10 +121,10 @@ export default {
   border-color: transparent
 
   :hover
-   background: $kytos-extra-dark
+   background: $fill-panel
 
  .k-button
-  font-size: 0.8em
+  font-size: 0.7em
   height: 30px
   margin: 0px
   padding: 0px 5px

@@ -70,8 +70,8 @@ export default {
 
 .k-terminal-toolbar
  width: 100%
- background-color: $kytos-black
- height: 30px
+ background-color: $fill-menubar-b
+ min-height: 30px
  overflow: hidden
 
  .k-input
@@ -79,8 +79,7 @@ export default {
   height: 10px
 
  .k-button
-  font-size: 0.8em
-  height: 30px
+  font-size: 0.7em
 
  svg
   width: 10px

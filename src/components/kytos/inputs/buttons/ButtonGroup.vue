@@ -39,6 +39,7 @@ export default {
 
 .k-button-wrapper
  position: relative
+ align-self: center
  vertical-align: middle
  float: left
 

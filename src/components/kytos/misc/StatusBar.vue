@@ -70,7 +70,7 @@ export default {
 
 .k-status-bar
   display: inline-flex
-  background: $kytos-dark-gray
+  background: $fill-panel-dark
   padding: 6px 0;
   font-family: monospace
   color: $kytos-blue

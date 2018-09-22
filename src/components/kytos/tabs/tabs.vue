@@ -128,7 +128,7 @@ export default {
  margin-top: -350px
  z-index: 900
  position: relative
- background: $kytos-dark-gray
+ background: $fill-panel-dark
  margin-left: 280px
 
 .k-tabs.hiddenTabs
@@ -155,12 +155,12 @@ export default {
 .k-tabs-nav
  overflow: hidden
  height: 25px
- background-color: $kytos-extra-dark
- box-shadow: 0 -5px 5px -5px $kytos-black
+ background-color: $fill-panel-dark
+ box-shadow: 0 -5px 5px -5px $fill-bar
 
 .k-tabs-nav button
  float: left
- color: $kytos-dark-white
+ color: $fill-panel-h
  border: none
  outline: none
  cursor: pointer
@@ -169,16 +169,16 @@ export default {
  height: 25px
  margin: 0px
  transition: 0.3s
- background-color: $kytos-dark-gray
- border-right: 1px solid $kytos-extra-dark
+ background-color: $fill-panel-dark
+ border-right: 1px solid $fill-panel
 
 .k-tabs-nav button:hover
-  color: $kytos-white
-  background-color: $kytos-extra-dark
+  color: $fill-panel-h
+  background-color: $fill-panel
 
 .k-tabs-nav .active
-  color: $kytos-white
-  background-color: $kytos-black
+  color: $fill-panel-h
+  background-color: $fill-bar
 
 .k-tabs-nav button:hover svg
   fill: $fill-icon-h
@@ -192,7 +192,7 @@ export default {
 
 .tabcontent
   display: none
-  background: $kytos-black
+  background: $fill-bar
   position: relative
   min-height: 325px
   max-height: 325px

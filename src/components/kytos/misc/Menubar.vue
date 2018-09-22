@@ -71,7 +71,7 @@ export default {
  z-index: 998
  width: 40px
  height: 100vh
- background: $kytos-medium-gray
+ background: $fill-menubar
  box-shadow: 5px 0px 10px $fill-panel
 
  .logo
@@ -110,7 +110,7 @@ export default {
   &:hover
    fill: $fill-icon-h
    border-color: $fill-menubar-b
-   background: $kytos-dark-gray
+   background: $fill-menubar-b
 
   &::-moz-focus-inner
    border: 0
@@ -120,7 +120,7 @@ export default {
    border-color: $fill-menubar-b
 
    > svg
-    border-left: 3px solid $kytos-blue
+    border-left: 3px solid $fill-link-h
 
 .compacted
  .k-menu-bar
@@ -129,7 +129,7 @@ export default {
 
 #kytos-version
  font-size: 0.5em
- color: #EEE
+ color: $kytos-dark-white
  margin: 0 auto
  position: absolute
  top: 25px
