@@ -1,0 +1,33 @@
+/* Light Theme */
+
+$fill-bar: #bbb !global;
+$fill-panel: #ccc !global;
+$fill-panel-h: #e6e6e6 !global;
+$fill-panel-dark: #eee !global;
+
+$fill-link: #545454 !global;
+$fill-link-h: $kytos-blue !global;
+
+$fill-icon: $kytos-purple !global;
+$fill-icon-h: $fill-link-h !global;
+
+$fill-text: $fill-icon !global;
+$fill-text-h: $fill-icon-h !global;
+
+$fill-menubar: $fill-panel-h !global;
+$fill-menubar-h: $fill-panel !global;
+$fill-menubar-b: $fill-panel-h !global;
+
+$fill-button: $fill-icon !global;
+$fill-button-bg: $fill-panel-h !global;
+$fill-button-hover: $fill-icon !global;
+$fill-button-bg-h: $fill-panel-dark !global;
+
+$fill-input: $fill-icon !global;
+$fill-input-bg: $fill-panel-h !global;
+$fill-input-hover: $fill-panel !global;
+$fill-input-content: $fill-panel-h !global;
+
+$fill-actionm-bg: $fill-panel !global;
+$fill-shortkey: $fill-icon !global;
+
