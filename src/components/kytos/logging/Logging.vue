@@ -109,16 +109,22 @@ export default {
 
 .k-logging-toolbar
  width: 100%
- background-color: $fill-button-bg-h
+ background-color: $fill-menubar-b
  height: 30px
  overflow: hidden
+
+ .k-input-wrap
+  margin-top: 1px
 
  .k-input-wrap, input
   background: none
   border-color: transparent
 
+  :hover
+   background: $fill-panel
+
  .k-button
-  font-size: 0.8em
+  font-size: 0.7em
   height: 30px
   margin: 0px
   padding: 0px 5px
@@ -133,7 +139,7 @@ export default {
  font-size: 0.8em
  line-height: 1.3em
  padding: 0.5em 1em
- background: $fill-input-hover
+ background: $kytos-black
  color: $fill-input
 
  .highlight

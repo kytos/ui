@@ -55,7 +55,7 @@ export default {
   z-index: 99
 
 .tab:hover .k-accordion-label
- color: #DDD
+ color: $fill-icon-h
 
 .k-accordion-label
   position: relative
@@ -64,8 +64,8 @@ export default {
   margin-top: 5px
   cursor: pointer
   font-size: 0.7em
-  color: rgba(255,255,255,0.5)
-  border-bottom: 1px solid rgba(0,0,0,0.5)
+  color: $fill-icon
+  border-bottom: 1px solid $fill-bar
 
   &:after
     position: absolute
@@ -83,7 +83,7 @@ export default {
     position: relative
     margin-bottom: 1px
     width: 100%
-    color: rgba(255,255,255,0.8)
+    color: $fill-bar
     overflow: hidden
 
   .tab-content
@@ -93,7 +93,7 @@ export default {
     -webkit-transition: max-height .35s
     -o-transition: max-height .35s
     transition: max-height .35s
-    border-top: 1px solid rgba(255,255,255,0.05)
+    border-top: 1px solid $fill-panel-dark
 
     p
       margin: 1em
@@ -115,6 +115,8 @@ export default {
 .compacted
  .tab
    display: inline-flex
+   width: auto
+   float: left
 
  .k-accordion-input
    display: none
@@ -139,6 +141,7 @@ export default {
 
  .tab
   .tab-content
+   min-width: 230px
    margin-left: 15px
    &:before
      content: ';;;;;;;'
@@ -159,5 +162,7 @@ export default {
      left: -10px
      top: 15px
 
+  .k-button-wrapper
+   min-width: 120px
 
 </style>

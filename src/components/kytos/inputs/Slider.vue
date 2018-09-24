@@ -86,7 +86,6 @@ export default {
   display: inline-flex;
   cursor: default;
   color: $fill-text;
-  padding-left: 13px;
 
   svg
    margin-right: 7px;
@@ -115,7 +114,6 @@ export default {
   outline: 0;
   order: 2;
   margin: 0px;
-  margin-top: 3px
   padding: 0px;
   cursor: pointer;
 
@@ -127,8 +125,8 @@ export default {
     background: $fill-input-bg;
 
    &::-moz-range-progress
-    background-color: $fill-icon-h;
-    border: 1px solid $fill-icon-h;
+    background-color: $fill-link-h;
+    border: 1px solid $fill-link-h;
     border-radius: 5px;
 
    &::-moz-range-thumb
@@ -165,5 +163,6 @@ export default {
 
 .compacted
  .k-slider
-  margin-top: 5px
+  align-self: center
+
 </style>

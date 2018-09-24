@@ -81,6 +81,7 @@ export default {
  align-items: center
  vertical-align: middle
  font-size: 0.8em
+ min-height: 30px
  color: $fill-text
  background: $fill-button-bg
 

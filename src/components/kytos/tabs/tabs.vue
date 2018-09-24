@@ -90,7 +90,7 @@ export default {
       }
    },
 
-    openTab: function (cityName) {
+    openTab: function (tabName) {
       // Declare all variables
       var i, tabcontent, tablinks;
 
@@ -108,7 +108,7 @@ export default {
 
       // TODO: Fix this active button
       // Show the current tab, and add an "active" class to the button that opened the tab
-      document.getElementById(cityName).style.display = "block";
+      document.getElementById(tabName).style.display = "block";
       //evt.currentTarget.className += " active";
 
       // Open select tab on click
@@ -128,7 +128,7 @@ export default {
  margin-top: -350px
  z-index: 900
  position: relative
- background: $kytos-dark-gray
+ background: $fill-panel-dark
  margin-left: 280px
 
 .k-tabs.hiddenTabs
@@ -155,12 +155,12 @@ export default {
 .k-tabs-nav
  overflow: hidden
  height: 25px
- background-color: $fill-bar
- box-shadow: 0 -5px 5px -5px $kytos-dark-gray
+ background-color: $fill-panel-dark
+ box-shadow: 0 -5px 5px -5px $fill-bar
 
 .k-tabs-nav button
  float: left
- color: $fill-text
+ color: $fill-icon
  border: none
  outline: none
  cursor: pointer
@@ -169,15 +169,16 @@ export default {
  height: 25px
  margin: 0px
  transition: 0.3s
- border-right: 1px solid $kytos-dark-gray
+ background-color: $fill-panel-dark
+ border-right: 1px solid $fill-panel
 
 .k-tabs-nav button:hover
-  color: $fill-text-h
-  background-color: rgba(0,0,0,0.4)
+  color: $fill-icon-h
+  background-color: $fill-panel
 
 .k-tabs-nav .active
-  color: $fill-link
-  background-color: $fill-button-bg-h
+  color: $fill-panel-h
+  background-color: $fill-bar
 
 .k-tabs-nav button:hover svg
   fill: $fill-icon-h
@@ -191,7 +192,7 @@ export default {
 
 .tabcontent
   display: none
-  background: $fill-input-hover
+  background: $fill-bar
   position: relative
   min-height: 325px
   max-height: 325px
@@ -199,18 +200,19 @@ export default {
   padding: 0px 0px 0px
 
 .k-tabs-control
-  float: right
-  display: inline-flex
+ float: right
+ display: inline-flex
 
-.k-tabs-control svg
+ svg
   width: 8px
+  fill: $fill-icon
 
-.k-tabs-control a
+ a
   display: block
   cursor: pointer
   padding: 5px
 
-.k-tabs-control a:hover svg
+ a:hover svg
   fill: $fill-icon-h
 
 .k-tabs:-moz-full-screen .tabcontent

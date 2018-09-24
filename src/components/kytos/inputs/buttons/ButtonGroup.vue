@@ -38,8 +38,23 @@ export default {
 @import '../../../../assets/styles/variables'
 
 .k-button-wrapper
- display: inline-flex
  position: relative
+ align-self: center
  vertical-align: middle
+ float: left
+
+ .k-button
+   float: left
+
+.k-toolbar
+
+ .k-button
+  float: left
+
+ .k-button-wrapper
+  clear: both
+
+  .k-button
+   clear: none
 
 </style>

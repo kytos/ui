@@ -2,7 +2,10 @@
  <div class="container">
    <section class="k-menu-bar">
      <div class="logo" v-on:click="toggle" v-bind:class="{ compacted: compacted  }">
-       <img v-show="!compacted" src="../../../assets/logo-kytos.svg" class="logo-kytos" alt="Kytos" height="35">
+       <div v-show="!compacted">
+         <img src="../../../assets/logo-kytos.svg" class="logo-kytos" alt="Kytos" height="35">
+         <div id="kytos-version">v{{version}}</div>
+       </div>
        <img v-show="compacted" src="../../../assets/icon-kytos.svg" class="icon-kytos" alt="Kytos" height="35">
      </div>
      <k-button v-for="(component, index) in components"
@@ -11,13 +14,6 @@
                :icon="component.icon"
                :tooltip="component.tooltip"
                @click.native="setItem(index+1)"/>
-
-     <div id="kytos-version">
-        kytos<br>
-        version<br>
-        {{version}}
-     </div>
-
    </section>
    <k-toolbar :active="activeItem" :components.sync="components" :compacted="compacted"></k-toolbar>
  </div>
@@ -76,7 +72,7 @@ export default {
  width: 40px
  height: 100vh
  background: $fill-menubar
- box-shadow: 10px 0px 20px -10px $fill-menubar
+ box-shadow: 0px 0px 10px $fill-panel
 
  .logo
     padding: 0
@@ -86,7 +82,7 @@ export default {
     width: 280px
     vertical-align: middle
     padding: 3px 0px 7px 0px
-    background: $fill-menubar-h
+    background: $kytos-gradient
     cursor: pointer
     text-align: center
 
@@ -99,6 +95,7 @@ export default {
   width: 40px
   height: 40px
   margin: 0px
+  padding: 0px
   background: $fill-menubar
 
   > svg
@@ -113,7 +110,7 @@ export default {
   &:hover
    fill: $fill-icon-h
    border-color: $fill-menubar-b
-   background: $kytos-dark-gray
+   background: $fill-menubar-b
 
   &::-moz-focus-inner
    border: 0
@@ -123,7 +120,7 @@ export default {
    border-color: $fill-menubar-b
 
    > svg
-    border-left: 3px solid $fill-menubar-h
+    border-left: 3px solid $fill-link-h
 
 .compacted
  .k-menu-bar
@@ -131,10 +128,12 @@ export default {
    width: 40px
 
 #kytos-version
-  bottom: 0px
-  position: absolute
-  padding: 2px
-  font-size: 10px
-  color: white
+ font-size: 0.5em
+ color: $kytos-dark-white
+ margin: 0 auto
+ position: absolute
+ top: 25px
+ left: 175px
+ font-weight: bold
 
 </style>
