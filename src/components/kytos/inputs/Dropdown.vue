@@ -1,5 +1,5 @@
 <template>
-   <label class="k-dropdown">
+   <label class="k-dropdown" v-bind:class="{ 'no-title' : !title }">
     <div class="k-dropdown__title">
       <icon v-if="icon" v-bind:name="icon"></icon>
       {{title}}
@@ -153,6 +153,13 @@ export default {
    text-align: center
    top: 4.5px
 
+ &.no-title
+  display: inline-flex
+  height: 20px
+  margin: 5px 0px
+  .k-dropdown__title
+   padding: 3px
+
 .k-dropdown__title
  padding-bottom: 10px
  padding-top: 5px
@@ -174,9 +181,9 @@ export default {
  padding-right: 20px
  margin: 0
  margin-right: -20px
- -webkit-border-radius: 4px
- -moz-border-radius: 4px
- border-radius: 4px
+ -webkit-border-radius: 3px
+ -moz-border-radius: 3px
+ border-radius: 3px
  background: $fill-input-bg
  color: $fill-text
  border: none
@@ -205,6 +212,13 @@ export default {
   margin-top: 7px
   margin-right: 5px
   margin-left: 2px
+
+  &.no-title
+   svg
+    margin-left: -3px
+    margin-top: 2px
+   &:before
+    bottom: -2px
 
  .k-dropdown__title
   visibility: hidden

@@ -68,6 +68,7 @@ export default {
  border-radius: 0.2em
  background: $fill-input-bg
  display: flex
+ margin: 5px 0
  flex-direction: row
 
  &:hover
@@ -99,5 +100,9 @@ export default {
   border-color: $fill-input-hover
   color: $fill-text
   background: $fill-input-content
+
+.compacted
+ .k-input-wrap
+   margin: 2px 5px
 
 </style>
