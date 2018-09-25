@@ -143,6 +143,7 @@ export default {
   .tab-content
    min-width: 230px
    margin-left: 15px
+   border: none
    &:before
      content: ';;;;;;;'
      font: 8px monospace
