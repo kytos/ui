@@ -131,11 +131,12 @@ export default {
   cursor: pointer
   padding-top: 0.3em
   width: 100%
-  background-color: $fill-button-bg
+  color: $fill-text
+  background-color: $fill-panel
 
   &:hover *
    color: $fill-link-h
-   background: $fill-button-bg-h
+   background: $fill-bar
 
   .usage
     min-width: 4px
@@ -160,6 +161,7 @@ export default {
       height: 10px
       padding: 5px 5px 5px
       flex: 0 0 auto
+      word-break: break-all
       text-align: center
 
     .x_bytes

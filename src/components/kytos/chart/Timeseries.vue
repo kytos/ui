@@ -323,7 +323,7 @@ export default {
 .chart-timeseries
   width: 100%;
   float: left;
-  background-color: $fill-button-bg-h;
+  background-color: $fill-bar;
 
   text
     fill: grey;
