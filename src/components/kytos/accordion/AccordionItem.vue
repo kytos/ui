@@ -113,57 +113,58 @@ export default {
       content: "▴"
 
 .compacted
- .tab
-   display: inline-flex
-   width: auto
-   float: left
-
- .k-accordion-input
-   display: none
- .k-accordion-label
-   display: none
-
- .k-accordion-input
-   & ~ .tab-content
+ .k-toolbar
+  .tab
     display: inline-flex
-    margin-top: 0px
-    height: 35px
-    max-height: 100%
-    overflow: hidden
-
-   &[type=checkbox]
-     & + .k-accordion-label:after
-       content: ""
-
-   &[type=checkbox]:checked
-     & + .k-accordion-label:after
-       content: ""
-
- .tab
-  .tab-content
-   min-width: 230px
-   margin-left: 15px
-   border: none
-   &:before
-     content: ';;;;;;;'
-     font: 8px monospace
-     line-height: 5px
-     color: $fill-bar
-     filter: invert(50%)
-     opacity: 0.2
-     -webkit-transform: rotate(90deg)
-     -moz-transform: rotate(90deg)
-     -ms-transform: rotate(90deg)
-     transform: rotate(90deg)
-     border-bottom: 1px solid $fill-bar
-     pointer-events: none
-     width: 35px
-     height: 10px
-     position: absolute
-     left: -10px
-     top: 15px
-
-  .k-button-wrapper
-   min-width: 120px
+    width: auto
+    float: left
+ 
+  .k-accordion-input
+    display: none
+  .k-accordion-label
+    display: none
+ 
+  .k-accordion-input
+    & ~ .tab-content
+     display: inline-flex
+     margin-top: 0px
+     height: 35px
+     max-height: 100%
+     overflow: hidden
+ 
+    &[type=checkbox]
+      & + .k-accordion-label:after
+        content: ""
+ 
+    &[type=checkbox]:checked
+      & + .k-accordion-label:after
+        content: ""
+ 
+  .tab
+   .tab-content
+    min-width: 230px
+    margin-left: 15px
+    border: none
+    &:before
+      content: ';;;;;;;'
+      font: 8px monospace
+      line-height: 5px
+      color: $fill-bar
+      filter: invert(50%)
+      opacity: 0.2
+      -webkit-transform: rotate(90deg)
+      -moz-transform: rotate(90deg)
+      -ms-transform: rotate(90deg)
+      transform: rotate(90deg)
+      border-bottom: 1px solid $fill-bar
+      pointer-events: none
+      width: 35px
+      height: 10px
+      position: absolute
+      left: -10px
+      top: 15px
+ 
+   .k-button-wrapper
+    min-width: 120px
 
 </style>

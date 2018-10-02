@@ -148,11 +148,11 @@ export default {
   margin-bottom: 5px
   width: 100%
   font-size: 0.8em
-  background: $fill-button-bg
+  color: $fill-text
+  background: $fill-input-bg
 
   &:hover
-   color: $fill-link-h
-   background: $fill-button-bg-h
+   color: $fill-text-h
 
   span
    font-weight: bold
@@ -180,6 +180,7 @@ export default {
     flex-direction: column
     position: relative
     display: table
+    background: $fill-menubar
 
     .match-l2, .match-l3
      display: flex

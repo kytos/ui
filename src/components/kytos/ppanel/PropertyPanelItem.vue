@@ -52,8 +52,8 @@ export default {
   th
    display: table-cell
    font-size: 0.8em
-   border-right: 1px solid $fill-button-bg-h
-   border-bottom: 1px solid $fill-button-bg-h
+   border-right: 1px solid $fill-input-content
+   border-bottom: 1px solid $fill-input-content
    color: $fill-text
    text-align: right
    padding: 0.5em
@@ -61,20 +61,20 @@ export default {
 
   td
    display: table-cell
-   color: $fill-text-h
+   color: $fill-text
    text-align: left
-   border-bottom: 1px solid $fill-button-bg-h
+   border-bottom: 1px solid $fill-input-content
    font-size: 0.8em
    padding: 0.5em
 
   &:nth-child(odd)
-   background-color: $fill-button-bg
+   background-color: $fill-menubar
 
   &:nth-child(even)
-   background-color: $fill-button-bg
+   background-color: $fill-panel
 
   &:hover *
-   color: $fill-shortkey
-   background-color: $fill-button-bg-h
+   color: $fill-text-h
+   background-color: $fill-bar
 
 </style>
