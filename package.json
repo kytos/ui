@@ -1,7 +1,7 @@
 {
-  "name": "hello",
-  "description": "A Vue.js project",
-  "version": "1.2.0",
+  "name": "kytos-web-ui",
+  "description": "Kytos Web-ui project",
+  "version": "1.3.0",
   "author": "Beraldo Leal <beraldo.leal@cern.ch>",
   "private": true,
   "scripts": {
