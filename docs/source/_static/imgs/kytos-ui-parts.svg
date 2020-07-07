@@ -13,7 +13,7 @@
    content="&lt;mxfile userAgent=&quot;Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.140 Safari/537.36&quot; version=&quot;8.0.8&quot; editor=&quot;www.draw.io&quot; type=&quot;google&quot;&gt;&lt;diagram id=&quot;6a5e19c9-ee08-059f-1e1f-09b903a8b5d4&quot; name=&quot;Page-1&quot;&gt;5VhNl5sgFP01LqdHwBCznKTTdtNVFl0zSpQzKBbJJOmvLwr4kThnPJ048TQuEr0PHnjvfcDRQ5vs+F2SIv0pYso96MdHD331IAyXUP9WwMkAwdI3QCJZbCDQAlv2h1rQNduzmJa9hkoIrljRByOR5zRSPYxIKQ79ZjvB+6MWJKEXwDYi/BL9xWKV2teCyxb/QVmSupEBXpnIM4leEin2uR3Pg2hXXyacEZfLvmiZklgcOhB68tBGCqHMXXbcUF5R62gz/b69EW3mLWmuxnRYrFbhjjwvVtiPAMb4wWZ4JXxP3StgrnOtd0Kn1DNWJ8sS/r0XLvBQ1ho+6gYgLI5tUN8l1T9wafRcTCaDWxqapLAmj1bT83X4kDJFtwWJquhBe01jqcq4fgLV0IzzjeBC1n0d1WhdKileaCfi11cz3iuVih7f5Aw0SmiDU5FRJU+6ieuArXjW3MCJeWitElgo7bjEYcSaM2kytwLpG6vRSL3ggF4fYfQK/ED/fX4W8LMIWsyPoAsD4XEGguEUBOH5EXThoAGCwJCDprHQcv4MBf4tayycH0E4/Mcam4QgMLRMX2Vb/cLY2J1Vk6n6PPe3yVzk9GxPtRDhLMn1Y6TJpxpfV9IwfVx6tIGMxXE1zKCwfeknWD/hcqS2k0gbTCft3SkbBGdVi26p7NDRwQhSFiT/WNF2tTXZ/ndtYTCnqh3asq5RtejuavZ8p72trquJdA3uTtfztTgAN9TVJZ3TERPB94+YCH/aGdMxcnXrw7u3/oRLmn5sv/bVsc4XVfT0Fw==&lt;/diagram&gt;&lt;/mxfile&gt;"
    id="svg62"
    sodipodi:docname="kytos-ui-parts.svg"
-   inkscape:version="0.92.3pre0 (0ab9bec, 2018-03-03)">
+   inkscape:version="0.92.5 (2060ec1f9f, 2020-04-08)">
   <metadata
      id="metadata66">
     <rdf:RDF>
@@ -34,15 +34,15 @@
      guidetolerance="10"
      inkscape:pageopacity="0"
      inkscape:pageshadow="2"
-     inkscape:window-width="1366"
-     inkscape:window-height="723"
+     inkscape:window-width="1848"
+     inkscape:window-height="1009"
      id="namedview64"
      showgrid="false"
      inkscape:zoom="0.72097162"
      inkscape:cx="582.61278"
      inkscape:cy="95.711485"
-     inkscape:window-x="0"
-     inkscape:window-y="0"
+     inkscape:window-x="72"
+     inkscape:window-y="34"
      inkscape:window-maximized="1"
      inkscape:current-layer="svg62" />
   <defs
@@ -150,7 +150,7 @@
        sodipodi:role="line"
        id="tspan4664"
        x="232.44231"
-       y="151.32692">Kytos-mapa</tspan></text>
+       y="151.32692">Kytos-map</tspan></text>
   <text
      xml:space="preserve"
      style="font-style:normal;font-weight:normal;font-size:18.66666603px;line-height:25px;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
@@ -204,7 +204,7 @@
        sodipodi:role="line"
        id="tspan4664-8"
        x="847.83228"
-       y="164.96864">Kytos-mapa</tspan></text>
+       y="164.96864">Kytos-map</tspan></text>
   <rect
      style="opacity:0.95;fill:#ffffff;fill-opacity:1;stroke:#00000b;stroke-width:0.96402735;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
      id="rect4634-7"
@@ -341,5 +341,5 @@
        sodipodi:role="line"
        id="tspan4851-2"
        x="850.73798"
-       y="352.50308">Compacted</tspan></text>
+       y="352.50308">Compact</tspan></text>
 </svg>
