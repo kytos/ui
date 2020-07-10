@@ -124,3 +124,43 @@ displayed on our UI.
 
 You can use any **font-awesome icon**. Kytos ui interface will read that icon
 and create a new button into the **k-menu-bar**.
+
+
+Toolbar Component
+*****************
+
+The toolbar components can exist in two format versions: compressed and expanded.
+
+Components that can be displayed in expanded and compressed formats must declare style attributes for both version.
+For the compressed view the default class selector name is ``compacted``.
+
+Below is an example of the input component:
+
+.. code-block:: html
+
+    <style lang="sass">
+      .k-input-wrap
+        border: 1px solid
+
+        ...
+
+      .compacted
+        .k-input-wrap
+          margin: 2px 5px
+    </style>
+
+
+Some componentes are not suited for display in compressed format, so you can add the name ``no-compact`` to the class attribute in the template. It will signal the view that the component will not be displayed in compressed form.
+
+A few Kytos components have the class name to hide the component in the compressed format, such as TextArea, Table and PropertyPanel because they have dimensions that cannot fit in the compressed format of the toolbar.
+
+Below is an example in the Textarea component:
+
+.. code-block:: html
+
+    <template>
+      <div class="k-textarea-wrap no-compact">
+        ...
+      </div>
+    </template>
+
