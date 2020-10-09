@@ -106,11 +106,11 @@ export default {
 
   &[type=checkbox]
     & + .k-accordion-label:after
-      content: "▾"
+      content: "▸"
 
   &[type=checkbox]:checked
     & + .k-accordion-label:after
-      content: "▴"
+      content: "▾"
 
 .compacted
  .k-toolbar
