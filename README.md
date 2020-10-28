@@ -1,8 +1,11 @@
 # Kytos/UI
 
+This is the web user interface for the [Kytos project](https://kytos.io). For more information
+on how to use it, please refer to the [UI documentation](https://docs.kytos.io/developer/web-ui/).
+
 ## Build Setup
 
-``` bash
+```bash
 # install dependencies
 npm install
 
@@ -19,7 +22,7 @@ To create a new release file you need to run the command below and during the
 procedure to create a new release on github you need append the file
 latest.zip.
 
-``` bash
+```bash
 # build for production and compress the file as latest.zip
 npm run build
 ```
