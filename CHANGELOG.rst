@@ -1,7 +1,7 @@
 #########
 Changelog
 #########
-All notable changes to the kytos ui project will be documented in this file.
+All notable changes to the Kytos UI project will be documented in this file.
 
 UNRELEASED - Under development
 ******************************
