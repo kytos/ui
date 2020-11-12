@@ -25,7 +25,7 @@ import KytosBaseWithIcon from '../base/KytosBaseWithIcon'
 
 /**
  * Menu with a list of actions and their shortcuts. The menu can be shown or
- * hidden using the shortcut *Ctrl+Alt+Space*.
+ * hidden using the shortcut *Ctrl+Space*.
  *
  * @example /_static/imgs/components/misc/k-action-menu.png
  */
@@ -54,7 +54,7 @@ export default {
      * Method to add new action menu item
      *
      * @public
-     * @param {object} options An object with the params [name, author, shortkey, content]
+     * @param {object} options An object with the params [name, author, shortkey, action]
      */
     add_action_menu_item(options){
       var found = false
