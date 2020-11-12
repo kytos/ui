@@ -10,11 +10,15 @@
 
       <div class="k-tabs-control">
         <a class="k-hidden-tab" v-on:click="this.toggleTerminal">
-            <icon v-if="!hiddenTabs" name="chevron-down"></icon>
-            <icon v-else name="chevron-up"></icon>
+          <icon v-if="!hiddenTabs" name="chevron-down"></icon>
+          <icon v-else name="chevron-up"></icon>
+        </a>
+        <a class="k-hidden-tab k-toggle-info-panel" v-on:click="this.latestInfoPanel ">
+          <icon v-if="!hiddenPanel" name="chevron-left"></icon>
+          <icon v-else name="chevron-right"></icon>
         </a>
         <a v-on:click="this.fullTerminal">
-            <icon name="arrows-alt"></icon>
+          <icon name="arrows-alt"></icon>
         </a>
       </div><!-- .k-tabs-control -->
 
@@ -44,51 +48,60 @@ import KytosBaseWithIcon from '../base/KytosBaseWithIcon';
 export default {
   name: 'k-tabs',
   mixins: [KytosBaseWithIcon],
-  data () {
+  data() {
     return {
       hiddenTabs: true,
+      hiddenPanel: true,
+      content: {},
     }
   },
 
   methods: {
-    toggleTerminal () {
+    toggleTerminal() {
       this.hiddenTabs = !this.hiddenTabs
     },
+    toggleInfoPanelIcon(action) {
+      (action == 'show') ? this.hiddenPanel = false : this.hiddenPanel = true
+    },
+    latestInfoPanel() {
+      let infoPanelEvent
+      (this.hiddenPanel) ? infoPanelEvent = 'showLatestInfoPanel' : infoPanelEvent = 'hideInfoPanel'
+      this.$kytos.$emit(infoPanelEvent)
+    },
+    fullTerminal() {
 
-   fullTerminal () {
+      // Open/show tab on click
+      this.hiddenTabs = false;
 
-    // Open/show tab on click
-    this.hiddenTabs = false;
+      var isInFullScreen = (document.fullscreenElement && document.fullscreenElement !== null) ||
+          (document.webkitFullscreenElement && document.webkitFullscreenElement !== null) ||
+          (document.mozFullScreenElement && document.mozFullScreenElement !== null) ||
+          (document.msFullscreenElement && document.msFullscreenElement !== null);
 
-    var isInFullScreen = (document.fullscreenElement && document.fullscreenElement !== null) ||
-        (document.webkitFullscreenElement && document.webkitFullscreenElement !== null) ||
-        (document.mozFullScreenElement && document.mozFullScreenElement !== null) ||
-        (document.msFullscreenElement && document.msFullscreenElement !== null);
+      var docElm = document.getElementById("tabs-panel");
 
-    var docElm = document.getElementById("tabs-panel");
-
-    if (!isInFullScreen) {
+      if (!isInFullScreen) {
         if (docElm.requestFullscreen) {
-            docElm.requestFullscreen();
+          docElm.requestFullscreen();
         } else if (docElm.mozRequestFullScreen) {
-            docElm.mozRequestFullScreen();
+          docElm.mozRequestFullScreen();
         } else if (docElm.webkitRequestFullScreen) {
-            docElm.webkitRequestFullScreen();
+          docElm.webkitRequestFullScreen();
         } else if (docElm.msRequestFullscreen) {
-            docElm.msRequestFullscreen();
+          docElm.msRequestFullscreen();
         }
-    } else {
+      } else {
         if (document.exitFullscreen) {
-            document.exitFullscreen();
+          document.exitFullscreen();
         } else if (document.webkitExitFullscreen) {
-            document.webkitExitFullscreen();
+          document.webkitExitFullscreen();
         } else if (document.mozCancelFullScreen) {
-            document.mozCancelFullScreen();
+          document.mozCancelFullScreen();
         } else if (document.msExitFullscreen) {
-            document.msExitFullscreen();
+          document.msExitFullscreen();
         }
       }
-   },
+    },
 
     openTab: function (tabName) {
       // Declare all variables
@@ -97,13 +110,13 @@ export default {
       // Get all elements with class="tabcontent" and hide them
       tabcontent = document.getElementsByClassName("tabcontent");
       for (i = 0; i < tabcontent.length; i++) {
-          tabcontent[i].style.display = "none";
+        tabcontent[i].style.display = "none";
       }
 
       // Get all elements with class="tab-nav" and remove the class "active"
       tablinks = document.getElementsByClassName("tab-nav");
       for (i = 0; i < tablinks.length; i++) {
-          tablinks[i].className = tablinks[i].className.replace(" active", "");
+        tablinks[i].className = tablinks[i].className.replace(" active", "");
       }
 
       // TODO: Fix this active button
@@ -114,7 +127,19 @@ export default {
       // Open select tab on click
       this.hiddenTabs = false;
 
+    },
+    register_listeners() {
+      /**
+       * Toggle the InfoPanel icon
+       *
+       * @event toggleInfoPanelIcon
+       * @type {NULL}
+       */
+      this.$kytos.$on('toggleInfoPanelIcon', this.toggleInfoPanelIcon)
     }
+  },
+  mounted() {
+    this.register_listeners()
   }
 }
 </script>
@@ -124,12 +149,12 @@ export default {
 @import '../../../assets/styles/variables'
 
 .k-tabs
- height: 350px
- margin-top: -350px
- z-index: 900
- position: relative
- background: $fill-panel-dark
- margin-left: 280px
+  height: 350px
+  margin-top: -350px
+  z-index: 1000
+  position: relative
+  background: $fill-panel-dark
+  margin-left: 280px
 
 .k-tabs.hiddenTabs
   margin-top: -25px
@@ -153,24 +178,24 @@ export default {
   display: none
 
 .k-tabs-nav
- overflow: hidden
- height: 25px
- background-color: $fill-panel-dark
- box-shadow: 0 -5px 5px -5px $fill-bar
+  overflow: hidden
+  height: 25px
+  background-color: $fill-panel-dark
+  box-shadow: 0 -5px 5px -5px $fill-bar
 
 .k-tabs-nav button
- float: left
- color: $fill-icon
- border: none
- outline: none
- cursor: pointer
- font-size: 0.78em
- padding: 0 1.2em
- height: 25px
- margin: 0px
- transition: 0.3s
- background-color: $fill-panel-dark
- border-right: 1px solid $fill-panel
+  float: left
+  color: $fill-icon
+  border: none
+  outline: none
+  cursor: pointer
+  font-size: 0.78em
+  padding: 0 1.2em
+  height: 25px
+  margin: 0px
+  transition: 0.3s
+  background-color: $fill-panel-dark
+  border-right: 1px solid $fill-panel
 
 .k-tabs-nav button:hover
   color: $fill-icon-h
@@ -200,20 +225,20 @@ export default {
   padding: 0px 0px 0px
 
 .k-tabs-control
- float: right
- display: inline-flex
+  float: right
+  display: inline-flex
 
- svg
-  width: 8px
-  fill: $fill-icon
+  svg
+    width: 8px
+    fill: $fill-icon
 
- a
-  display: block
-  cursor: pointer
-  padding: 5px
+  a
+    display: block
+    cursor: pointer
+    padding: 5px
 
- a:hover svg
-  fill: $fill-icon-h
+  a:hover svg
+    fill: $fill-icon-h
 
 .k-tabs:-moz-full-screen .tabcontent
   height: auto
@@ -226,7 +251,12 @@ export default {
   max-height: 100vh
 
 .compacted
- .k-tabs
-   margin-left: 40px
+  .k-tabs
+    margin-left: 40px
+
+.k-hidden-tab
+  &.k-toggle-info-panel
+    svg
+      width: 6px
 
 </style>

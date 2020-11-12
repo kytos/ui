@@ -120,4 +120,6 @@ export default {
     height: 100%;
     z-index: 1;
 
+.mapboxgl-ctrl-attrib
+  top: -25px
 </style>
