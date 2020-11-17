@@ -28,7 +28,7 @@ import KytosStatusBar from './components/kytos/misc/StatusBar.vue'
 import KytosInput from './components/kytos/inputs/Input.vue';
 import KytosTextarea from './components/kytos/inputs/Textarea.vue';
 import KytosCheckbox from './components/kytos/inputs/Checkbox.vue';
-import MapBoxSettings from './components/kytos/map/MapBoxSettings.vue'
+import MapBoxSettings from './components/kytos/map/MapBoxSettings.vue';
 
 import KytosSelect from './components/kytos/inputs/Select.vue';
 import KytosSlider from './components/kytos/inputs/Slider.vue';
@@ -43,10 +43,12 @@ import KytosFlow from './components/kytos/switch/Flow.vue';
 import KytosSwitchRadar from './kytos/switchRadar.vue';
 import KytosInterfaceInfo from './kytos/interfaceInfo.vue';
 
-import KytosChartTimeseries from './components/kytos/chart/Timeseries.vue'
-import KytosChartRadar from './components/kytos/chart/RadarChart.vue'
+import KytosChartTimeseries from './components/kytos/chart/Timeseries.vue';
+import KytosChartRadar from './components/kytos/chart/RadarChart.vue';
 
-import KytosTable from './components/kytos/table/Table.vue'
+import KytosTable from './components/kytos/table/Table.vue';
+
+import KytosNotification from "./components/kytos/misc/Notification.vue";
 
 Vue.component('k-menubar', KytosMenubar);
 Vue.component('k-map', KytosMap);
@@ -63,7 +65,7 @@ Vue.component('k-action-menu', KytosActionMenu);
 Vue.component('k-input', KytosInput);
 Vue.component('k-textarea', KytosTextarea);
 Vue.component('k-checkbox', KytosCheckbox);
-Vue.component('k-status-bar', KytosStatusBar)
+Vue.component('k-status-bar', KytosStatusBar);
 
 Vue.component('k-select', KytosSelect)
 Vue.component('k-slider', KytosSlider);
@@ -87,6 +89,7 @@ Vue.component('k-chart-timeseries', KytosChartTimeseries)
 Vue.component('k-chart-radar', KytosChartRadar)
 
 Vue.component('k-table', KytosTable)
+Vue.component('k-notification', KytosNotification)
 
 Vue.filter('humanize_bytes', function (num, precision = 0, suffix = 'bps') {
     num = Number(num);
