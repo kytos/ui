@@ -26,16 +26,15 @@ Security
 Changed
 =======
 
-[1.3.3] - 2020-11-20
-********************
+[1.4] - 2020-11-20
+******************
 
 Added
 =====
 
-- Added new notification component.
-- Added notification component event.
-- Added info panel toggle button in tabs component.
-- Added close button in infoPanel component.
+- New UI component: Notification.
+- Added info-panel toggle button in tabs component.
+- Added close button to info-panel component.
 
 Fixed
 =====
