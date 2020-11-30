@@ -17,3 +17,6 @@ build/
 
 # Log
 *.log
+
+# JetBrains project files
+.idea
