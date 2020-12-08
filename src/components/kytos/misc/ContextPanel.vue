@@ -49,10 +49,11 @@ export default {
   },
   computed: {
     style() {
-      let color
-      (this.title_color !== undefined) ? color = 'color:' + this.title_color : color = 'color: #CCC'
-
-      return color
+      if (this.title_color !== undefined) {
+        return 'color:' + this.title_color
+      } else {
+        return 'color: #CCC'
+      }
     }
   },
 }
