@@ -2,10 +2,10 @@
   <div id="tabs-panel" class="k-tabs" v-bind:class="{ hiddenTabs: hiddenTabs }">
     <div class="k-tabs-nav">
 
-      <k-button class="tab-nav" title="Terminal" icon="terminal" @click.native="openTab('terminal')"></k-button>
-      <k-button class="tab-nav" title="Switches" icon="circle-o" @click.native="openTab('switches')"></k-button>
-      <k-button class="tab-nav active" title="Logging" icon="heartbeat" @click.native="openTab('logging')"></k-button>
-      <k-button class="tab-nav" title="Notifications" icon="bell-o" @click.native="openTab('notifications')"></k-button>
+      <k-button class="tab-nav terminal" title="Terminal" icon="terminal" @click.native="openTab('terminal')"></k-button>
+      <k-button class="tab-nav switches" title="Switches" icon="circle-o" @click.native="openTab('switches')"></k-button>
+      <k-button class="tab-nav logging" title="Logging" icon="heartbeat" @click.native="openTab('logging')"></k-button>
+      <k-button class="tab-nav notifications" title="Notifications" icon="bell-o" @click.native="openTab('notifications')"></k-button>
       <k-status-bar></k-status-bar>
 
       <div class="k-tabs-control">
@@ -13,7 +13,7 @@
           <icon v-if="!hiddenTabs" name="chevron-down"></icon>
           <icon v-else name="chevron-up"></icon>
         </a>
-        <a class="k-hidden-tab k-toggle-info-panel" v-on:click="this.latestInfoPanel ">
+        <a class="k-hidden-tab k-toggle-info-panel" v-on:click="this.latestInfoPanel">
           <icon v-if="!hiddenPanel" name="chevron-left"></icon>
           <icon v-else name="chevron-right"></icon>
         </a>
@@ -58,15 +58,33 @@ export default {
       content: {},
       notifications: [],
       hiddenPanel: true,
+      lastTab: -1
     }
   },
-
+  watch: {
+    hiddenTabs: function () {
+      /** Watch the hiddenTabs and get all elements with class="tab-nav"
+       * to remove the class "active" when tabs are closed,
+       * and reactive the last used tab
+       **/
+      let tabLinks = $(".tab-nav")
+      if (this.hiddenTabs) {
+        for (let i = 0; i < tabLinks.length; i++) {
+           $(tabLinks[i]).removeClass("active")
+        }
+      }else {
+        if (!$(tabLinks[this.lastTab]).hasClass("active")){
+          $(tabLinks[this.lastTab]).addClass("active")
+        }
+      }
+    }
+  },
   methods: {
     toggleTerminal() {
       this.hiddenTabs = !this.hiddenTabs
     },
     toggleInfoPanelIcon(action) {
-      (action == 'show') ? this.hiddenPanel = false : this.hiddenPanel = true
+      this.hiddenPanel = (action !== 'show')
     },
     latestInfoPanel() {
       let infoPanelEvent
@@ -112,10 +130,9 @@ export default {
         }
       }
     },
-
     openTab: function (tabName) {
       // Declare all variables
-      var i, tabcontent, tablinks;
+      var i, tabcontent, tabLinks;
 
       // Get all elements with class="tabcontent" and hide them
       tabcontent = document.getElementsByClassName("tabcontent");
@@ -124,13 +141,22 @@ export default {
       }
 
       // Get all elements with class="tab-nav" and remove the class "active"
-      tablinks = document.getElementsByClassName("tab-nav");
-      for (i = 0; i < tablinks.length; i++) {
-        tablinks[i].className = tablinks[i].className.replace(" active", "");
+      tabLinks = $(".tab-nav")
+      for (i = 0; i < tabLinks.length; i++) {
+        if ($(tabLinks[i]).hasClass(tabName)) {
+          $(tabLinks[i]).addClass("active")
+          this.lastTab = i
+        }else {
+          $(tabLinks[i]).removeClass("active")
+        }
       }
 
-      // TODO: Fix this active button
-      // Show the current tab, and add an "active" class to the button that opened the tab
+      /**Show the current tab by adding an "active" class
+       * to the button that opened the tab
+       * [ Maybe in the future change it to use
+       * event listeners if needed like:
+       * **evt.currentTarget.className += " active"**]
+       **/
       document.getElementById(tabName).style.display = "block";
       //evt.currentTarget.className += " active";
 
@@ -193,8 +219,8 @@ export default {
 .k-tabs:-webkit-full-screen
   width: 100%
   height: 100vh
-  margin: 0px
-  padding: 0px
+  margin: 0
+  padding: 0
 
 .k-tabs:-moz-full-screen .k-hidden-tab
   display: none
@@ -217,7 +243,7 @@ export default {
   font-size: 0.78em
   padding: 0 1.2em
   height: 25px
-  margin: 0px
+  margin: 0
   transition: 0.3s
   background-color: $fill-panel-dark
   border-right: 1px solid $fill-panel
@@ -247,7 +273,7 @@ export default {
   min-height: 325px
   max-height: 325px
   overflow: auto
-  padding: 0px 0px 0px
+  padding: 0 0 0
 
 .k-tabs-control
   float: right
