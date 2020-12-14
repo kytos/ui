@@ -85,8 +85,11 @@ export default {
       /**
        * Move pagination forward
        */
-      ((this.currentPage * this.pageSize) < this.rows.length) ?
-        this.currentPage++ : this.currentPage = 1
+      if ((this.currentPage * this.pageSize) < this.rows.length){
+        this.currentPage++
+      }else {
+        this.currentPage = 1
+      }
 
       this.activeCurrentPage()
     },
@@ -94,8 +97,11 @@ export default {
       /**
        * Move pagination backwards
        */
-      (this.currentPage > 1) ?
-          this.currentPage-- : this.currentPage = this.lastPage
+      if (this.currentPage > 1) {
+        this.currentPage--
+      }else {
+        this.currentPage = this.lastPage
+      }
 
       this.activeCurrentPage()
     },
@@ -213,7 +219,6 @@ export default {
     margin: 2px
     padding: 2px 5px
     font-weight: bold
-    font-family: Tahoma, serif
     &.active
       color: #EEE
 
