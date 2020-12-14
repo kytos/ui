@@ -84,7 +84,7 @@ export default {
       this.hiddenTabs = !this.hiddenTabs
     },
     toggleInfoPanelIcon(action) {
-      (action === 'show') ? this.hiddenPanel = false : this.hiddenPanel = true
+      this.hiddenPanel = (action !== 'show')
     },
     latestInfoPanel() {
       let infoPanelEvent
