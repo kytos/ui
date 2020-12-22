@@ -26,6 +26,23 @@ Security
 Changed
 =======
 
+
+[1.4.1] - 2020-12-23
+********************
+
+Added
+=====
+
+- New CSS to the k-table component.
+- Add pagination to k-table component.
+- New CSS to k-context-panel component.
+ 
+Changed
+=======
+
+- Update template of k-context-panel component.
+
+
 [1.4.0] - 2020-11-20
 ********************
 
