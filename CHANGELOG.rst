@@ -33,14 +33,13 @@ Changed
 Added
 =====
 
-- New CSS to the k-table component.
-- Add pagination to k-table component.
-- New CSS to k-context-panel component.
+- New CSS for the k-table and k-context-panel components.
+- Added pagination to the k-table component.
  
-Changed
+Fixed
 =======
 
-- Update template of k-context-panel component.
+- Fixed k-context-panel component template.
 
 
 [1.4.0] - 2020-11-20
