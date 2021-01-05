@@ -5,7 +5,11 @@
         <thead>
         <tr>
           <th scope="col">#</th>
-          <th scope="col" v-for="header in headers"> {{ header }}</th>
+          <th scope="col" class="header" v-for="(header, index) in headers" @click="defineSort(index)">
+            {{ header }}
+            <span v-if="currentSortDir[index] === 'desc'">▾</span>
+            <span v-else>▴</span>
+          </th>
         </tr>
         </thead>
 
@@ -64,6 +68,8 @@ export default {
   },
   data() {
     return {
+      currentSort: 0,
+      currentSortDir: Array(this.headers.length).fill('asc'),
       currentPage: 1,
       pageSize: 5,
       pages: []
@@ -85,7 +91,7 @@ export default {
       /**
        * Move pagination forward
        */
-      if ((this.currentPage * this.pageSize) < this.rows.length){
+      if ((this.currentPage * this.pageSize) < this.rows.length) {
         this.currentPage++
       }else {
         this.currentPage = 1
@@ -118,6 +124,26 @@ export default {
        * row index in range of the page size
        */
       return (this.currentPage * this.pageSize) - ((this.pageSize - 1) - index)
+    },
+    defineSort(newSort) {
+      /**
+      * Identify the direction of the sort for
+      * the selected column as sort base
+      */
+      if(newSort === this.currentSort) {
+        let sortDir = (this.currentSortDir[newSort] === 'asc') ? 'desc' : 'asc'
+
+        this.$set(this.currentSortDir, newSort, sortDir)
+        /**
+        * It is necessary to use a different syntax to replace arrays values
+        * by index because Vue cannot detect when directly set an item with
+        * the index like it is usually done. In this case should've been:
+        * this.currentSortDir[newSort] = sortDir
+        */
+      }
+
+      console.log(this.currentSortDir)
+      this.currentSort = newSort;
     }
   },
   computed: {
@@ -134,10 +160,26 @@ export default {
     },
     rowsOfPage: function() {
       /**
-       * Filter all rows to return only the number of
-       * rows that fits in current page size
+       * Orders by ascendant or descendant of a
+       * selected column and filters all rows
+       * to return only the number of rows
+       * that fits in current page size
        */
-      return this.rows.filter((row, index) => {
+      return this.rows.sort((a, b) => {
+
+        let modifier = 1,
+            key_a = Object.keys(a),
+            key_b = Object.keys(b)
+
+        if(this.currentSortDir[this.currentSort] === 'desc')
+          modifier = -1;
+        if(a[key_a[this.currentSort]] < b[key_b[this.currentSort]])
+          return -1 * modifier;
+        if(a[key_a[this.currentSort]] > b[key_b[this.currentSort]])
+          return modifier;
+
+        return 0;
+      }).filter((row, index) => {
         let start, end
 
         start = (this.currentPage - 1) * this.pageSize;
@@ -154,9 +196,11 @@ export default {
       let number = Math.ceil(this.rows.length / this.pageSize)
 
       for (let i = 0; i < number; i++) {
-        this.pages.push((i + 1).toString())
-      }
+        let pageNumber = (i + 1).toString()
 
+        if (!this.pages.includes(pageNumber))
+          this.pages.push(pageNumber)
+      }
       return this.pages
     }
   },
@@ -194,7 +238,6 @@ export default {
 
   th
     padding: 10px 0
-
   tbody
     tr:nth-child(even)
       background: $kytos-medium-gray
@@ -202,10 +245,11 @@ export default {
     tr:hover
       color: $fill-text-h
       background-color: rgba(0, 0, 0, 0.15)
-
+  .header
+    cursor: pointer
 .next-previous
   display: flex
-  justify-content: flex-end
+  justify-content: center
   align-items: center
 
   button
