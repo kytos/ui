@@ -1,12 +1,23 @@
 <template>
   <section v-bind:class="classObject" v-hotkey="keymap" v-show="this.infoPanelView">
     <div class="row" style="display: flex;justify-content: flex-end;">
-      <k-button class='close-info-panel-btn' tooltip="Close Info-Panel" icon="times" :on_click="this.hide"></k-button>
+      <div class="actions-btn">
+        <k-button class='info-panel-btn max' icon="window-maximize"
+                  tooltip="Maximize Info-Panel"
+                  :on_click="this.maximize">
+        </k-button>
+        <k-button class='info-panel-btn close' icon="times"
+                  tooltip="Close Info-Panel"
+                  :on_click="this.hide">
+        </k-button>
+      </div>
     </div>
     <div class="k-info-title">
       <icon v-if="myIcon" v-bind:name="myIcon"></icon>
       <div v-if="myTitle" class="panel-title">
-        <h1>{{ myTitle }} <small v-if="mySubtitle">{{ mySubtitle }}</small></h1>
+        <h1> {{ myTitle }}
+          <small v-if="mySubtitle">{{ mySubtitle }}</small>
+        </h1>
       </div>
     </div>
     <div class="k-info-wrapper">
@@ -99,6 +110,13 @@ export default {
         }
         this.show(standard_infoPanel)
       }
+    },
+    maximize() {
+      /**
+       * Controls the maximized view of the current
+       * k-info-panel by adding and removing its css class
+      */
+      $('.k-info-panel').toggleClass('k-info-panel-max')
     },
     register_listeners() {
       /**
@@ -197,8 +215,13 @@ export default {
       color: $fill-text
       display: block
 
-.close-info-panel-btn
+.actions-btn
   position: absolute !important
+
+.info-panel-btn
   background: inherit !important
+  display: inline-block
+  &.max svg
+    width: 14px !important
 
 </style>
