@@ -7,12 +7,13 @@
           <th scope="col">#</th>
           <th scope="col" class="header" v-for="(header, index) in headers" @click="defineSort(index)">
             {{ header }}
-            <span v-if="currentSortDir[index] === 'desc'">▾</span>
-            <span v-else>▴</span>
+            <span class="order-dir" v-if="currentSort === index" >
+              {{ spanDir(index) }}
+            </span>
+            <span class="order-dir" v-else>&nbsp;</span>
           </th>
         </tr>
         </thead>
-
         <tbody>
         <tr v-for="(row, index) in rowsOfPage">
           <th scope="row" style="width: 45px">{{ rowIndex(index) }}</th>
@@ -141,9 +142,17 @@ export default {
         * this.currentSortDir[newSort] = sortDir
         */
       }
-
-      console.log(this.currentSortDir)
       this.currentSort = newSort;
+    },
+    spanDir(index) {
+      /**
+      * Defines a span marker only for the selected
+      * column to indicate its sort direction
+      */
+      if (this.currentSortDir[index] === 'desc')
+        return '▾'
+
+      return '▴'
     }
   },
   computed: {
@@ -268,5 +277,9 @@ export default {
 
 .k-table-divisor
   height: 190px
+
+.order-dir
+  display: inline-block
+  width: 12px
 
 </style>
