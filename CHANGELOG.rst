@@ -26,6 +26,13 @@ Security
 Changed
 =======
 
+[1.4.2] - 2021-05-31
+********************
+
+Added
+=====
+- Added maximize button to k-info-panel.
+- Added upward or downward sorter to the k-table.
 
 [1.4.1] - 2020-12-23
 ********************
@@ -35,7 +42,7 @@ Added
 
 - New CSS for the k-table and k-context-panel components.
 - Added pagination to the k-table component.
- 
+
 Fixed
 =======
 
