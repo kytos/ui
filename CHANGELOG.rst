@@ -26,6 +26,7 @@ Security
 Changed
 =======
 
+
 [1.4.2] - 2021-05-31
 ********************
 
@@ -33,6 +34,7 @@ Added
 =====
 - Added maximize button to k-info-panel.
 - Added upward or downward sorter to the k-table.
+
 
 [1.4.1] - 2020-12-23
 ********************
